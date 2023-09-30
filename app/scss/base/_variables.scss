@@ -1,0 +1,144 @@
+
+@use 'sass:math';
+
+// for adaptive mixin
+$screenMaxWidth: 1920;
+$screenMinWidth: 320;
+$containerMaxWidth: 1200;
+
+// real theme colors
+$dark-colors: (
+  "primary": #f34c84,
+  "primary300": #f34c84,
+  "primary500": #f34c84,
+  "secondary": #91bea9,
+  "secondary300": #91bea9,
+  "secondary500": #91bea9,
+  "tertiary": #c297dc,
+  "tertiary300": #c297dc,
+  "tertiary500": #c297dc,
+  "black": #15043f,
+  "white": #ffffff,
+  "grey": #cccccc,
+);
+
+// real theme colors
+$light-colors: (
+  "primary": #f34c84,
+  "primary300": #f34c84,
+  "primary500": #f34c84,
+  "secondary": #91bea9,
+  "secondary300": #91bea9,
+  "secondary500": #91bea9,
+  "tertiary": #c297dc,
+  "tertiary300": #c297dc,
+  "tertiary500": #c297dc,
+  "black": #15043f,
+  "white": #ffffff,
+  "grey": #dddddd,
+);
+
+// for theme colors
+$--color-primary: --color-primary;
+$--color-primary300: --color-primary300;
+$--color-primary500: --color-primary500;
+$--color-secondary: --color-secondary;
+$--color-secondary300: --color-secondary300;
+$--color-secondary500: --color-secondary500;
+$--color-tertiary: --color-tertiary;
+$--color-tertiary300: --color-tertiary300;
+$--color-tertiary500: --color-tertiary500;
+$--color-black: --color-black;
+$--color-white: --color-white;
+$--color-grey: --color-grey;
+
+$--control-color-page-back: --control-color-page-back;
+$--control-color-page-title: --control-color-page-title;
+$--control-color-page-sub-title: --control-color-page-sub-title;
+$--control-color-page-scene-back: --control-color-page-scene-back;
+
+$--control-color-text: --control-color-text;
+
+$--control-color-border: --control-color-border;
+
+$--control-color-button-back: --control-color-button-back;
+$--control-color-button-text: --control-color-button-text;
+$--control-color-button-border: --control-color-button-border;
+
+
+
+@function get-color($key, $map: $dark-colors) {
+    @if not map-has-key($map, $key) {
+        @error "key: '#{$key}', is not a key in map: #{$map}";
+    }
+    @return map-get($map: $map, $key: $key);
+};
+
+
+// light theme
+$color-map-light: (
+    $--color-primary: get-color("primary", $light-colors),
+    $--color-primary300: get-color("primary300", $light-colors),
+    $--color-primary500: get-color("primary500", $light-colors),
+    $--color-secondary: get-color("secondary", $light-colors),
+    $--color-secondary300: get-color("secondary300", $light-colors),
+    $--color-secondary500: get-color("secondary500", $light-colors),
+    $--color-tertiary: get-color("tertiary", $light-colors),
+    $--color-tertiary300: get-color("tertiary300", $light-colors),
+    $--color-tertiary500: get-color("tertiary500", $light-colors),
+    $--color-black: get-color("black", $light-colors),
+    $--color-white: get-color("white", $light-colors),
+    $--color-grey: get-color("grey", $light-colors),
+);
+// dark, overrides the light theme
+$color-map-dark: (
+    $--color-primary: get-color("primary", $dark-colors),
+    $--color-primary300: get-color("primary300", $dark-colors),
+    $--color-primary500: get-color("primary500", $dark-colors),
+    $--color-secondary: get-color("secondary", $dark-colors),
+    $--color-secondary300: get-color("secondary300", $dark-colors),
+    $--color-secondary500: get-color("secondary500", $dark-colors),
+    $--color-tertiary: get-color("tertiary", $dark-colors),
+    $--color-tertiary300: get-color("tertiary300", $dark-colors),
+    $--color-tertiary500: get-color("tertiary500", $dark-colors),
+    $--color-black: get-color("black", $dark-colors),
+    $--color-white: get-color("white", $dark-colors),
+    $--color-grey: get-color("grey", $dark-colors),
+);
+
+
+// control colors light theme
+$control-color-map-light: (
+    $--control-color-page-back: get-color("white", $light-colors),
+    $--control-color-page-title: get-color("black", $light-colors),
+    $--control-color-page-sub-title: get-color("grey", $light-colors),
+    $--control-color-page-scene-back: get-color("secondary", $light-colors),
+    
+    $--control-color-text: get-color("black", $light-colors),
+    
+    $--control-color-border: get-color("primary", $light-colors),
+    
+    $--control-color-button-back: get-color("white", $light-colors),
+    $--control-color-button-text: get-color("black", $light-colors),
+    $--control-color-button-border: get-color("secondary", $light-colors),
+);
+
+
+// control colors DARK theme
+ $control-color-map-dark: (
+    $--control-color-page-back: get-color("black", $dark-colors),
+    $--control-color-page-title: get-color("white", $dark-colors),
+    $--control-color-page-sub-title: get-color("grey", $dark-colors),
+    $--control-color-page-scene-back: get-color("secondary", $dark-colors),
+
+    $--control-color-text: get-color("white", $dark-colors),
+    
+    $--control-color-border: get-color("primary", $dark-colors),
+    
+    $--control-color-button-back: get-color("primary", $dark-colors),
+    $--control-color-button-text: get-color("white", $dark-colors),
+    $--control-color-button-border: get-color("primary", $dark-colors),
+ );
+
+
+

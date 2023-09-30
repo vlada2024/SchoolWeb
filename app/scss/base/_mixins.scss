@@ -1,0 +1,56 @@
+
+
+
+// sample: @include adaptive-value("padding", 150, 20, 0);
+// 150 <- padding: 150px for screenMaxWidth
+// 20 <- padding: 20px for screenMinWidth
+// 1 <- type пересчитывать размер в пределах от screenMinWidth до containerMaxWidth
+// 2 <- type пересчитывать размер в пределах от on containerMaxWidth и выше
+// 0 <- type пересчитывать всегда
+
+//@debug adaptive-value("padding", 150, 20, 0);
+//@debug adaptive-value("padding", 150, 20, 1);
+//@debug adaptive-value("padding", 150, 20, 2);
+
+@mixin adaptive-value($property, $controlInitSize, $controlMinSize, $type) {
+    $diffSize:  $controlInitSize - $controlMinSize;
+
+    @if($type == 1) {
+
+        // только если <меньше> containerMaxWidth
+        #{$property}: $controlInitSize + px;
+
+        @media (max-width: #{$containerMaxWidth + px}) {
+            
+            #{$property}: calc(#{$controlMinSize + px} + #{$diffSize} * ((100vw - #{$screenMinWidth + px}) / #{$screenMaxWidth - $screenMinWidth}));
+        
+        }
+
+    } @else if(type == 2) {
+
+        // только если <больше> containerMaxWidth
+        #{$property}: $controlInitSize + px;
+
+        @media (min-width: #{$containerMaxWidth + px}) {
+            
+            #{$property}: calc(#{$controlMinSize + px} + #{$diffSize} * ((100vw - #{$screenMinWidth + px}) / #{$screenMaxWidth - $screenMinWidth}));
+        
+        }
+
+    } @else {
+
+        // always
+        #{$property}: calc(#{$controlMinSize + px} + #{$diffSize} * ((100vw - #{$screenMinWidth + px}) / #{$screenMaxWidth - $screenMinWidth}));
+    }
+
+}
+
+
+@mixin spread-map($map: ()) {
+    @each $key, $value in $map {
+        #{$key}: $value;
+    }
+}
+
+
+

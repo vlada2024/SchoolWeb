@@ -1,0 +1,190 @@
+
+
+
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/functions';
+
+@import 'components/theme-indicator';
+
+
+$maxPageWidth: 642;
+$maxPageHeight: 351;
+$minPageWidth: 200;
+$minPageHeight: calc($minPageWidth * $maxPageHeight / $maxPageWidth);
+
+:root.light {
+  @include spread-map($color-map-light);
+  @include spread-map($control-color-map-light);
+}
+:root.dark {
+  @include spread-map($color-map-dark);
+  @include spread-map($control-color-map-dark);
+}
+
+.wrapper {
+  min-height: 100vh; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  //background-image: url("../images/background.jpg");
+  background-position: center center; 
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.page {
+  //@include adaptive-value("width", $maxPageWidth, $minPageWidth, 0);
+  //@include adaptive-value("height", $maxPageHeight, $minPageHeight, 0);
+  
+  display: flex;
+  color:  control-color-var($--control-color-text);
+  background-color: control-color-var($--control-color-page-back);
+  min-height: 100vh; 
+  width: 100%;
+  padding: 20px 0;
+}
+
+.page_bg {
+ // background: url(../images/components/404/404_chemical.png) center / cover no-repeat fixed;
+  background: url(../images/components/404/404a.svg) center / cover no-repeat fixed;
+  background-color: control-color-var($--control-color-page-back);
+  background-size: contain;
+}
+
+.page__body {
+  background-color: control-color-var($--control-color-page-scene-back);
+  flex: 1 1 auto;
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.page__title {
+
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.page__text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+$divider: 5; // 4 wrong!!!
+
+$school_max_width: 619;
+$school_max_height: 717;
+$school_max_right: 146;
+$school_max_top: 165;
+
+// $road_max_width: 2863;
+// $road_max_height: 1495;
+// $road_max_right: 300;
+// $road_max_top: 640;
+
+$road_max_width: 2560;
+$road_max_height: 900;
+$road_max_right: 351;
+$road_max_top: 883;
+
+
+$boy_max_width: 254;
+$boy_max_height: 400;
+$boy_max_left: 179;
+$boy_max_top: 858;//643; <<<<<
+
+
+$teacher_max_width: 169;
+$teacher_max_height: 289;
+$teacher_max_right: 552;
+$teacher_max_top: 684;
+
+$family_max_width: 241;
+$family_max_height: 360;
+$family_max_left: 550;  //<<<< 
+$family_max_top: 700;   //<<<<<
+
+$treeTop_max_width: 177;
+$treeTop_max_height: 418;
+$treeTop_max_right: 50;
+$treeTop_max_top: 524;
+
+$treeBehind_max_width: 177;
+$treeBehind_max_height: 418;
+$treeBehind_max_right: 720;
+$treeBehind_max_top: 467;
+
+
+
+.pic-school{
+  position: absolute;
+  @include adaptive-value("width", $school_max_width, calc($school_max_width/$divider), 0);
+  @include adaptive-value("right", $school_max_right, calc($school_max_right/$divider) , 0);
+  @include adaptive-value("top", $school_max_top, calc($school_max_top/$divider), 0);
+  @include adaptive-value("height", $school_max_height, calc($school_max_height/$divider), 0);
+  z-index: 40;
+}
+
+.pic-road{
+  position: absolute;
+  @include adaptive-value("width", $road_max_width, calc($road_max_width/$divider), 0);
+  @include adaptive-value("right", $road_max_right, calc($road_max_right/$divider) , 0);
+  @include adaptive-value("top", $road_max_top, calc($road_max_top/$divider), 0); 
+ // @include adaptive-value("left", $road_max_left, calc($road_max_left/$divider), 0);
+  @include adaptive-value("height", $road_max_height, calc($road_max_height/$divider), 0);
+  z-index: 40;
+}
+
+
+.pic-boy{
+  position: absolute;
+  @include adaptive-value("width", $boy_max_width, calc($boy_max_width/$divider), 0);
+  @include adaptive-value("left", $boy_max_left, calc($boy_max_left/$divider), 0);
+  @include adaptive-value("top", $boy_max_top, calc($boy_max_top/$divider), 0);
+  @include adaptive-value("height", $boy_max_height, calc($boy_max_height/$divider), 0);
+  z-index: 100;
+}
+
+.pic-teacher{
+  position: absolute;
+  @include adaptive-value("width", $teacher_max_width, calc($teacher_max_width/$divider), 0);
+  @include adaptive-value("right", $teacher_max_right, calc($teacher_max_right/$divider), 0);
+  @include adaptive-value("top", $teacher_max_top, calc($teacher_max_top/$divider), 0);
+  @include adaptive-value("height", $teacher_max_height, calc($teacher_max_height/$divider), 0);
+  z-index: 80;
+}
+
+.pic-family{
+  position: absolute;
+  @include adaptive-value("width", $family_max_width, calc($family_max_width/$divider), 0);
+  @include adaptive-value("left", $family_max_left, calc($family_max_left/$divider), 0);
+  @include adaptive-value("top", $family_max_top, calc($family_max_top/$divider), 0);
+  @include adaptive-value("height", $family_max_height, calc($family_max_height/$divider), 0);
+  z-index: 90;
+}
+
+.pic-treeTop{
+  position: absolute;
+  @include adaptive-value("width", $treeTop_max_width, calc($treeTop_max_width/$divider), 0);
+  @include adaptive-value("right", $treeTop_max_right, calc($treeTop_max_right/$divider), 0);
+  @include adaptive-value("top", $treeTop_max_top, calc($treeTop_max_top/$divider), 0);
+  @include adaptive-value("height", $treeTop_max_height, calc($treeTop_max_height/$divider), 0);
+  z-index: 70;
+}
+
+.pic-treeBehind{
+  position: absolute;
+  @include adaptive-value("width", $treeBehind_max_width, calc($treeBehind_max_width/$divider), 0);
+  @include adaptive-value("right", $treeBehind_max_right, calc($treeBehind_max_right/$divider), 0);
+  @include adaptive-value("top", $treeBehind_max_top, calc($treeBehind_max_top/$divider), 0);
+  @include adaptive-value("height", $treeBehind_max_height, calc($treeBehind_max_height/$divider), 0);
+  z-index: 20;
+}
