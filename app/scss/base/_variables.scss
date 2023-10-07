@@ -4,7 +4,14 @@
 // for adaptive mixin
 $screenMaxWidth: 1920;
 $screenMinWidth: 320;
-$containerMaxWidth: 1200;
+$screenMaxHeight: 1200;
+$containerMaxWidth: 1200; // !!! the same as $containerMaxWidthPX
+$containerMaxWidthPX: $containerMaxWidth + px; // 1200 + padd 20 + pad 20
+$containerMaxHeight: calc($containerMaxWidth * $screenMaxHeight / $screenMaxWidth);
+$containerMaxHeightPX: $containerMaxHeight + px;
+
+$mobileContainerMaxWidth: 700;
+$mobileContainerMaxWidthPX: $mobileContainerMaxWidth + px;
 
 // real theme colors
 $dark-colors: (
@@ -20,6 +27,8 @@ $dark-colors: (
   "black": #15043f,
   "white": #ffffff,
   "grey": #cccccc,
+  "grey300": #999999,
+  "grey500": #666666,
 );
 
 // real theme colors
@@ -36,6 +45,8 @@ $light-colors: (
   "black": #15043f,
   "white": #ffffff,
   "grey": #dddddd,
+  "grey300": #777777,
+  "grey500": #555555,
 );
 
 // for theme colors
@@ -51,6 +62,8 @@ $--color-tertiary500: --color-tertiary500;
 $--color-black: --color-black;
 $--color-white: --color-white;
 $--color-grey: --color-grey;
+$--color-grey300: --color-grey300;
+$--color-grey500: --color-grey500;
 
 $--control-color-page-back: --control-color-page-back;
 $--control-color-page-title: --control-color-page-title;
@@ -65,6 +78,8 @@ $--control-color-button-back: --control-color-button-back;
 $--control-color-button-text: --control-color-button-text;
 $--control-color-button-border: --control-color-button-border;
 
+$--control-color-button-back-inactive: --control-color-button-back-inactive;
+$--control-color-button-border-inactive: --control-color-button-border-inactive;
 
 
 @function get-color($key, $map: $dark-colors) {
@@ -89,6 +104,8 @@ $color-map-light: (
     $--color-black: get-color("black", $light-colors),
     $--color-white: get-color("white", $light-colors),
     $--color-grey: get-color("grey", $light-colors),
+    $--color-grey300: get-color("grey300", $light-colors),
+    $--color-grey500: get-color("grey500", $light-colors),
 );
 // dark, overrides the light theme
 $color-map-dark: (
@@ -104,6 +121,8 @@ $color-map-dark: (
     $--color-black: get-color("black", $dark-colors),
     $--color-white: get-color("white", $dark-colors),
     $--color-grey: get-color("grey", $dark-colors),
+    $--color-grey300: get-color("grey300", $dark-colors),
+    $--color-grey500: get-color("grey500", $dark-colors),
 );
 
 
@@ -118,9 +137,11 @@ $control-color-map-light: (
     
     $--control-color-border: get-color("primary", $light-colors),
     
-    $--control-color-button-back: get-color("white", $light-colors),
+    $--control-color-button-back: get-color("black", $light-colors),
     $--control-color-button-text: get-color("black", $light-colors),
     $--control-color-button-border: get-color("secondary", $light-colors),
+    $--control-color-button-back-inactive: get-color("grey", $light-colors),
+    $--control-color-button-border-inactive: get-color("grey300", $light-colors),
 );
 
 
@@ -135,9 +156,11 @@ $control-color-map-light: (
     
     $--control-color-border: get-color("primary", $dark-colors),
     
-    $--control-color-button-back: get-color("primary", $dark-colors),
+    $--control-color-button-back: get-color("white", $dark-colors),
     $--control-color-button-text: get-color("white", $dark-colors),
     $--control-color-button-border: get-color("primary", $dark-colors),
+    $--control-color-button-back-inactive: get-color("grey", $dark-colors),
+    $--control-color-button-border-inactive: get-color("grey300", $dark-colors),
  );
 
 

@@ -1,45 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.min.css"/>
-    <script type="text/javascript" src="js/main.min.js" ></script>
+    <link rel="stylesheet" href="css/main.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@600&family=PT+Sans&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript" src="js/main.min.js"></script>
     <title>Template</title>
+
 </head>
+
 <body>
     <div class="wrapper">
-       <section class="page">
-         <div class="page__body">
-            <img class="pic-school"  src="images/components/landing/school.svg" alt="">
-            <img class="pic-boy"  src="images/components/landing/boy.svg" alt="">
-            <img class="pic-teacher"  src="images/components/landing/teacher.svg" alt="">
-            <img class="pic-family"  src="images/components/landing/family.svg" alt="">
-            <img class="pic-treeTop"  src="images/components/landing/treeTop.svg" alt="">
-            <img class="pic-treeBehind"  src="images/components/landing/treeBehind.svg" alt="">
-            <img class="pic-road"  src="images/components/landing/road.svg" alt="">
-          </div>
-       </section>
-       <section class="page page_bg">
+        <section class="page">
+            <div class="page__body">
+                <div class="scene__wrapper">
+                    <header class="header">
+                        <div class="container">
+                            <div class="header__inner">
+                                <a href="" class="logo">
+                                    <img src="" alt="" class="logo__image">
+                                </a>
+                                <nav class="menu">
+                                    <button class="menu-button">
+                                        <span class="menu-button__line">
+                                            Расписание
+                                        </span>
+                                        <span class="menu-button__line">
+                                            Кружки
+                                        </span>
+                                        <span class="menu-button__line">
+                                            Альбом
+                                        </span>
+                                    </button>
+                                </nav>
+                                <ul class="menu__list">
+                                    <li class="menu__item">
+                                        <a href="" class="menu__link">Расписание</a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="" class="menu__link">Кружки</a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="" class="menu__link">Альбом</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                    <section class="main">
+                        <div class="container">
+                            <div class="main__inner">
+                                <h1 class="main__title">
+                                    Наша школа
+                                </h1>
+                                <h2 class="main__subtitle">
+                                    МОУ СОШ №4 г. Краснослободска
+                                </h2>
+
+                                <div class="item-container">
+
+                                    <div class="main__item item-boy">
+                                        <img class="pic-boy" src="images/components/landing/boy.svg" alt="">
+                                    </div>
+                                    <div class="main__item item-family">
+                                        <img class="pic-family" src="images/components/landing/family.svg" alt="">
+                                    </div>
+                                    <div class="main__item item-teacher">
+                                        <img class="pic-teacher" src="images/components/landing/teacher.svg" alt="">
+                                    </div>
+                                    <div class="main__item item-school">
+                                        <img class="pic-treeTop" src="images/components/landing/treeTop.svg" alt="">
+                                        <img class="pic-school" src="images/components/landing/school.svg" alt="">
+                                        <img class="pic-treeBehind" src="images/components/landing/treeBehind.svg"
+                                            alt="">
+                                    </div>
+                                    <div class="main__item item-road">
+                                        <img class="pic-road" src="images/components/landing/road.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="footer">
+                        <div class="container">
+                            <div class="footer__inner">
+                                <span class="footer__text">
+                                    Designed by Vlada
+                                </span>
+                            </div>
+                        </div>
+                    </footer>
+
+
+
+
+                </div>
+            </div>
+        </section>
+        <!-- <section class="page page_bg">
         </section>
        <section class="page">
             <div class="page__body"> 
                 
              </div>
-        </section>
+        </section> -->
         <!-- page theme indicator -->
-       <div class="page__theme-indicator">
+        <div class="page__theme-indicator">
             <!-- <div class="theme-ind------icator"> -->
-                <img class="page__theme-indicator-image theme-indicator indicator-image-dark" 
-                    src="images/components/theme-indicator/dark-theme.svg" alt="dark">
-                <img class="page__theme-indicator-image theme-indicator indicator-image-light" 
-                    src="images/components/theme-indicator/light-theme.svg" alt="light">
-                <img class="page__theme-indicator-image theme-indicator indicator-image-auto" 
-                    src="images/components/theme-indicator/clear-theme.svg" alt="auto">
+            <!-- <img class="page__theme-indicator-image theme-indicator indicator-image-dark" 
+                    src="images/components/theme-indicator/dark-theme.svg" alt="dark"> -->
+            <svg class="page__theme-indicator-image theme-indicator indicator-image-dark" viewBox="0 0 32 32"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M20.4955 22.5066C22.4975 22.5066 24.3752 21.9716 25.9928 21.0368C24.0953 24.3604 20.5177 26.6 16.4177 26.6C10.3328 26.6 5.4 21.6672 5.4 15.5822C5.4 11.4823 7.63951 7.90469 10.963 6.00723C10.0283 7.62474 9.4933 9.50246 9.4933 11.5044C9.4933 17.5808 14.4191 22.5066 20.4955 22.5066Z"
+                    fill="currentColor" stroke="currentColor" stroke-width="0.8" />
+            </svg>
+            <!-- <img class="page__theme-indicator-image theme-indicator indicator-image-light" 
+                    src="images/components/theme-indicator/light-theme.svg" alt="light"> -->
+            <svg class="page__theme-indicator-image theme-indicator indicator-image-light" viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="6.1" fill="black" stroke="black" stroke-width="0.8" />
+                <path d="M17 3C17 2.44772 16.5523 2 16 2C15.4477 2 15 2.44772 15 3H17ZM15 3V7.5H17V3H15Z"
+                    fill="black" />
+                <path
+                    d="M8.04045 6.62621C7.64993 6.23569 7.01676 6.23569 6.62624 6.62621C6.23571 7.01674 6.23571 7.6499 6.62624 8.04043L8.04045 6.62621ZM6.62624 8.04043L9.80822 11.2224L11.2224 9.80819L8.04045 6.62621L6.62624 8.04043Z"
+                    fill="black" />
+                <path
+                    d="M25.6366 8.04043C26.0272 7.6499 26.0272 7.01674 25.6366 6.62621C25.2461 6.23569 24.6129 6.23569 24.2224 6.62621L25.6366 8.04043ZM24.2224 6.62621L21.0404 9.80819L22.4546 11.2224L25.6366 8.04043L24.2224 6.62621Z"
+                    fill="black" />
+                <path
+                    d="M6.62624 24.2224C6.23571 24.6129 6.23571 25.2461 6.62624 25.6366C7.01676 26.0272 7.64993 26.0272 8.04045 25.6366L6.62624 24.2224ZM8.04045 25.6366L11.2224 22.4546L9.80822 21.0404L6.62624 24.2224L8.04045 25.6366Z"
+                    fill="black" />
+                <path
+                    d="M24.2224 25.6366C24.6129 26.0272 25.2461 26.0272 25.6366 25.6366C26.0272 25.2461 26.0272 24.6129 25.6366 24.2224L24.2224 25.6366ZM25.6366 24.2224L22.4546 21.0404L21.0404 22.4546L24.2224 25.6366L25.6366 24.2224Z"
+                    fill="black" />
+                <path d="M3 15C2.44772 15 2 15.4477 2 16C2 16.5523 2.44772 17 3 17V15ZM3 17H7.5V15H3V17Z"
+                    fill="black" />
+                <path d="M29 17C29.5523 17 30 16.5523 30 16C30 15.4477 29.5523 15 29 15V17ZM29 15H24.5V17H29V15Z"
+                    fill="black" />
+                <path d="M15 29C15 29.5523 15.4477 30 16 30C16.5523 30 17 29.5523 17 29H15ZM15 24.5V29H17V24.5H15Z"
+                    fill="black" />
+            </svg>
+            <!-- <img class="page__theme-indicator-image theme-indicator indicator-image-auto" 
+                    src="images/components/theme-indicator/auto-theme.svg" alt="auto">  -->
+            <svg viewBox="0 0 32 32" class="page__theme-indicator-image theme-indicator indicator-image-auto"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3.033 19H1.38527L3.89592 11.7273H5.87746L8.38456 19H6.73683L4.9151 13.3892H4.85828L3.033 19ZM2.93001 16.1413H6.82206V17.3416H2.93001V16.1413ZM13.6721 11.7273H15.2097V16.4503C15.2097 16.9806 15.0831 17.4446 14.8298 17.8423C14.5788 18.2401 14.2273 18.5502 13.7751 18.7727C13.3229 18.9929 12.7962 19.103 12.1948 19.103C11.5911 19.103 11.0632 18.9929 10.611 18.7727C10.1588 18.5502 9.80728 18.2401 9.55634 17.8423C9.30539 17.4446 9.17991 16.9806 9.17991 16.4503V11.7273H10.7176V16.3189C10.7176 16.5959 10.7779 16.8421 10.8987 17.0575C11.0218 17.273 11.1946 17.4422 11.4171 17.5653C11.6397 17.6884 11.8989 17.75 12.1948 17.75C12.4931 17.75 12.7524 17.6884 12.9725 17.5653C13.1951 17.4422 13.3667 17.273 13.4874 17.0575C13.6105 16.8421 13.6721 16.5959 13.6721 16.3189V11.7273ZM16.1178 12.995V11.7273H22.0909V12.995H19.8643V19H18.3444V12.995H16.1178ZM29.3457 15.3636C29.3457 16.1567 29.1954 16.8314 28.8947 17.3878C28.5964 17.9441 28.1892 18.3691 27.6731 18.6626C27.1594 18.9538 26.5818 19.0994 25.9402 19.0994C25.2939 19.0994 24.7139 18.9527 24.2001 18.6591C23.6864 18.3655 23.2804 17.9406 22.9821 17.3842C22.6838 16.8279 22.5347 16.1544 22.5347 15.3636C22.5347 14.5705 22.6838 13.8958 22.9821 13.3395C23.2804 12.7831 23.6864 12.3594 24.2001 12.0682C24.7139 11.7746 25.2939 11.6278 25.9402 11.6278C26.5818 11.6278 27.1594 11.7746 27.6731 12.0682C28.1892 12.3594 28.5964 12.7831 28.8947 13.3395C29.1954 13.8958 29.3457 14.5705 29.3457 15.3636ZM27.7868 15.3636C27.7868 14.8499 27.7098 14.4167 27.556 14.0639C27.4044 13.7112 27.1902 13.4437 26.9132 13.2614C26.6362 13.0791 26.3119 12.9879 25.9402 12.9879C25.5685 12.9879 25.2442 13.0791 24.9672 13.2614C24.6902 13.4437 24.4748 13.7112 24.3209 14.0639C24.1694 14.4167 24.0936 14.8499 24.0936 15.3636C24.0936 15.8774 24.1694 16.3106 24.3209 16.6634C24.4748 17.0161 24.6902 17.2836 24.9672 17.4659C25.2442 17.6482 25.5685 17.7393 25.9402 17.7393C26.3119 17.7393 26.6362 17.6482 26.9132 17.4659C27.1902 17.2836 27.4044 17.0161 27.556 16.6634C27.7098 16.3106 27.7868 15.8774 27.7868 15.3636Z"
+                    fill="white" />
+            </svg>
+            <!-- <img class="page__theme-indicator-image theme-indicator indicator-image-empty" 
+                    src="images/components/theme-indicator/place-holder.svg" alt="auto"> -->
+            <svg class="page__theme-indicator-image theme-indicator indicator-image-empty" viewBox="0 0 32 32"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+            </svg>
             <!-- </div> -->
         </div>
         <!-- END page theme indicator -->
     </div>
 </body>
+
 </html>

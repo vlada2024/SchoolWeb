@@ -1,160 +1,195 @@
-/*
+
 // подписываемся на события страницы, когда она полностью будет загружена
 window.addEventListener("load", onWindowLoad);
 
 // имя ключа в локальном хранилищи браузера, где будет хранится имя текущей пользовательсткой темы
-const USER_THEME = "user-theme";
+const USER_THEME = "user-theme2";
 const LIGHT = "light";
 const DARK = "dark";
+const AUTO = "auto";
 const DEFAULT_THEME = LIGHT;
-const CHANGE_THEME_CONTAINER_BUTTON = ".page__theme-indicator_change";
-const RESET_THEME_BUTTON =  ".page__theme-indicator_reset";
 const BUTTON_ACTIVE = "active";
-const DARK_THEME_IMAGES =  ".indicator-image-dark";
-const LIGHT_THEME_IMAGES =  ".indicator-image-light";
-
-const themes = [LIGHT, DARK];
-const images = [LIGHT_THEME_IMAGES, DARK_THEME_IMAGES]
-
+const DARK_THEME_BUTTON =  ".indicator-image-dark";
+const LIGHT_THEME_BUTTON =  ".indicator-image-light";
+const AUTO_THEME_BUTTON =  ".indicator-image-auto";
+const EMPTY_THEME_BUTTON =  ".indicator-image-empty";
 
 function onWindowLoad() {
+  
+  let savedUserTheme = getThemeFromStorage();
 
+  const themes = [LIGHT, DARK, AUTO];
   const htmlBlock = document.documentElement;
-  let savedUserTheme = dataStorage.loadValue(USER_THEME);
+  
+  const darkThemeButton = document.querySelector(DARK_THEME_BUTTON)
+  const lightThemeButton = document.querySelector(LIGHT_THEME_BUTTON)
+  const autoThemeButton = document.querySelector(AUTO_THEME_BUTTON)
+  const emptyThemeButton = document.querySelector(EMPTY_THEME_BUTTON)
 
-  const darkThemeButton = document.querySelector(DARK_THEME_IMAGES)
-  const lightThemeButton = document.querySelector(LIGHT_THEME_IMAGES)
+  const buttons = [lightThemeButton, darkThemeButton, autoThemeButton];
 
-  const buttons = [lightThemeButton, darkThemeButton];
-
-  function toggleIndicator(currentTheme) {
-    if(currentTheme == DARK) {
-      darkThemeButton.classList.remove(BUTTON_ACTIVE);
-      lightThemeButton.classList.add(BUTTON_ACTIVE);
-    } else if(currentTheme == LIGHT) {
-      lightThemeButton.classList.remove(BUTTON_ACTIVE);
-      darkThemeButton.classList.add(BUTTON_ACTIVE);
-    } else {
-      lightThemeButton.classList.remove(BUTTON_ACTIVE);
-      darkThemeButton.classList.remove(BUTTON_ACTIVE);
-    } 
+  function getThemeFromStorage() {
+    return dataStorage.loadValue(USER_THEME);
   }
 
-  function toggleClassTheme(elementWhereClassThemeStored){
-    let currentTheme = elementWhereClassThemeStored.classList.contains(LIGHT) ? LIGHT : DARK;
-
-    toggleIndicator(currentTheme);
-
-    if(currentTheme == LIGHT) {
-        elementWhereClassThemeStored.classList.remove(LIGHT);
-        elementWhereClassThemeStored.classList.add(DARK);
-        return DARK;
-    } else {
-        elementWhereClassThemeStored.classList.remove(DARK);
-        elementWhereClassThemeStored.classList.add(LIGHT);
-        return LIGHT;
+  function switchIndicator(currentTheme, nextTheme) {
+    
+    if(currentTheme == nextTheme) {
+      return
     }
-}
 
+    if(htmlBlock.classList.contains(currentTheme))
+      htmlBlock.classList.remove(currentTheme);
+    
+    let systemTheme = "";
+    if(nextTheme == AUTO) {
+      systemTheme = getSystemTheme();
+      htmlBlock.classList.remove(currentTheme);
+      htmlBlock.classList.add(systemTheme);
+      onAutoThemeButton(false);
+    }
+    
+    for(let i = 0; i < buttons.length; i++) {
+      if(nextTheme == AUTO) {
+
+          if(themes[i] != systemTheme) {
+            buttons[i].classList.remove(BUTTON_ACTIVE);
+          } else {
+            buttons[i].classList.add(BUTTON_ACTIVE);
+          }
+
+      } else {
+
+        if(themes[i] == nextTheme) {
+            buttons[i].classList.add(BUTTON_ACTIVE);
+            htmlBlock.classList.add(nextTheme);
+        }
+
+        if(themes[i] == currentTheme) {
+          buttons[i].classList.remove(BUTTON_ACTIVE);
+          //htmlBlock.classList.remove(currentTheme);
+        }
+
+      }
+    }
+
+  }
+
+  function onAutoThemeButton(activate) {
+
+    if(activate) {
+
+      if(!autoThemeButton.classList.contains(BUTTON_ACTIVE))
+          autoThemeButton.classList.add(BUTTON_ACTIVE);
+          
+      if(!emptyThemeButton.classList.contains(BUTTON_ACTIVE))
+          emptyThemeButton.classList.add(BUTTON_ACTIVE);
+
+
+    } else {
+
+      if(autoThemeButton.classList.contains(BUTTON_ACTIVE))
+          autoThemeButton.classList.remove(BUTTON_ACTIVE);
+
+      if(emptyThemeButton.classList.contains(BUTTON_ACTIVE))
+          emptyThemeButton.classList.remove(BUTTON_ACTIVE);
+
+    }
+    
+  }
 
   function getSystemTheme() {
     if(window.matchMedia) {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK : LIGHT;
     }
-    return undefined;
- }
+    return DEFAULT_THEME;
+  }
 
- let systemTheme = getSystemTheme();
-
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", e => {
-    if(!savedUserTheme) {
-       changeTheme(false);
-    }
-  });
+  
 
 
-  function changeTheme(saveThemeToStorage = false) {
+  function changeTheme(currentTheme, nextTheme, saveThemeToStorage = false) {
     
-    let newTheme = toggleClassTheme(htmlBlock);
+    switchIndicator(currentTheme, nextTheme);
     
     if(saveThemeToStorage) {
-        dataStorage.saveValue(USER_THEME, newTheme)
+        dataStorage.saveValue(USER_THEME, nextTheme)
+        savedUserTheme = nextTheme;
     }
 
-    return newTheme;
+    onAutoThemeButton(savedUserTheme);
   }
 
-  function initThemeClass (elementWhereClassThemeStored, resetButton, changeButton) {
-    if(savedUserTheme) {
-        elementWhereClassThemeStored.classList.add(savedUserTheme);
-        if(!resetButton.classList.contains(BUTTON_ACTIVE))
-            resetButton.classList.add(BUTTON_ACTIVE);
-        
+  function initThemeClass () {
 
 
-      } else {
-      resetButton.classList.remove(BUTTON_ACTIVE);
-      systemTheme = getSystemTheme();
-        if(systemTheme) {
-            if(systemTheme == DARK) {
-                elementWhereClassThemeStored.classList.remove(LIGHT);
-                if(!elementWhereClassThemeStored.classList.contains(DARK))
-                    elementWhereClassThemeStored.classList.add(DARK);
-            } else {
-                elementWhereClassThemeStored.classList.remove(DARK);
-                if(!elementWhereClassThemeStored.classList.contains(LIGHT))
-                    elementWhereClassThemeStored.classList.add(LIGHT);
-            }
-        }
-    }
-
-    if((savedUserTheme ?? systemTheme) == DARK) {
-      lightThemeButton.classList.remove(BUTTON_ACTIVE);
-      darkThemeButton.classList.add(BUTTON_ACTIVE);
-    } else if((savedUserTheme ?? systemTheme) == LIGHT) {
-      darkThemeButton.classList.remove(BUTTON_ACTIVE);
-      lightThemeButton.classList.add(BUTTON_ACTIVE);
+    if(autoThemeButton) {
+    
+      autoThemeButton.addEventListener("click", e => {
+          dataStorage.saveValue(USER_THEME, '');
+          // reset to system theme!!
+          const prevTheme = savedUserTheme;
+          savedUserTheme = undefined;
+          //if(!prevTheme)
+          //  console.warn("prevTheme is NULL!!")
+          changeTheme(prevTheme, AUTO, false);
+      });
+  
     } else {
-      lightThemeButton.classList.remove(BUTTON_ACTIVE);
-      darkThemeButton.classList.remove(BUTTON_ACTIVE);
+      console.error("autoThemeButton not found!")
     }
-}
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", e => {
+      const themeFromStorage = dataStorage.loadValue(USER_THEME)
+      if(!themeFromStorage) {
+         let systemTheme = getSystemTheme();
+         changeTheme(systemTheme == DARK ? LIGHT : DARK, systemTheme, false);
+      }
+    });
 
 
-  const changeThemeButton = document.querySelector(CHANGE_THEME_CONTAINER_BUTTON)
-  const resetToSystemThemeButton = document.querySelector(RESET_THEME_BUTTON)
+   
 
-  if(changeThemeButton) {
+   
+
+    for(let i = 0; i < buttons.length; i++) {
+
+      if(themes[i] == AUTO)
+        continue;
+
+      button = buttons[i];
+      if(button) {
+        
+        let theme = themes[i];
+        button.addEventListener("click", e => {
+         
+
+          onAutoThemeButton(true);
+
+          const themeInStorage = getThemeFromStorage();
+          console.warn("theme!!!  --->>> ", themeInStorage, theme);
+          changeTheme(themeInStorage ? themeInStorage : getSystemTheme(), theme, true);
+        })
     
-    changeThemeButton.addEventListener("click", e => {
-        resetToSystemThemeButton?.classList.add(BUTTON_ACTIVE);
-        savedUserTheme = changeTheme(true);
-    })
+      } else {
+        console.error("button, " + themes[i] + " not found!")
+      }
+  
+    }
 
-  } else {
-    console.error("changeThemeButton, .page_theme--change not found!")
+    if(savedUserTheme) {
+      changeTheme("", savedUserTheme, false)
+    } else {
+      changeTheme(AUTO, getSystemTheme(), false)
+    }
   }
 
 
 
-  if(resetToSystemThemeButton) {
-    
-    resetToSystemThemeButton.addEventListener("click", e => {
-        resetToSystemThemeButton.classList.remove(BUTTON_ACTIVE);
-        dataStorage.saveValue(USER_THEME, '');
+  
 
-        // reset to system theme!!
-        savedUserTheme = undefined;
-        initThemeClass(htmlBlock, resetToSystemThemeButton);
-    })
-
-  } else {
-    console.error("resetToSystemThemeButton, .page_theme--reset not found!")
-  }
-
-  initThemeClass(htmlBlock, resetToSystemThemeButton);
+  initThemeClass();
 
   
 }
 
-*/

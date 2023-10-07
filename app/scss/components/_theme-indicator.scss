@@ -3,9 +3,6 @@
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 5px;
-  //width: 38px;
-  //height: 38px;
-  //position: absolute;
   right: 10px;
   top: 10px;
   z-index: 100;
@@ -13,50 +10,62 @@
 }
 
 .theme-indicator {
-    background-color: control-color-var($--control-color-button-back);
-    color: control-color-var($--control-color-button-text);
-    border: 3px solid control-color-var($--control-color-button-border);
+    border-width: 3px;// solid control-color-var($--control-color-button-border);
     border-radius: 18px;
     width: 38px;
     height: 38px;
     text-align: center;
     vertical-align: baseline;
     margin-bottom: 10px;
+    cursor: pointer;
+    
   }
-  
-  // .reset-indicator {
-  //   right: 0;
-  //   top: 0;
-  //   height: 15px;
-  //   width: 15px;
-  //   z-index: 10;
-  //   cursor: pointer;
-  //   float: right;
-  // }
+
+
+
+  svg.theme-indicator circle, svg.theme-indicator path  {
+    fill: control-color-var($--control-color-button-back);
+    stroke: control-color-var($--control-color-button-back);
+  }
+
   
   
   
-  // .indicator-image-dark {
-   
-  // }
-  
-  // .indicator-image-light {
-  
-  // }
+  .indicator-image-dark {
+    //background-color: control-color-var($--control-color-button-back);
+    //border-color: control-color-var($--control-color-button-border);
+    //cursor: pointer;
+    display: block;
+  }
+
+  .indicator-image-dark.active {
+    //background-color: control-color-var($--control-color-button-back-inactive);
+    //border-color: control-color-var($--control-color-button-border-inactive);
+    //cursor: default;
+    display: none;
+  }
+
+  .indicator-image-light {
+    //background-color: control-color-var($--control-color-button-back);
+    //border-color: control-color-var($--control-color-button-border);
+    //cursor: pointer;
+    display: block;
+  }
+ 
+  .indicator-image-light.active {
+    //background-color: control-color-var($--control-color-button-back-inactive);
+    //border-color: control-color-var($--control-color-button-border-inactive);
+    //cursor: default;
+    display: none;
+  }
   
   .page__theme-indicator-image {
     height: 32px;
     width: 32px;
-    cursor: pointer;
+    //cursor: pointer;
     //display: none;
   }
   
-  // .page__theme-indicator-image.active {
-  //   display: block;
-  // }
-  
-  // .page__theme-indicator_change {
-  // }
   
   .indicator-image-auto {
     display: none;
@@ -65,9 +74,13 @@
   .indicator-image-auto.active {
     display: block;
   }
-  
-  // .reset-indicator-image {
-  //   height: 10px;
-  //   width: 10px;
-  // }
+
+  .indicator-image-empty {
+    display: block;
+    //border: 0;
+  }
+
+  .indicator-image-empty.active {
+    display: none;
+  }
   
