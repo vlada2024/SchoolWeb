@@ -13,6 +13,14 @@ $containerMaxHeightPX: $containerMaxHeight + px;
 $mobileContainerMaxWidth: 700;
 $mobileContainerMaxWidthPX: $mobileContainerMaxWidth + px;
 
+$space: 10px;
+$space2x: $space * 2;
+$space3x: $space * 3;
+$space4x: $space * 4;
+
+$headerHeight: 100px;
+$footerHeight: 100px;
+
 // real theme colors
 $dark-colors: (
   "primary": #f34c84,
