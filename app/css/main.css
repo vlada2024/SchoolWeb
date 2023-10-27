@@ -459,10 +459,11 @@ font-family: 'PT Sans', sans-serif;
   }
   .pic-family {
     position: relative;
-    width: 100px;
+    width: 150px;
     height: unset;
     top: unset;
     left: unset;
+    margin-top: 20px;
     z-index: 0;
   }
   .item-teacher {

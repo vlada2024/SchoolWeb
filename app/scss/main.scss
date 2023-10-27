@@ -489,10 +489,14 @@ font-family: 'PT Sans', sans-serif;
 
   .pic-family{
     position: relative;
-    width: 100px;
+    width: 150px;
+
     height: unset;
     top: unset;
     left: unset;
+
+    margin-top: 20px;
+
     // @include adaptive-value("width", $family_max_width, calc($family_max_width/$divider), $respType);
     // @include adaptive-value("left", $family_max_left, calc($family_max_left/$divider), $respType);
     // @include adaptive-value("top", $family_max_top, calc($family_max_top/$divider), $respType);
