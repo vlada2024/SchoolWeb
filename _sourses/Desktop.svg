@@ -1,0 +1,32 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_0_28)">
+<rect width="1920" height="1080" fill="white"/>
+<path d="M-0.5 -0.5L1920.5 1079.5" stroke="#0000FF"/>
+<path d="M-0.5 1080.5L1917.67 2.58826" stroke="#0000FF"/>
+<path d="M960.5 0.5L1919.5 540.5" stroke="#0000FF"/>
+<path d="M960.007 1079.41L1918.26 2.58826" stroke="#0000FF"/>
+<path d="M-0.5 -0.5L960.5 1079.5" stroke="#0000FF"/>
+<path d="M-0.5 1080.5L960.5 0.5" stroke="#0000FF"/>
+<path d="M0.5 540.5L960.5 1079.5" stroke="#0000FF"/>
+<path d="M0.5 540.5L960.5 0.5" stroke="#0000FF"/>
+<path d="M960.5 1.5L1920.5 1079.5" stroke="#0000FF"/>
+<path d="M960.5 1079.5L1919.5 540.5" stroke="#0000FF"/>
+<path d="M1600.34 0V1080" stroke="#0000FF"/>
+<path d="M1439.79 0V1080" stroke="#0000FF"/>
+<path d="M1280.34 0V1080" stroke="#0000FF"/>
+<path d="M960.5 0V1080" stroke="#0000FF"/>
+<path d="M640.34 0V1080" stroke="#0000FF"/>
+<path d="M480.371 0V1080" stroke="#0000FF"/>
+<path d="M320.371 0V1080" stroke="#0000FF"/>
+<path d="M0 810.176H1920" stroke="#0000FF"/>
+<path d="M0 720.176H1920" stroke="#0000FF"/>
+<path d="M0 540.5H1920" stroke="#0000FF"/>
+<path d="M0 360.176H1920" stroke="#0000FF"/>
+<path d="M0 270H1920" stroke="#0000FF"/>
+</g>
+<defs>
+<clipPath id="clip0_0_28">
+<rect width="1920" height="1080" fill="white"/>
+</clipPath>
+</defs>
+</svg>
