@@ -1,0 +1,29 @@
+<svg width="768" height="1024" viewBox="0 0 768 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_0_15)">
+<rect width="768" height="1024" fill="white"/>
+<path d="M708 54H728" stroke="#F1F1F1" stroke-linecap="square"/>
+<path d="M708 64H728" stroke="#F1F1F1" stroke-linecap="square"/>
+<path d="M708 59H728" stroke="#F1F1F1" stroke-linecap="square"/>
+<path d="M-0.5 -0.500005L768.5 1024.5" stroke="#0000FF"/>
+<path d="M0.468011 1022.5L768.5 -0.5" stroke="#0000FF"/>
+<path d="M383.5 0.499995L768.5 1024.5" stroke="#0000FF"/>
+<path d="M384.5 1023.5L767.5 511.5" stroke="#0000FF"/>
+<path d="M383.5 0.5L767.5 511.5" stroke="#0000FF"/>
+<path d="M0.5 511.5L384.5 1023.5" stroke="#0000FF"/>
+<path d="M0.5 511.5L384.5 -0.500005" stroke="#0000FF"/>
+<path d="M0.234005 1022.5L384.5 -0.5" stroke="#0000FF"/>
+<path d="M-0.499994 -0.5L384.5 1023.5" stroke="#0000FF"/>
+<path d="M384.5 1023.5L768.5 -0.5" stroke="#0000FF"/>
+<path d="M576 0V1024" stroke="#0000FF"/>
+<path d="M383.85 -0.0527344L384.35 1024" stroke="#0000FF"/>
+<path d="M192 0V1024" stroke="#0000FF"/>
+<path d="M0 768.009H768" stroke="#0000FF"/>
+<path d="M0 511.447H768" stroke="#0000FF"/>
+<path d="M0 256.009H768" stroke="#0000FF"/>
+</g>
+<defs>
+<clipPath id="clip0_0_15">
+<rect width="768" height="1024" fill="white"/>
+</clipPath>
+</defs>
+</svg>
