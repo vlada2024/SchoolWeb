@@ -6,6 +6,7 @@
 @import 'components/theme-indicator';
 
 
+
 $maxPageWidth: 642;
 $maxPageHeight: 351;
 $minPageWidth: 200;
@@ -68,17 +69,58 @@ $respType: 0;
 }
 
 .wrapper {
-  min-height: 100vh; 
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  //background-image: url("../images/background.jpg");
-  background-position: center center; 
-  background-size: cover;
-  background-attachment: fixed;
+  // min-height: 100vh; 
+  // height: 100%;
+   display: flex;
+  //  flex-direction: column;
+  // //background-image: url("../images/background.jpg");
+  // background-position: center center; 
+  // background-size: cover;
+  // background-attachment: fixed;
+
 }
 
+.grid_image {
+  position: absolute;
+  max-width: $screenMaxWidth + px;
+  max-height: $screenMaxHeight + px;
 
+  width: $screenMaxWidth + px; // todo change size
+  height: $screenMaxHeight + px; // todo change size
+  z-index: 100;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.page{
+  max-width: $screenMaxWidth + px;
+  max-height: $screenMaxHeight + px;
+
+  width: $screenMaxWidth + px; // todo change size
+  height: $screenMaxHeight + px; // todo change size
+
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+   
+
+
+  background-color: control-color-var(--control-color-page-back);
+  // background-image: url("../images/components/grid.svg");
+  //  background-position: center center; 
+  //  background-size: cover;
+  //  background-attachment: fixed;
+  
+}
+
+/*
 .page {
   //@include adaptive-value("width", $maxPageWidth, $minPageWidth, 0);
   //@include adaptive-value("height", $maxPageHeight, $minPageHeight, 0);
@@ -305,12 +347,15 @@ $respType: 0;
   @include adaptive-value("height", $treeBehind_max_height, calc($treeBehind_max_height/$divider), $respType);
   z-index: 20;
 }
+*/
+
 /*
 font-family: 'Lora', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'PT Sans', sans-serif;
 */
 
+/*
 @media  (max-width: $mobileContainerMaxWidthPX) {
 
   .wrapper {
@@ -531,12 +576,12 @@ font-family: 'PT Sans', sans-serif;
    
   }
 }
+*/
 
 
 
 
-
-
+/*
 // for testing ONLY!!!
 @media  (min-width: $containerMaxWidthPX) {
   .page{
@@ -544,3 +589,4 @@ font-family: 'PT Sans', sans-serif;
   }
 
 }
+*/

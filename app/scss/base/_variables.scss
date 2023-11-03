@@ -2,18 +2,21 @@
 @use 'sass:math';
 
 // for adaptive mixin
-$screenMaxWidth: 1920;
 $screenMinWidth: 320;
-$screenMaxHeight: 1200;
-$containerMaxWidth: 1200; // !!! the same as $containerMaxWidthPX
-$containerMaxWidthPX: $containerMaxWidth + px; // 1200 + padd 20 + pad 20
+$screenMinHeight: 568;
+
+$screenMaxWidth: 1920 * 0.65;
+$screenMaxHeight: 1080 * 0.65;
+
+$containerMaxWidth: 1080; // !!! the same as $containerMaxWidthPX
+$containerMaxWidthPX: $containerMaxWidth + px; // 1080 + padd 20 + pad 20
 $containerMaxHeight: calc($containerMaxWidth * $screenMaxHeight / $screenMaxWidth);
 $containerMaxHeightPX: $containerMaxHeight + px;
 
-$mobileContainerMaxWidth: 700;
-$mobileContainerMaxWidthPX: $mobileContainerMaxWidth + px;
+// $mobileContainerMaxWidth: 700;
+// $mobileContainerMaxWidthPX: $mobileContainerMaxWidth + px;
 
-$space: 10px;
+$space: 6px;
 $space2x: $space * 2;
 $space3x: $space * 3;
 $space4x: $space * 4;
@@ -32,6 +35,9 @@ $dark-colors: (
   "tertiary": #c297dc,
   "tertiary300": #c297dc,
   "tertiary500": #c297dc,
+  "quaternary": #B7D8BA,
+  "quaternary300": #B7D8BA33,
+  "quaternary500": #B7D8BA33,
   "black": #15043f,
   "white": #ffffff,
   "grey": #cccccc,
@@ -41,17 +47,20 @@ $dark-colors: (
 
 // real theme colors
 $light-colors: (
-  "primary": #f34c84,
-  "primary300": #f34c84,
-  "primary500": #f34c84,
-  "secondary": #91bea9,
-  "secondary300": #91bea9,
-  "secondary500": #91bea9,
-  "tertiary": #c297dc,
-  "tertiary300": #c297dc,
-  "tertiary500": #c297dc,
-  "black": #15043f,
-  "white": #ffffff,
+  "primary": #E7A9AC,
+  "primary300": #E7A9AC33,
+  "primary500": #E7A9AC33,
+  "secondary": #8182BD,
+  "secondary300": #8182BD33,
+  "secondary500": #8182BD33,
+  "tertiary": #D9C8E2,
+  "tertiary300": #D9C8E233,
+  "tertiary500": #D9C8E233,
+  "quaternary": #B7D8BA,
+  "quaternary300": #B7D8BA33,
+  "quaternary500": #B7D8BA33,
+  "black": #505486,
+  "white": #F2E6E2,
   "grey": #dddddd,
   "grey300": #777777,
   "grey500": #555555,
@@ -67,6 +76,9 @@ $--color-secondary500: --color-secondary500;
 $--color-tertiary: --color-tertiary;
 $--color-tertiary300: --color-tertiary300;
 $--color-tertiary500: --color-tertiary500;
+$--color-quaternary: --color-quaternary;
+$--color-quaternary300: --color-quaternary300;
+$--color-quaternary500: --color-quaternary500;
 $--color-black: --color-black;
 $--color-white: --color-white;
 $--color-grey: --color-grey;
@@ -109,6 +121,11 @@ $color-map-light: (
     $--color-tertiary: get-color("tertiary", $light-colors),
     $--color-tertiary300: get-color("tertiary300", $light-colors),
     $--color-tertiary500: get-color("tertiary500", $light-colors),
+    
+    $--color-quaternary: get-color("quaternary", $light-colors),
+    $--color-quaternary300: get-color("quaternary300", $light-colors),
+    $--color-quaternary500: get-color("quaternary500", $light-colors),
+    
     $--color-black: get-color("black", $light-colors),
     $--color-white: get-color("white", $light-colors),
     $--color-grey: get-color("grey", $light-colors),
@@ -126,6 +143,11 @@ $color-map-dark: (
     $--color-tertiary: get-color("tertiary", $dark-colors),
     $--color-tertiary300: get-color("tertiary300", $dark-colors),
     $--color-tertiary500: get-color("tertiary500", $dark-colors),
+
+    $--color-quaternary: get-color("quaternary", $dark-colors),
+    $--color-quaternary300: get-color("quaternary300", $dark-colors),
+    $--color-quaternary500: get-color("quaternary500", $dark-colors),
+
     $--color-black: get-color("black", $dark-colors),
     $--color-white: get-color("white", $dark-colors),
     $--color-grey: get-color("grey", $dark-colors),
