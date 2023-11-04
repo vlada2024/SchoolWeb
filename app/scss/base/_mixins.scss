@@ -1,5 +1,30 @@
 
 
+@function pt-to-px($pt) {
+    @return $pt / 0.75;
+}
+
+
+@function px-to-pt($px) {
+    @return $px * 0.75;
+}
+ 
+// 90 = 90px
+// fontSize: av-on-width(90, 45, 1920, 960)
+@function av-on-width($maketPropertyValue, $minPropertyValue,  $maketContainerWidth, $minContainerWidth, $scale) {
+    $minProp : $minPropertyValue * $scale;
+    $diff : ($maketPropertyValue - $minPropertyValue) * $scale;
+    @return calc(#{$minProp + px} +  #{$diff} * ((100vw - #{$minContainerWidth + px}) / #{$maketContainerWidth - $minContainerWidth}));
+}
+
+@function av-on-height($maketPropertyValue, $minPropertyValue,  $maketContainerHeight, $minContainerHeight) {
+    @return calc(#{$minPropertyValue + px} + #{$maketPropertyValue - $minPropertyValue} * ((100vh - #{$minContainerHeight + px}) / #{$maketContainerHeight - $minContainerHeight}));
+}
+
+// @function scale($valueToScale, $scale) {
+//     @return $valueToScale * scale;
+// }
+
 
 // sample: @include adaptive-value("padding", 150, 20, 0);
 // 150 <- padding: 150px for screenMaxWidth
@@ -12,38 +37,38 @@
 //@debug adaptive-value("padding", 150, 20, 1);
 //@debug adaptive-value("padding", 150, 20, 2);
 
-@mixin adaptive-value($property, $controlInitSize, $controlMinSize, $type) {
-    $diffSize:  $controlInitSize - $controlMinSize;
+// @mixin adaptive-value($property, $controlInitSize, $controlMinSize, $type) {
+//     $diffSize:  $controlInitSize - $controlMinSize;
 
-    @if($type == 1) {
+//     @if($type == 1) {
 
-        // только если <меньше> containerMaxWidth
-        #{$property}: $controlInitSize + px;
+//         // только если <меньше> containerMaxWidth
+//         #{$property}: $controlInitSize + px;
 
-        @media (max-width: #{$containerMaxWidth + px}) {
+//         @media (max-width: #{$containerMaxWidth + px}) {
             
-            #{$property}: calc(#{$controlMinSize + px} + #{$diffSize} * ((100vw - #{$screenMinWidth + px}) / #{$screenMaxWidth - $screenMinWidth}));
+//             #{$property}: calc(#{$controlMinSize + px} + #{$diffSize} * ((100vw - #{$screenMinWidth + px}) / #{$screenMaxWidth - $screenMinWidth}));
         
-        }
+//         }
 
-    } @else if(type == 2) {
+//     } @else if(type == 2) {
 
-        // только если <больше> containerMaxWidth
-        #{$property}: $controlInitSize + px;
+//         // только если <больше> containerMaxWidth
+//         #{$property}: $controlInitSize + px;
 
-        @media (min-width: #{$containerMaxWidth + px}) {
+//         @media (min-width: #{$containerMaxWidth + px}) {
             
-            #{$property}: calc(#{$controlMinSize + px} + #{$diffSize} * ((100vw - #{$screenMinWidth + px}) / #{$screenMaxWidth - $screenMinWidth}));
+//             #{$property}: calc(#{$controlMinSize + px} + #{$diffSize} * ((100vw - #{$screenMinWidth + px}) / #{$screenMaxWidth - $screenMinWidth}));
         
-        }
+//         }
 
-    } @else {
+//     } @else {
 
-        // always
-        #{$property}: calc(#{$controlMinSize + px} + #{$diffSize} * ((100vw - #{$screenMinWidth + px}) / #{$screenMaxWidth - $screenMinWidth}));
-    }
+//         // always
+//         #{$property}: calc(#{$controlMinSize + px} + #{$diffSize} * ((100vw - #{$screenMinWidth + px}) / #{$screenMaxWidth - $screenMinWidth}));
+//     }
 
-}
+// }
 
 
 @mixin spread-map($map: ()) {

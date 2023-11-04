@@ -1,17 +1,7 @@
 
 @use 'sass:math';
 
-// for adaptive mixin
-$screenMinWidth: 320;
-$screenMinHeight: 568;
 
-$screenMaxWidth: 1920 * 0.65;
-$screenMaxHeight: 1080 * 0.65;
-
-$containerMaxWidth: 1080; // !!! the same as $containerMaxWidthPX
-$containerMaxWidthPX: $containerMaxWidth + px; // 1080 + padd 20 + pad 20
-$containerMaxHeight: calc($containerMaxWidth * $screenMaxHeight / $screenMaxWidth);
-$containerMaxHeightPX: $containerMaxHeight + px;
 
 // $mobileContainerMaxWidth: 700;
 // $mobileContainerMaxWidthPX: $mobileContainerMaxWidth + px;

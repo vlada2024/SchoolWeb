@@ -149,16 +149,29 @@ svg.theme-indicator circle, svg.theme-indicator path {
   --control-color-button-border-inactive: #999999;
 }
 
-.wrapper {
-  display: flex;
+.wrapper_mobile {
+  display: none;
+}
+
+.page {
+  max-width: 1200px;
+  max-height: 675px;
+  width: 1200px;
+  height: 675px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: var(--control-color-page-back);
 }
 
 .grid_image {
   position: absolute;
-  max-width: 1248px;
-  max-height: 702px;
-  width: 1248px;
-  height: 702px;
+  max-width: 1200px;
+  max-height: 675px;
+  width: 1200px;
+  height: 675px;
   z-index: 100;
   position: fixed;
   top: 50%;
@@ -167,20 +180,97 @@ svg.theme-indicator circle, svg.theme-indicator path {
   transform: translate(-50%, -50%);
 }
 
-.page {
-  max-width: 1248px;
-  max-height: 702px;
-  width: 1248px;
-  height: 702px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background-color: var(--control-color-page-back);
+.pic-school {
+  position: absolute;
+  width: 461.25px;
+  height: 431.875px;
+  right: 50px;
+  top: 128.75px;
+  z-index: 40;
 }
 
+.pic-road {
+  position: absolute;
+  width: 627.5px;
+  height: 179.375px;
+  left: 241.875px;
+  top: 495.625px;
+  z-index: 30;
+}
+
+.pic-boy {
+  position: absolute;
+  width: 95.625px;
+  height: 318.75px;
+  left: 300.625px;
+  top: 330.625px;
+  z-index: 100;
+}
+
+.pic-family {
+  position: absolute;
+  width: 177.5px;
+  height: 245.625px;
+  left: 511.25px;
+  top: 415px;
+  z-index: 90;
+}
+
+.pic-teacher {
+  position: absolute;
+  width: 72.5px;
+  height: 165.625px;
+  right: 337.5px;
+  top: 465.625px;
+  z-index: 80;
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+  .wrapper {
+    background-color: red;
+  }
+  .page {
+    width: calc(700px + 500 * (100vw - 700px) / 500);
+  }
+  .grid_image {
+    width: calc(700px + 500 * (100vw - 700px) / 500);
+  }
+  .pic-school {
+    position: absolute;
+    width: calc(230.625px + 230.625 * (100vw - 700px) / 500);
+    z-index: 40;
+  }
+  .pic-road {
+    position: absolute;
+    width: calc(365px + 262.5 * (100vw - 700px) / 500);
+    height: calc(105px + 74.375 * (100vw - 700px) / 500);
+    left: calc(141px + 100.875 * (100vw - 700px) / 500);
+    z-index: 30;
+  }
+}
+@media (max-width: 700px) {
+  .wrapper {
+    display: none;
+  }
+  .wrapper_mobile {
+    display: flex;
+    padding: 12px;
+    background-color: aquamarine;
+  }
+}
 /*
+.main__item{
+  //background-color: rgb(228, 235, 230);
+ // padding: 10px;
+}
+
+
+
+
+
+
+
+
 .page {
   //@include adaptive-value("width", $maxPageWidth, $minPageWidth, 0);
   //@include adaptive-value("height", $maxPageHeight, $minPageHeight, 0);
