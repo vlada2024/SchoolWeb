@@ -12,11 +12,8 @@ li {
 }
 
 html, body {
-  height: 100%;
   background-color: #fff;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #000;
-  line-height: 24px;
 }
 
 a {
@@ -107,12 +104,12 @@ svg.theme-indicator circle, svg.theme-indicator path {
   --color-grey500: #555555;
   --control-color-page-back: #F2E6E2;
   --control-color-page-title: #505486;
-  --control-color-page-sub-title: #dddddd;
+  --control-color-page-sub-title: #505486;
   --control-color-page-scene-back: #8182BD;
   --control-color-text: #505486;
   --control-color-border: #E7A9AC;
   --control-color-button-back: #505486;
-  --control-color-button-text: #505486;
+  --control-color-button-text: #8182BD;
   --control-color-button-border: #8182BD;
   --control-color-button-back-inactive: #dddddd;
   --control-color-button-border-inactive: #777777;
@@ -253,11 +250,108 @@ svg.theme-indicator circle, svg.theme-indicator path {
     display: none;
   }
   .wrapper_mobile {
-    display: flex;
+    display: block;
     padding: 12px;
-    background-color: aquamarine;
+    background-color: var(--control-color-page-back);
+  }
+  .grid_image {
+    display: none;
+  }
+  .header {
+    height: 24px;
+    min-height: 24px;
+  }
+  .menu {
+    min-height: 24px;
+  }
+  .menu__background {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+  }
+  .menu__button {
+    background-color: transparent;
+  }
+  .menu__button-image {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+  }
+  .menu__button-image path {
+    fill: var(--control-color-button-text);
+  }
+  .public-info {
+    height: 106px;
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .info__name {
+    padding-top: 30px;
+    width: 50%;
+  }
+  .info__title {
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: var(--control-color-page-title);
+  }
+  .info__subtitle {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    color: var(--control-color-page-title);
+    font-weight: 600;
+  }
+  .info__contacts {
+    width: 130px;
+  }
+  .info__background {
+    position: absolute;
+    top: 12px;
+    width: 130px;
+    height: 130px;
+  }
+  .info__text {
+    position: absolute;
+    right: 12px;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+  }
+  .info__number {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    color: var(--control-color-page-title);
+  }
+  .info__city {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    color: var(--control-color-page-title);
+  }
+  .info__adress {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    color: var(--control-color-page-title);
   }
 }
+/*
+font-family: 'Lora', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
 /*
 .main__item{
   //background-color: rgb(228, 235, 230);
@@ -497,11 +591,6 @@ svg.theme-indicator circle, svg.theme-indicator path {
   @include adaptive-value("height", $treeBehind_max_height, calc($treeBehind_max_height/$divider), $respType);
   z-index: 20;
 }
-*/
-/*
-font-family: 'Lora', serif;
-font-family: 'Montserrat', sans-serif;
-font-family: 'PT Sans', sans-serif;
 */
 /*
 @media  (max-width: $mobileContainerMaxWidthPX) {
