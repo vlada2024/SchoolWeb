@@ -21,37 +21,22 @@ $minMobileHeight: 568; // is not propotional to landscape orientation!!!!
 $maxDeskWidth: 1920 * $scale;
 $maxDeskHeight: 1080 * $scale;
 
+$ratio: calc($maxDeskHeight / $maxDeskWidth);
+
 $minDeskWidth: 700;
-$minDeskHeight: 700 *  calc($maxDeskHeight / $maxDeskWidth);
+$minDeskHeight: $minDeskWidth *  $ratio;
 
-//$containerMaxWidth: 1080; // !!! the same as $containerMaxWidthPX
-//$containerMaxWidthPX: $containerMaxWidth + px; // 1080 + padd 20 + pad 20
-//$containerMaxHeight: calc($containerMaxWidth * $screenMaxHeight / $screenMaxWidth);
-//$containerMaxHeightPX: $containerMaxHeight + px;
-
-
-//$maxPageWidth: 642;
-//$maxPageHeight: 351;
-//$minPageWidth: 200;
-//$minPageHeight: calc($minPageWidth * $maxPageHeight / $maxPageWidth);
-
-
-$divider: 5; // 4 wrong!!!
 
 $school_max_width: 738 * $scale;
 $school_max_height: 691 * $scale;
 $school_max_right: 80 * $scale;
 $school_max_top: 206 * $scale;
 
-// $road_max_width: 2863;
-// $road_max_height: 1495;
-// $road_max_right: 300;
-// $road_max_top: 640;
 
 $road_max_width: 1004 * $scale;
 $road_max_height: 287 * $scale;
-//$road_max_right: 351 * $scale;
-$road_max_left: 387 * $scale;
+$road_max_right: 529 * $scale;
+$road_max_left: 399 * $scale; //387
 $road_max_top: 793 * $scale;
 
 
@@ -73,7 +58,6 @@ $family_max_top: 664 * $scale;   //<<<<<
 
 
 
-$respType: 0;
 
 :root.light {
   @include spread-map($color-map-light);
@@ -100,6 +84,9 @@ $respType: 0;
 } 
 
 .wrapper_mobile{
+  display: none;
+}
+.grid_image_mobile{
   display: none;
 }
 
@@ -130,7 +117,8 @@ $respType: 0;
   height: $maxDeskHeight + px; 
   z-index: 100;
 
-  position: fixed;
+  //position: fixed;
+  opacity: 0.4;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -162,11 +150,6 @@ $respType: 0;
   height: $boy_max_height + px;
   left: $boy_max_left + px;
   top: $boy_max_top + px;
-  
-  // @include adaptive-value("width", $boy_max_width, calc($boy_max_width/$divider), $respType);
-  // @include adaptive-value("left", $boy_max_left, calc($boy_max_left/$divider), $respType);
-  // @include adaptive-value("top", $boy_max_top, calc($boy_max_top/$divider), $respType);
-  // @include adaptive-value("height", $boy_max_height, calc($boy_max_height/$divider), $respType);
   z-index: 100;
 }
 
@@ -176,11 +159,6 @@ $respType: 0;
   height: $family_max_height + px;
   left: $family_max_left + px;
   top: $family_max_top + px;
-  
-  // @include adaptive-value("width", $family_max_width, calc($family_max_width/$divider), $respType);
-  // @include adaptive-value("left", $family_max_left, calc($family_max_left/$divider), $respType);
-  // @include adaptive-value("top", $family_max_top, calc($family_max_top/$divider), $respType);
-  // @include adaptive-value("height", $family_max_height, calc($family_max_height/$divider), $respType);
   z-index: 90;
 }
 
@@ -190,10 +168,6 @@ $respType: 0;
   height: $teacher_max_height + px;
   right: $teacher_max_right + px;
   top: $teacher_max_top + px;
-  // @include adaptive-value("width", $teacher_max_width, calc($teacher_max_width/$divider), $respType);
-  // @include adaptive-value("right", $teacher_max_right, calc($teacher_max_right/$divider), $respType);
-  // @include adaptive-value("top", $teacher_max_top, calc($teacher_max_top/$divider), $respType);
-  // @include adaptive-value("height", $teacher_max_height, calc($teacher_max_height/$divider), $respType);
   z-index: 80;
 }
 
@@ -204,43 +178,66 @@ $respType: 0;
     background-color: red;
   }
   .page{
-    width: av-on-width($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, 1); 
-    //height: av-on-width($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, 0.5625); 
+    width: av-on-width($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
+    height: av-on-width($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, $ratio);
   }
 
   .grid_image {
-    width: av-on-width($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, 1); 
+    width: av-on-width($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
+    opacity: 0.4;
+    //height: 100px;
+    position: absolute;
+    z-index: 100;
   }
 
   .pic-school{
     position: absolute;
-    width: av-on-width($school_max_width, calc($school_max_width / 2), $maxDeskWidth, $minDeskWidth, 1);
-    //height: $school_max_height + px;
-    //right: $school_max_right + px;
-    //top: $school_max_top + px;
-    
-    //@include adaptive-value("width", $school_max_width, calc($school_max_width/$divider), $respType);
-    //@include adaptive-value("height", $school_max_height, calc($school_max_height/$divider), $respType);
-    //@include adaptive-value("right", $school_max_right, calc($school_max_right/$divider) , $respType);
-    //@include adaptive-value("top", $school_max_top, calc($school_max_top/$divider), $respType);
+    width: av-on-width($school_max_width, 270, $maxDeskWidth, $minDeskWidth);
+    height: av-on-width($school_max_height, 252, $maxDeskWidth, $minDeskWidth);
+    left: unset;
+    right: av-on-width($school_max_right, 29, $maxDeskWidth, $minDeskWidth);
+    top: av-on-width($school_max_top, 76, $maxDeskWidth, $minDeskWidth);
     z-index: 40;
   }
   .pic-road{
     position: absolute;
-    width: av-on-width($road_max_width, 365, $maxDeskWidth, $minDeskWidth, 1);
-    height: av-on-width($road_max_height, 105, $maxDeskWidth, $minDeskWidth, 1);
-    left: av-on-width($road_max_left, 141, $maxDeskWidth, $minDeskWidth, 1);
-    //top: av-on-width($road_max_top, 292, $maxDeskWidth, $minDeskWidth,  1);
-
-    //bottom: av-on-width($road_max_height, 105, $maxDeskWidth, $minDeskWidth, 1);
-  //   @include adaptive-value("width", $road_max_width, calc($road_max_width/$divider), $respType);
-  //   @include adaptive-value("right", $road_max_right, calc($road_max_right/$divider) , $respType);
-  //   @include adaptive-value("top", $road_max_top, calc($road_max_top/$divider), $respType); 
-  //  // @include adaptive-value("left", $road_max_left, calc($road_max_left/$divider), 0);
-  //   @include adaptive-value("height", $road_max_height, calc($road_max_height/$divider), $respType);
+    width: av-on-width($road_max_width, 365, $maxDeskWidth, $minDeskWidth);
+    height: av-on-width($road_max_height, 105, $maxDeskWidth, $minDeskWidth);
+    left: av-on-width($road_max_left, 141, $maxDeskWidth, $minDeskWidth);
+    right: unset;
+    top: av-on-width($road_max_top, 290, $maxDeskWidth, $minDeskWidth);
     z-index: 30;
   }
 
+  .pic-boy{
+    position: absolute;
+    width: av-on-width($boy_max_width, 56, $maxDeskWidth, $minDeskWidth);
+    height: av-on-width($boy_max_height, 186, $maxDeskWidth, $minDeskWidth);
+    left: av-on-width($boy_max_left, 175, $maxDeskWidth, $minDeskWidth);
+    right: unset;
+    top: av-on-width($boy_max_top, 193, $maxDeskWidth, $minDeskWidth);
+    z-index: 100;
+  }
+
+  .pic-teacher{
+    position: absolute;
+    width: av-on-width($teacher_max_width, 42, $maxDeskWidth, $minDeskWidth);
+    height: av-on-width($teacher_max_height, 96, $maxDeskWidth, $minDeskWidth);
+    left: unset;
+    right: av-on-width($teacher_max_right, 199, $maxDeskWidth, $minDeskWidth);
+    top: av-on-width($teacher_max_top, 272, $maxDeskWidth, $minDeskWidth);
+    z-index: 80;
+  }
+
+  .pic-family{
+    position: absolute;
+    width: av-on-width($family_max_width, 103, $maxDeskWidth, $minDeskWidth);
+    height: av-on-width($family_max_height, 143, $maxDeskWidth, $minDeskWidth);
+    left: av-on-width($family_max_left, 298, $maxDeskWidth, $minDeskWidth);
+    right: unset;
+    top: av-on-width($family_max_top, 243, $maxDeskWidth, $minDeskWidth);
+    z-index: 90;
+  }
 
 }
 
@@ -250,6 +247,7 @@ $respType: 0;
   .wrapper {
     display: none;
   }
+  
 
   .wrapper_mobile{
     //display: flex;
@@ -261,23 +259,29 @@ $respType: 0;
 
   .grid_image {
     display: none;
-    // position: absolute;
-    // min-width: $minMobileWidth + px;
-    // min-height: $minMobileHeight + px;
-  
-    // width: $minMobileWidth + px; 
-    // height: $minMobileHeight + px; 
-    // z-index: 200;
-  
-    // top: 0;
-    // left: 0;
-    
-    //transform-origin: left;
-    //transform: rotate(-90deg) ;
-
-    //transform: translate(0, -50%) rotate(90deg);
   }
-  
+
+
+  .grid_image_mobile{
+    display: block;
+    position: absolute;
+    opacity: 0.3;
+    //max-width: $maxDeskWidth + px;
+    //max-height: $maxDeskHeight + px;
+
+    //width: $maxDeskWidth + px; 
+    //height: $maxDeskHeight + px; 
+    z-index: 100;
+
+  // //position: fixed;
+    top: 0;
+    left: 0;
+    //transform: none;
+  // -webkit-transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
+  }
+
+
 
   .header{
     height: 24px;

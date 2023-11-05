@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 320 568" enable-background="new 0 0 320 568" xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="0.148" y="0.148" width="319.703" height="567.704"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_2_)">
+		<rect x="0.148" y="0.148" fill="none" stroke="#3E3E3E" stroke-miterlimit="10" width="319.703" height="567.704"/>
+		<path fill="none" stroke="#3E3E3E" d="M320,0L0.296,568"/>
+		<path fill="none" stroke="#3E3E3E" d="M0,0l319.086,567.163"/>
+		<path fill="none" stroke="#3E3E3E" d="M319.704,284.148L159.852,567.705"/>
+		<path fill="none" stroke="#3E3E3E" d="M0.323,284.002l318.763,283.336"/>
+		<path fill="none" stroke="#3E3E3E" d="M320,0L0.296,284.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M0,0l319.704,284.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M159.852,0.295L0.296,284.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M159.852,0.295l159.853,283.853"/>
+		<path fill="none" stroke="#3E3E3E" d="M319.408,284.148L0.296,568"/>
+		<path fill="none" stroke="#3E3E3E" d="M0.296,284.148l159.556,283.557"/>
+		<path fill="none" stroke="#3E3E3E" d="M319.852,473.336H0.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M319.852,425.864H0.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M319.852,378.718H0.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M319.852,284.148H0.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M319.852,189.483H0.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M319.852,142.184H0.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M319.852,94.875H0.148"/>
+		<path fill="none" stroke="#3E3E3E" d="M80.021,0.148v567.704"/>
+		<path fill="none" stroke="#3E3E3E" d="M106.664,0.148v567.704"/>
+		<path fill="none" stroke="#3E3E3E" d="M159.852,0.148v567.704"/>
+		<path fill="none" stroke="#3E3E3E" d="M213.232,0.148l-0.001,567.704"/>
+		<path fill="none" stroke="#3E3E3E" d="M239.926,0.148v567.704"/>
+	</g>
+	<use xlink:href="#SVGID_1_"  overflow="visible" fill="none" stroke="#3E3E3E" stroke-miterlimit="10"/>
+</g>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="319.086" y1="567.338" x2="159.852" y2="0.148"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="159.852" y1="0.148" x2="0.296" y2="568"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="320" y1="0" x2="159.852" y2="567.853"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="159.852" y1="567.853" x2="0" y2="0"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="319.852" y1="567.853" x2="0.148" y2="425.864"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.148" y1="567.853" x2="319.852" y2="425.864"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.296" y1="496.858" x2="319.086" y2="496.858"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="319.852" y1="142.184" x2="0" y2="0"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="320" y1="0" x2="0.148" y2="142.184"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.296" y1="71.092" x2="320" y2="71.092"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="299.95" y1="0" x2="299.95" y2="567.338"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="20.286" y1="567.338" x2="20.286" y2="0"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.296" y1="36.057" x2="319.086" y2="36.057"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.296" y1="18.029" x2="319.852" y2="18.029"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.296" y1="550.219" x2="319.086" y2="550.219"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.296" y1="532.485" x2="319.852" y2="532.485"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.296" y1="113.792" x2="319.852" y2="113.792"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.296" y1="454.342" x2="320" y2="454.342"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0" y1="340.737" x2="319.086" y2="340.737"/>
+<line fill="none" stroke="#3E3E3E" stroke-miterlimit="10" x1="0.296" y1="227.494" x2="320" y2="227.494"/>
+</svg>
