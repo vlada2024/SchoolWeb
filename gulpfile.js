@@ -60,6 +60,7 @@ function observe(){
         //'!app/js/slick.min.js'
     ], prepareScripts)
     watch(['app/**/*.html']).on('change', browserSync.reload)
+    watch(['app/images/**/*.*']).on('change', browserSync.reload)
 }
 
 function browserRefresh(){
@@ -80,7 +81,8 @@ function build(){
     return src([
         'app/css/*.min.css',
         'app/js/*.min.js',
-        'app/**/*.html'
+        'app/**/*.html',
+        'app/images/**/*.*'
     ], {base: 'app'})
     .pipe(dest('dist'))
 }
