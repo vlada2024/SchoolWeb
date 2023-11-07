@@ -375,6 +375,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     justify-content: flex-start;
     align-items: center;
     gap: 12px;
+    font-style: normal;
   }
   .info__number {
     font-size: 12px;
