@@ -258,14 +258,17 @@ $family_max_top: 664 * $scale;   //<<<<<
     display: block;
     padding: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
     background-color: control-color-var(--control-color-page-back);
-    width: $minMobileWidth; //adapt($maxMobileWidth, $minMobileWidth, $maxMobileWidth, $minMobileWidth); //$minMobileWidth;//adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
-    height: $minMobileHeight;//adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, $ratio);
+    width: adapt($maxMobileWidth, $minMobileWidth, $maxMobileWidth, $minMobileWidth); //$minMobileWidth;//adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
+    height: 100vh;//adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, $ratio);
 
     background-image: url("/images/components/mobile/green-circle.svg");
     background-size: adapt($mScale * 446, 446, $maxMobileWidth, $minMobileWidth); 
     background-position-x: adapt($mScale * 9, 9, $maxMobileWidth, $minMobileWidth); 
     background-position-y: adapt($mScale * 366, 366, $maxMobileWidth, $minMobileWidth); 
     background-repeat: no-repeat;
+
+    overflow: hidden;
+
   }
 
   .grid_image {
@@ -274,7 +277,7 @@ $family_max_top: 664 * $scale;   //<<<<<
 
 
   .grid_image_mobile{
-    display: block;
+    display: none; // block
     position: absolute;
     opacity: 0.2;
     z-index: 100;
@@ -317,7 +320,6 @@ $family_max_top: 664 * $scale;   //<<<<<
 
   .public-info{
     height: adapt($mScale * 106, 106, $maxMobileWidth, $minMobileWidth);
-    //background-color: red;
   }
 
   //----------------------------------
@@ -329,7 +331,6 @@ $family_max_top: 664 * $scale;   //<<<<<
 
   .info__name{
     padding-top: adapt($mScale * 30, 30, $maxMobileWidth, $minMobileWidth);
-    //background-color:bisque ;
     width: 50%;
   }
 
@@ -353,7 +354,6 @@ $family_max_top: 664 * $scale;   //<<<<<
 .info__contacts{
   //background-color: rgb(206, 173, 173);
   width: adapt($mScale * 130, 130, $maxMobileWidth, $minMobileWidth);
-  //margin-right: adapt($sp2x * $mScale, $sp2x, $maxMobileWidth, $minMobileWidth);
 }
   .info__background{
 
@@ -397,11 +397,6 @@ $family_max_top: 664 * $scale;   //<<<<<
   $minMobileHeightPX: $minMobileHeight + px;
   //-----------------------------
   .main-container{
-    //display: block;
-    //flex-direction: row;
-    //background-color:bisque ;
-     //height: calc($minMobileHeightPX - 24px - 106px - $space4x);
-     //overflow: hidden;
      width: adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth); 
      height: adapt($mScale * calc($minMobileHeight - 24 - 106 - $sp4x), calc($minMobileHeight - 24 - 106 - $sp4x), $maxMobileWidth, $minMobileWidth);
 
@@ -412,33 +407,27 @@ $family_max_top: 664 * $scale;   //<<<<<
       background-position-y: adapt($mScale * 47, 47, $maxMobileWidth, $minMobileWidth); 
       background-repeat: no-repeat; 
 
-      //   width: adapt($mScale * 405, 405, $maxMobileWidth, $minMobileWidth); 
-  //   top: adapt($mScale * 190, 190, $maxMobileWidth, $minMobileWidth); 
-  //   left: adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth); 
   }
 
   .navigation{
-    width: 68px;
-    background-color: aqua;
-    //display: block;
-    //float: left;
+    width: adapt($mScale * 68, 68, $maxMobileWidth, $minMobileWidth);
+    //background-color: aqua;
   }
 
   .navigation__arrow{
-    height: 142px;
+    height: adapt($mScale * 142, 142, $maxMobileWidth, $minMobileWidth);
     //background-color: aquamarine;
     //text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
-    // position: absolute;
-    // bottom: 0;
   }
 
   .arrow-button-image{
     align-self: center;
-    padding-bottom: 14px;
+    padding-bottom: adapt($mScale * 14, 14, $maxMobileWidth, $minMobileWidth);
+    width: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);
+    height: adapt($mScale * 94, 94, $maxMobileWidth, $minMobileWidth);
     path {
       fill: control-color-var($--control-color-button-text);
     }
@@ -448,69 +437,19 @@ $family_max_top: 664 * $scale;   //<<<<<
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 24px;
-    padding-top: 24px;
+    gap: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    padding-top: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    
   }
 
   .nav-button-image{
     align-self: center;
-    //padding-top: 24px;
+    width: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
     path {
       fill: control-color-var($--control-color-button-text);
     }
   }
 
-  // .central-container{
-  //   //width: 228px;
-  //   //display: block;
-  //   //float: left;
-  //   //overflow: hidden;
-  //   //display: block;
-  //   //background-color: red;
-  //   display: block;
-  //   float: right;
-  //   padding-top: 47px;
-  // }
-
-
-
-
-  // .central-container__school{
-  //  // position: absolute;
-  //   //background-color: chocolate;
-  //   overflow: hidden;
-    
-  // }
-
-  // .school-image{
-  //   //position: absolute;
-  //   background-color: rgb(209, 158, 158);
-  //   width: adapt($mScale * 405, 405, $maxMobileWidth, $minMobileWidth); 
-  //   top: adapt($mScale * 190, 190, $maxMobileWidth, $minMobileWidth); 
-  //   left: adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth); 
-  //   //height: 379px;
-  //   z-index: 20;
-
-    
-  // }
-
-  // .central-container__background{
-  //   //float: right;
-  //   position: absolute;
-  //   top: 366px;
-  //   left: 9px;
-  //   width: 446px;
-  //   height: 446px;
-  //   //right: -200px;
-  //   //bottom: 100px;
-  //   z-index: 10;
-  //   //overflow-x: hidden;
-    
-  // }
-
-  // img {
-  //   overflow: hidden;
-  // }
   
 }
 

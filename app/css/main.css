@@ -294,19 +294,20 @@ svg.theme-indicator circle, svg.theme-indicator path {
     display: block;
     padding: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     background-color: var(--control-color-page-back);
-    width: 320;
-    height: 568;
+    width: calc(320px + 380 * (100vw - 320px) / 380);
+    height: 100vh;
     background-image: url("/images/components/mobile/green-circle.svg");
     background-size: calc(446px + 531.7692307692 * (100vw - 320px) / 380);
     background-position-x: calc(9px + 10.7307692308 * (100vw - 320px) / 380);
     background-position-y: calc(366px + 436.3846153846 * (100vw - 320px) / 380);
     background-repeat: no-repeat;
+    overflow: hidden;
   }
   .grid_image {
     display: none;
   }
   .grid_image_mobile {
-    display: block;
+    display: none;
     position: absolute;
     opacity: 0.2;
     z-index: 100;
@@ -399,18 +400,19 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background-repeat: no-repeat;
   }
   .navigation {
-    width: 68px;
-    background-color: aqua;
+    width: calc(68px + 81.0769230769 * (100vw - 320px) / 380);
   }
   .navigation__arrow {
-    height: 142px;
+    height: calc(142px + 169.3076923077 * (100vw - 320px) / 380);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
   .arrow-button-image {
     align-self: center;
-    padding-bottom: 14px;
+    padding-bottom: calc(14px + 16.6923076923 * (100vw - 320px) / 380);
+    width: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    height: calc(94px + 112.0769230769 * (100vw - 320px) / 380);
   }
   .arrow-button-image path {
     fill: var(--control-color-button-text);
@@ -419,11 +421,12 @@ svg.theme-indicator circle, svg.theme-indicator path {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 24px;
-    padding-top: 24px;
+    gap: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
+    padding-top: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
   }
   .nav-button-image {
     align-self: center;
+    width: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
   }
   .nav-button-image path {
     fill: var(--control-color-button-text);
