@@ -249,6 +249,7 @@ $family_max_top: 664 * $scale;   //<<<<<
   
   .wrapper {
     display: none;
+  
   }
   
 
@@ -257,6 +258,14 @@ $family_max_top: 664 * $scale;   //<<<<<
     display: block;
     padding: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
     background-color: control-color-var(--control-color-page-back);
+    width: $minMobileWidth; //adapt($maxMobileWidth, $minMobileWidth, $maxMobileWidth, $minMobileWidth); //$minMobileWidth;//adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
+    height: $minMobileHeight;//adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, $ratio);
+
+    background-image: url("/images/components/mobile/green-circle.svg");
+    background-size: adapt($mScale * 446, 446, $maxMobileWidth, $minMobileWidth); 
+    background-position-x: adapt($mScale * 9, 9, $maxMobileWidth, $minMobileWidth); 
+    background-position-y: adapt($mScale * 366, 366, $maxMobileWidth, $minMobileWidth); 
+    background-repeat: no-repeat;
   }
 
   .grid_image {
@@ -311,6 +320,7 @@ $family_max_top: 664 * $scale;   //<<<<<
     //background-color: red;
   }
 
+  //----------------------------------
   .info{
     display: flex;
     flex-direction: row;
@@ -384,6 +394,124 @@ $family_max_top: 664 * $scale;   //<<<<<
   .info__adress{
    
   }
+  $minMobileHeightPX: $minMobileHeight + px;
+  //-----------------------------
+  .main-container{
+    //display: block;
+    //flex-direction: row;
+    //background-color:bisque ;
+     //height: calc($minMobileHeightPX - 24px - 106px - $space4x);
+     //overflow: hidden;
+     width: adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth); 
+     height: adapt($mScale * calc($minMobileHeight - 24 - 106 - $sp4x), calc($minMobileHeight - 24 - 106 - $sp4x), $maxMobileWidth, $minMobileWidth);
+
+    
+     background-image: url("/images/components/mobile/school.svg");
+      background-size: adapt($mScale * 405, 405, $maxMobileWidth, $minMobileWidth); 
+      background-position-x: adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth); 
+      background-position-y: adapt($mScale * 47, 47, $maxMobileWidth, $minMobileWidth); 
+      background-repeat: no-repeat; 
+
+      //   width: adapt($mScale * 405, 405, $maxMobileWidth, $minMobileWidth); 
+  //   top: adapt($mScale * 190, 190, $maxMobileWidth, $minMobileWidth); 
+  //   left: adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth); 
+  }
+
+  .navigation{
+    width: 68px;
+    background-color: aqua;
+    //display: block;
+    //float: left;
+  }
+
+  .navigation__arrow{
+    height: 142px;
+    //background-color: aquamarine;
+    //text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    // position: absolute;
+    // bottom: 0;
+  }
+
+  .arrow-button-image{
+    align-self: center;
+    padding-bottom: 14px;
+    path {
+      fill: control-color-var($--control-color-button-text);
+    }
+  }
+
+  .navigation__buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    padding-top: 24px;
+  }
+
+  .nav-button-image{
+    align-self: center;
+    //padding-top: 24px;
+    path {
+      fill: control-color-var($--control-color-button-text);
+    }
+  }
+
+  // .central-container{
+  //   //width: 228px;
+  //   //display: block;
+  //   //float: left;
+  //   //overflow: hidden;
+  //   //display: block;
+  //   //background-color: red;
+  //   display: block;
+  //   float: right;
+  //   padding-top: 47px;
+  // }
+
+
+
+
+  // .central-container__school{
+  //  // position: absolute;
+  //   //background-color: chocolate;
+  //   overflow: hidden;
+    
+  // }
+
+  // .school-image{
+  //   //position: absolute;
+  //   background-color: rgb(209, 158, 158);
+  //   width: adapt($mScale * 405, 405, $maxMobileWidth, $minMobileWidth); 
+  //   top: adapt($mScale * 190, 190, $maxMobileWidth, $minMobileWidth); 
+  //   left: adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth); 
+  //   //height: 379px;
+  //   z-index: 20;
+
+    
+  // }
+
+  // .central-container__background{
+  //   //float: right;
+  //   position: absolute;
+  //   top: 366px;
+  //   left: 9px;
+  //   width: 446px;
+  //   height: 446px;
+  //   //right: -200px;
+  //   //bottom: 100px;
+  //   z-index: 10;
+  //   //overflow-x: hidden;
+    
+  // }
+
+  // img {
+  //   overflow: hidden;
+  // }
+  
 }
 
 
