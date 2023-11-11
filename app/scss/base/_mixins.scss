@@ -11,7 +11,7 @@
  
 // 90 = 90px
 // fontSize: av-on-width(90, 45, 1920, 960)
-@function av-on-width($maketPropertyValue, $minPropertyValue,  $maketContainerWidth, $minContainerWidth, $scale: 1) {
+@function adapt($maketPropertyValue, $minPropertyValue,  $maketContainerWidth, $minContainerWidth, $scale: 1) {
     $minProp : $minPropertyValue * $scale;
     $diff : ($maketPropertyValue - $minPropertyValue) * $scale;
     @return calc(#{$minProp + px} +  #{$diff} * ((100vw - #{$minContainerWidth + px}) / #{$maketContainerWidth - $minContainerWidth}));

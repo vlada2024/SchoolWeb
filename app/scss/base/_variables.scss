@@ -1,11 +1,23 @@
 
 @use 'sass:math';
 
+$sp: 6;
+$sp2x: $sp * 2;
+$sp4x: $sp * 4;
+$sp8x: $sp * 8;
 
 $space: 6px;
 $space2x: $space * 2;
 $space3x: $space * 3;
 $space4x: $space * 4;
+$space5x: $space * 5;
+$space6x: $space * 6;
+$space7x: $space * 7;
+$space8x: $space * 8;
+
+
+
+
 
 $headerHeight: 100px;
 $footerHeight: 100px;

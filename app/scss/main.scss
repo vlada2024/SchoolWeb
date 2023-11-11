@@ -14,11 +14,13 @@
 
 
 $scale: 0.625;  // for maket only
+$mScale: calc(285 / 130);
+  
 // for adaptive mixin
 $minMobileWidth: 320;
 $minMobileHeight: 568; // is not propotional to landscape orientation!!!!
 
-$maxDeskWidth: 1920 * $scale;
+$maxDeskWidth: 1920 * $scale; // 1200
 $maxDeskHeight: 1080 * $scale;
 
 $ratio: calc($maxDeskHeight / $maxDeskWidth);
@@ -26,6 +28,7 @@ $ratio: calc($maxDeskHeight / $maxDeskWidth);
 $minDeskWidth: 700;
 $minDeskHeight: $minDeskWidth *  $ratio;
 
+$maxMobileWidth: $minDeskWidth;
 
 $school_max_width: 738 * $scale;
 $school_max_height: 691 * $scale;
@@ -178,12 +181,12 @@ $family_max_top: 664 * $scale;   //<<<<<
     background-color: red;
   }
   .page{
-    width: av-on-width($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
-    height: av-on-width($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, $ratio);
+    width: adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
+    height: adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, $ratio);
   }
 
   .grid_image {
-    width: av-on-width($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
+    width: adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
     opacity: 0.4;
     //height: 100px;
     position: absolute;
@@ -192,56 +195,56 @@ $family_max_top: 664 * $scale;   //<<<<<
 
   .pic-school{
     position: absolute;
-    width: av-on-width($school_max_width, 270, $maxDeskWidth, $minDeskWidth);
-    height: av-on-width($school_max_height, 252, $maxDeskWidth, $minDeskWidth);
+    width: adapt($school_max_width, 270, $maxDeskWidth, $minDeskWidth);
+    height: adapt($school_max_height, 252, $maxDeskWidth, $minDeskWidth);
     left: unset;
-    right: av-on-width($school_max_right, 29, $maxDeskWidth, $minDeskWidth);
-    top: av-on-width($school_max_top, 76, $maxDeskWidth, $minDeskWidth);
+    right: adapt($school_max_right, 29, $maxDeskWidth, $minDeskWidth);
+    top: adapt($school_max_top, 76, $maxDeskWidth, $minDeskWidth);
     z-index: 40;
   }
   .pic-road{
     position: absolute;
-    width: av-on-width($road_max_width, 365, $maxDeskWidth, $minDeskWidth);
-    height: av-on-width($road_max_height, 105, $maxDeskWidth, $minDeskWidth);
-    left: av-on-width($road_max_left, 141, $maxDeskWidth, $minDeskWidth);
+    width: adapt($road_max_width, 365, $maxDeskWidth, $minDeskWidth);
+    height: adapt($road_max_height, 105, $maxDeskWidth, $minDeskWidth);
+    left: adapt($road_max_left, 141, $maxDeskWidth, $minDeskWidth);
     right: unset;
-    top: av-on-width($road_max_top, 290, $maxDeskWidth, $minDeskWidth);
+    top: adapt($road_max_top, 290, $maxDeskWidth, $minDeskWidth);
     z-index: 30;
   }
 
   .pic-boy{
     position: absolute;
-    width: av-on-width($boy_max_width, 56, $maxDeskWidth, $minDeskWidth);
-    height: av-on-width($boy_max_height, 186, $maxDeskWidth, $minDeskWidth);
-    left: av-on-width($boy_max_left, 175, $maxDeskWidth, $minDeskWidth);
+    width: adapt($boy_max_width, 56, $maxDeskWidth, $minDeskWidth);
+    height: adapt($boy_max_height, 186, $maxDeskWidth, $minDeskWidth);
+    left: adapt($boy_max_left, 175, $maxDeskWidth, $minDeskWidth);
     right: unset;
-    top: av-on-width($boy_max_top, 193, $maxDeskWidth, $minDeskWidth);
+    top: adapt($boy_max_top, 193, $maxDeskWidth, $minDeskWidth);
     z-index: 100;
   }
 
   .pic-teacher{
     position: absolute;
-    width: av-on-width($teacher_max_width, 42, $maxDeskWidth, $minDeskWidth);
-    height: av-on-width($teacher_max_height, 96, $maxDeskWidth, $minDeskWidth);
+    width: adapt($teacher_max_width, 42, $maxDeskWidth, $minDeskWidth);
+    height: adapt($teacher_max_height, 96, $maxDeskWidth, $minDeskWidth);
     left: unset;
-    right: av-on-width($teacher_max_right, 199, $maxDeskWidth, $minDeskWidth);
-    top: av-on-width($teacher_max_top, 272, $maxDeskWidth, $minDeskWidth);
+    right: adapt($teacher_max_right, 199, $maxDeskWidth, $minDeskWidth);
+    top: adapt($teacher_max_top, 272, $maxDeskWidth, $minDeskWidth);
     z-index: 80;
   }
 
   .pic-family{
     position: absolute;
-    width: av-on-width($family_max_width, 103, $maxDeskWidth, $minDeskWidth);
-    height: av-on-width($family_max_height, 143, $maxDeskWidth, $minDeskWidth);
-    left: av-on-width($family_max_left, 298, $maxDeskWidth, $minDeskWidth);
+    width: adapt($family_max_width, 103, $maxDeskWidth, $minDeskWidth);
+    height: adapt($family_max_height, 143, $maxDeskWidth, $minDeskWidth);
+    left: adapt($family_max_left, 298, $maxDeskWidth, $minDeskWidth);
     right: unset;
-    top: av-on-width($family_max_top, 243, $maxDeskWidth, $minDeskWidth);
+    top: adapt($family_max_top, 243, $maxDeskWidth, $minDeskWidth);
     z-index: 90;
   }
 
 }
 
-// resize MOBILE version
+// resize MOBILE version!!!!!!!!!!!!!!
 @media  (max-width: #{$minDeskWidth + px}) {
   
   .wrapper {
@@ -252,9 +255,8 @@ $family_max_top: 664 * $scale;   //<<<<<
   .wrapper_mobile{
     //display: flex;
     display: block;
-    padding: $space2x;
+    padding: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
     background-color: control-color-var(--control-color-page-back);
-    //height: 100%;
   }
 
   .grid_image {
@@ -265,30 +267,17 @@ $family_max_top: 664 * $scale;   //<<<<<
   .grid_image_mobile{
     display: block;
     position: absolute;
-    opacity: 0.3;
-    //max-width: $maxDeskWidth + px;
-    //max-height: $maxDeskHeight + px;
-
-    //width: $maxDeskWidth + px; 
-    //height: $maxDeskHeight + px; 
+    opacity: 0.2;
     z-index: 100;
-
-  // //position: fixed;
     top: 0;
     left: 0;
-    //transform: none;
-  // -webkit-transform: translate(-50%, -50%);
-  // transform: translate(-50%, -50%);
   }
 
 
 
   .header{
-    height: 24px;
-    min-height: 24px;
-    //display: inline-block;
-    //flex-direction: row;
-    //background-color: aliceblue;
+    height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    min-height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
   }
 
   .menu{
@@ -318,11 +307,7 @@ $family_max_top: 664 * $scale;   //<<<<<
   }
 
   .public-info{
-    //position: relative;
-    height: 106px ;
-    //display: block;
-    //flex-direction: row;
-    //margin-top: 30px;
+    height: adapt($mScale * 106, 106, $maxMobileWidth, $minMobileWidth);
     //background-color: red;
   }
 
@@ -333,13 +318,13 @@ $family_max_top: 664 * $scale;   //<<<<<
   }
 
   .info__name{
-    padding-top: 30px;
+    padding-top: adapt($mScale * 30, 30, $maxMobileWidth, $minMobileWidth);
     //background-color:bisque ;
     width: 50%;
   }
 
   .info__title{
-    font-size: 20px;
+    font-size: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: control-color-var($--control-color-page-title);
@@ -349,59 +334,55 @@ $family_max_top: 664 * $scale;   //<<<<<
   }
 
 .info__subtitle{
-  font-size: 12px;
+  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);
   font-family: 'Open Sans', sans-serif;
   color: control-color-var($--control-color-page-title);
   font-weight: 600;
 }
 
 .info__contacts{
-  //background-color: brown;
-  width: 130px;
-
+  //background-color: rgb(206, 173, 173);
+  width: adapt($mScale * 130, 130, $maxMobileWidth, $minMobileWidth);
+  //margin-right: adapt($sp2x * $mScale, $sp2x, $maxMobileWidth, $minMobileWidth);
 }
   .info__background{
 
     position: absolute;
-     top: $space2x;
-    // left: 176px;
-     width: 130px;
-     height: 130px;
+    top: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
+    width: adapt($mScale * 130, 130, $maxMobileWidth, $minMobileWidth);
+    right: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
   }
+
   
   .info__text{
     position: absolute;
-    right: $space2x;
-    width: 130px;
-    height: 130px;
+    right: adapt($sp2x * $mScale, $sp2x, $maxMobileWidth, $minMobileWidth);
+    width: adapt($mScale * 130, 130, $maxMobileWidth, $minMobileWidth);
+    top: adapt($mScale * 38, 38, $maxMobileWidth, $minMobileWidth);
+    height: adapt($mScale * 130, 130, $maxMobileWidth, $minMobileWidth);
     //text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     //background-color: aqua;
-    gap: $space2x;
+    gap: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
     font-style: normal;
-  }
-  .info__number{
-    font-size: 12px;
+    font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     color: control-color-var($--control-color-page-title);
+  }
+  .info__number{
+   
   }
 
   .info__city{
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    color: control-color-var($--control-color-page-title);
+   
   }
 
   .info__adress{
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    color: control-color-var($--control-color-page-title);
+   
   }
 }
 
