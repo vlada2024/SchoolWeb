@@ -173,7 +173,6 @@ svg.theme-indicator circle, svg.theme-indicator path {
   max-height: 675px;
   width: 1200px;
   height: 675px;
-  z-index: 100;
   opacity: 0.4;
   top: 50%;
   left: 50%;
@@ -238,7 +237,6 @@ svg.theme-indicator circle, svg.theme-indicator path {
     width: calc(700px + 500 * (100vw - 700px) / 500);
     opacity: 0.4;
     position: absolute;
-    z-index: 100;
   }
   .pic-school {
     position: absolute;
@@ -291,26 +289,47 @@ svg.theme-indicator circle, svg.theme-indicator path {
     display: none;
   }
   .wrapper_mobile {
-    display: block;
-    padding: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
     background-color: var(--control-color-page-back);
     width: calc(320px + 380 * (100vw - 320px) / 380);
+  }
+  .page_mobile {
+    display: block;
     height: 100vh;
+    max-height: 100vh;
+  }
+  .page_inner {
+    height: 100vh;
+    max-height: 100vh;
+    padding: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+  }
+  .startup-page {
     background-image: url("/images/components/mobile/green-circle.svg");
     background-size: calc(446px + 531.7692307692 * (100vw - 320px) / 380);
     background-position-x: calc(9px + 10.7307692308 * (100vw - 320px) / 380);
     background-position-y: calc(366px + 436.3846153846 * (100vw - 320px) / 380);
     background-repeat: no-repeat;
-    overflow: hidden;
+  }
+  .startup-page-background {
+    height: 100vh;
+    max-height: 100vh;
+    background-image: url("/images/components/mobile/school.svg");
+    background-size: calc(405px + 482.8846153846 * (100vw - 320px) / 380);
+    background-position-x: calc(80px + 95.3846153846 * (100vw - 320px) / 380);
+    background-position-y: calc(187px + 222.9615384615 * (100vw - 320px) / 380);
+    background-repeat: no-repeat;
+  }
+  .menu_button_background .bell-page {
+    background-color: rgb(212, 241, 232);
   }
   .grid_image {
     display: none;
   }
   .grid_image_mobile {
-    display: none;
+    display: block;
     position: absolute;
     opacity: 0.2;
-    z-index: 100;
     top: 0;
     left: 0;
   }
@@ -321,21 +340,18 @@ svg.theme-indicator circle, svg.theme-indicator path {
   .menu {
     min-height: 24px;
   }
-  .menu__background {
-    position: absolute;
-    top: -8px;
-    left: -8px;
-  }
   .menu__button {
     background-color: transparent;
-  }
-  .menu__button-image {
-    width: 24px;
-    height: 24px;
-    background-color: transparent;
+    width: 30px;
+    height: 30px;
     position: absolute;
     top: 6px;
     left: 6px;
+  }
+  .menu-button_background {
+    position: absolute;
+    top: -6px;
+    left: -6px;
   }
   .menu__button-image path {
     fill: var(--control-color-button-text);
@@ -355,7 +371,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
   .info__title {
     font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
     font-family: "Montserrat", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--control-color-page-title);
   }
   .info__subtitle {
@@ -391,13 +407,8 @@ svg.theme-indicator circle, svg.theme-indicator path {
     color: var(--control-color-page-title);
   }
   .main-container {
-    width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);
+    width: calc(295px + 351.7307692308 * (100vw - 320px) / 380);
     height: calc(414px + 493.6153846154 * (100vw - 320px) / 380);
-    background-image: url("/images/components/mobile/school.svg");
-    background-size: calc(405px + 482.8846153846 * (100vw - 320px) / 380);
-    background-position-x: calc(80px + 95.3846153846 * (100vw - 320px) / 380);
-    background-position-y: calc(47px + 56.0384615385 * (100vw - 320px) / 380);
-    background-repeat: no-repeat;
   }
   .navigation {
     width: calc(68px + 81.0769230769 * (100vw - 320px) / 380);
@@ -426,10 +437,72 @@ svg.theme-indicator circle, svg.theme-indicator path {
   }
   .nav-button-image {
     align-self: center;
+    z-index: 1;
     width: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
   }
   .nav-button-image path {
     fill: var(--control-color-button-text);
+  }
+  .menu-page {
+    background-image: url("/images/components/mobile/menu-button-back.svg");
+    background-size: 52px;
+    background-position-x: calc(100vw - 52px + 8px);
+    background-position-y: -8px;
+    background-repeat: no-repeat;
+  }
+  .main-menu {
+    height: 44px;
+  }
+  .main-menu_background {
+    background-image: url("/images/components/mobile/teacher-left.svg");
+    background-size: calc(142px + 169.3076923077 * (100vw - 320px) / 380);
+    background-position-x: calc(164px + 195.5384615385 * (100vw - 320px) / 380);
+    background-position-y: calc(220px + 262.3076923077 * (100vw - 320px) / 380);
+    background-repeat: no-repeat;
+  }
+  .close__button {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+  }
+  .close-button_background {
+    position: absolute;
+    top: -6px;
+    right: 6px;
+  }
+  .close__button-image path {
+    fill: var(--control-color-button-text);
+  }
+  .menus {
+    display: flex;
+    justify-content: center;
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-top: 19px;
+  }
+  .menu__link {
+    font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: var(--control-color-page-title);
+  }
+  .grid-in-bell {
+    top: 100vh;
+  }
+  .background-in-bell {
+    top: calc(100vh - 6px);
+  }
+  .button-in-bell {
+    top: calc(100vh - 6px);
+  }
+  .image-in-bell {
+    top: calc(100vh + 6px);
   }
 }
 /*
@@ -437,475 +510,4 @@ font-family: 'Lora', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'PT Sans', sans-serif;
 font-family: 'Open Sans', sans-serif;
-*/
-/*
-.main__item{
-  //background-color: rgb(228, 235, 230);
- // padding: 10px;
-}
-
-
-
-
-
-
-
-
-.page {
-  //@include adaptive-value("width", $maxPageWidth, $minPageWidth, 0);
-  //@include adaptive-value("height", $maxPageHeight, $minPageHeight, 0);
-
-  display: flex;
-  color:  control-color-var($--control-color-text);
-  background-color: control-color-var($--control-color-page-back);
-  min-height: 100vh; 
-  width: 100%;
-  padding: $space2x 0;
-}
-
-// .page_bg {
-//  // background: url(../images/components/404/404_chemical.png) center / cover no-repeat fixed;
-//   background: url(../images/components/404/404a.svg) center / cover no-repeat fixed;
-//   background-color: control-color-var($--control-color-page-back);
-//   background-size: contain;
-// }
-
-.page__body {
-  //background-color: control-color-var($--control-color-page-scene-back);
-  flex: 1 1 auto;
-  max-width: calc($containerMaxWidthPX);
-  max-height: calc($containerMaxHeightPX);
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  //padding: 0 2-0px; // 1200 + 20+ 20 = 1240px max container width
-  //overflow: hidden;
-  //overflow-y: hidden;
-  border: 5px solid #000;
-}
-
-
-.scene__wrapper{
-  width: $containerMaxWidthPX;
-  height: 100%;
-  //background-color: blueviolet;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.header{
-  background-color: bisque;
-  // position: fixed;
-  // top: 0;
-
-}
-
-.header__inner{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  height: $headerHeight; //TODO auto resize
-
-
-}
-
-.menu-mobile{
-  display: none;
-}
-
-.menu__list{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: $space2x ;
-  padding-left: $space2x;
-
-}
-
-.menu__link{
-  font-family: 'PT Sans', sans-serif;
-  font-size: 1.2rem;  //TODO resize
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-}
-
-.main{
-  //background-color: aqua;
-  height: 100%;
-}
-
-.title-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: $space2x;
-  padding: $space2x;
-}
-
-.title-container-mobile{
-  display: none;
-}
-
-.main__title{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  letter-spacing: 0;
-  border: 0;
-  margin: 0;
-  padding: 0;
-
-}
-
-.main__subtitle{
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  margin-left: $space;
-
-}
-
-.main__item{
-  background-color: rgb(6, 102, 27);
-  //width: 100%;
-  height: 5px;
-
-
- //align-content: stretch;
-}
-
-.item-container{
- // max-width: 100vw;
-  //width: 100%;
-  display: flex;
-  flex-direction: column;
-  //align-items: stretch;
-}
-
-.item-school{
-  background-color: chartreuse;
-}
-
-.item-boy{
-  background-color: chocolate;
-}
-
-.item-family{
-  background-color: rgb(133, 170, 161);
-}
-
-.footer{
-  position: relative;
-  height: $footerHeight;
-  min-height: $footerHeight;
-  display: block;
-  // bottom: 0;
-  background-color: rgb(192, 127, 133);
-}
-
-
-.footer__text{
-
-}
-
-
-
-.pic-school{
-  position: absolute;
-  @include adaptive-value("width", $school_max_width, calc($school_max_width/$divider), $respType);
-  @include adaptive-value("right", $school_max_right, calc($school_max_right/$divider) , $respType);
-  @include adaptive-value("top", $school_max_top, calc($school_max_top/$divider), $respType);
-  @include adaptive-value("height", $school_max_height, calc($school_max_height/$divider), $respType);
-  z-index: 40;
-}
-
-.pic-road{
-  position: absolute;
-  @include adaptive-value("width", $road_max_width, calc($road_max_width/$divider), $respType);
-  @include adaptive-value("right", $road_max_right, calc($road_max_right/$divider) , $respType);
-  @include adaptive-value("top", $road_max_top, calc($road_max_top/$divider), $respType); 
- // @include adaptive-value("left", $road_max_left, calc($road_max_left/$divider), 0);
-  @include adaptive-value("height", $road_max_height, calc($road_max_height/$divider), $respType);
-  z-index: 40;
-}
-
-
-.pic-boy{
-  position: absolute;
-  @include adaptive-value("width", $boy_max_width, calc($boy_max_width/$divider), $respType);
-  @include adaptive-value("left", $boy_max_left, calc($boy_max_left/$divider), $respType);
-  @include adaptive-value("top", $boy_max_top, calc($boy_max_top/$divider), $respType);
-  @include adaptive-value("height", $boy_max_height, calc($boy_max_height/$divider), $respType);
-  z-index: 100;
-}
-
-.pic-teacher{
-  position: absolute;
-  @include adaptive-value("width", $teacher_max_width, calc($teacher_max_width/$divider), $respType);
-  @include adaptive-value("right", $teacher_max_right, calc($teacher_max_right/$divider), $respType);
-  @include adaptive-value("top", $teacher_max_top, calc($teacher_max_top/$divider), $respType);
-  @include adaptive-value("height", $teacher_max_height, calc($teacher_max_height/$divider), $respType);
-  z-index: 80;
-}
-
-.pic-family{
-  position: absolute;
-  @include adaptive-value("width", $family_max_width, calc($family_max_width/$divider), $respType);
-  @include adaptive-value("left", $family_max_left, calc($family_max_left/$divider), $respType);
-  @include adaptive-value("top", $family_max_top, calc($family_max_top/$divider), $respType);
-  @include adaptive-value("height", $family_max_height, calc($family_max_height/$divider), $respType);
-  z-index: 90;
-}
-
-.pic-treeTop{
-  position: absolute;
-  @include adaptive-value("width", $treeTop_max_width, calc($treeTop_max_width/$divider), $respType);
-  @include adaptive-value("right", $treeTop_max_right, calc($treeTop_max_right/$divider), $respType);
-  @include adaptive-value("top", $treeTop_max_top, calc($treeTop_max_top/$divider), $respType);
-  @include adaptive-value("height", $treeTop_max_height, calc($treeTop_max_height/$divider), $respType);
-  z-index: 70;
-}
-
-.pic-treeBehind{
-  position: absolute;
-  @include adaptive-value("width", $treeBehind_max_width, calc($treeBehind_max_width/$divider), $respType);
-  @include adaptive-value("right", $treeBehind_max_right, calc($treeBehind_max_right/$divider), $respType);
-  @include adaptive-value("top", $treeBehind_max_top, calc($treeBehind_max_top/$divider), $respType);
-  @include adaptive-value("height", $treeBehind_max_height, calc($treeBehind_max_height/$divider), $respType);
-  z-index: 20;
-}
-*/
-/*
-@media  (max-width: $mobileContainerMaxWidthPX) {
-
-  .wrapper {
-    // min-height: auto; 
-    // height: auto;
-  }
-
-
-  .page{
-      background-color: #00ff0022;
-       //min-height: auto; 
-       height: auto;
-  }
-
-  .page__body {
-    max-width: 100vw;
-    max-height: 100vh;
-    align-items: center;
-  }
-
-  .scene__wrapper{
-    width: 100vw;
-
-  }
-
-  .header__inner{
-    //position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    //height: 250px;
-    background-color: blueviolet;
-    width: 100vw;
-
-  }
-  .menu-mobile{
-    display: none;
-    flex-direction: column;
-  }
-  .menu-button{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        //width: 45px;
-        height: 30px;
-        //background-color: $page-body-background-color;
-        border: 0;
-        cursor: pointer;
-        z-index: 4;
-
-  }
-
-  .menu__link{
-    padding: $space2x 0;
-    font-size: 3vh;
-    display: block;
-
-    width: 100vw;
-    text-align: center;
-}
-
-  .menu__list{
-    display: none;
-  }
-
-  .main{
-
-  }
-
-  .container{
-    height: 100%;
-  }
-
-  .main__inner{
-    height: 100%;
-  }
-
-  .title-container-mobile{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    //width: 100vw;
-    //text-align: left;
-    //background-color: brown;
-  }
-
-  .title-container{
-    display: none;
-  }
-
-  .main__title-mobile{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    letter-spacing: 0;
-    border: 0;
-    margin: 0;
-    padding: $space2x;
-    //width: 300px;
-  }
-
-  .main__subtitle-mobile{
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    margin-left: 4px;
-    padding: 0 $space2x;
-    //padding-bottom: 10px;
-  }
-
-  .item-container{
-    display: block;
-    height: 100%;
-
-  }
-
-  .main__item{
-    //height: 100%;
-  }
-
-  .item-school{
-    // height: 500px;
-    height: calc(100vh - $headerHeight);
-  }
-
-  .pic-school{
-    position: relative;
-    width: 300px;
-    height: unset;
-    top: unset;
-    left: unset;
-    // @include adaptive-value("width", $school_max_width, calc($school_max_width/$divider), $respType);
-    // @include adaptive-value("right", $school_max_right, calc($school_max_right/$divider) , $respType);
-    // @include adaptive-value("top", $school_max_top, calc($school_max_top/$divider), $respType);
-    // @include adaptive-value("height", $school_max_height, calc($school_max_height/$divider), $respType);
-    z-index: 0;
-  }
-
-  .pic-treeTop {
-    position: relative;
-    width: 100px;
-    height: unset;
-    top: unset;
-    left: unset;
-  }
-
-  .pic-treeBehind {
-    position: relative;
-    width: 100px;
-    height: unset;
-    top: unset;
-    left: unset;
-  }
-
-
-
-  .item-boy{
-    height: 100vh;
-  }
-
-
-.pic-boy{
-  position: relative;
-  width: 100px;
-  height: unset;
-  top: unset;
-  left: unset;
-  // @include adaptive-value("width", $boy_max_width, calc($boy_max_width/$divider), $respType);
-  // @include adaptive-value("left", $boy_max_left, calc($boy_max_left/$divider), $respType);
-  // @include adaptive-value("top", $boy_max_top, calc($boy_max_top/$divider), $respType);
-  // @include adaptive-value("height", $boy_max_height, calc($boy_max_height/$divider), $respType);
-  z-index: 0;
-}
-
-  .item-family{
-    height: calc(100vh);
-  }
-
-  .pic-family{
-    position: relative;
-    width: 150px;
-
-    height: unset;
-    top: unset;
-    left: unset;
-
-    margin-top: 20px;
-
-    // @include adaptive-value("width", $family_max_width, calc($family_max_width/$divider), $respType);
-    // @include adaptive-value("left", $family_max_left, calc($family_max_left/$divider), $respType);
-    // @include adaptive-value("top", $family_max_top, calc($family_max_top/$divider), $respType);
-    // @include adaptive-value("height", $family_max_height, calc($family_max_height/$divider), $respType);
-    z-index: 0;
-  }
-
-  .item-teacher{
-    height: calc(100vh - $footerHeight);
-  }
-
-  .pic-teacher{
-    position: relative;
-    width: 100px;
-    height: unset;
-    top: unset;
-    left: unset;
-    // @include adaptive-value("width", $teacher_max_width, calc($teacher_max_width/$divider), $respType);
-    // @include adaptive-value("right", $teacher_max_right, calc($teacher_max_right/$divider), $respType);
-    // @include adaptive-value("top", $teacher_max_top, calc($teacher_max_top/$divider), $respType);
-    // @include adaptive-value("height", $teacher_max_height, calc($teacher_max_height/$divider), $respType);
-    z-index: 0;
-  }
-
-  .item-road{
-    display: none;
-  }
-
-  .footer{
-    clear: both;
-    position: relative;
-
-  }
-}
-*/
-/*
-// for testing ONLY!!!
-@media  (min-width: $containerMaxWidthPX) {
-  .page{
-      background-color: #ff000011;
-  }
-
-}
 */
