@@ -2,6 +2,7 @@
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/functions';
+@import 'base/tricks';
 
 @import 'components/theme-indicator';
 
@@ -252,8 +253,6 @@ $family_max_top: 664 * $scale;   //<<<<<
 @media  (max-width: #{$minDeskWidth + px}) {
   
 
-  
-
 
   .wrapper {
     display: none;
@@ -273,8 +272,13 @@ $family_max_top: 664 * $scale;   //<<<<<
     
 
     //overflow: hidden;
-
+    // -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    // scrollbar-width: none;  /* Firefox */
   }
+
+  .wrapper_mobile::-webkit-scrollbar { 
+    // display: none;  /* Safari and Chrome */
+}
 
   .page_mobile{
 
@@ -329,7 +333,7 @@ $family_max_top: 664 * $scale;   //<<<<<
 
    // TODO change it to background with repeat!!!!
   .grid_image_mobile{
-    display: block; // block
+    display: none; // block
     position: absolute;
     opacity: 0.2;
     //z-index: 100;
@@ -506,7 +510,7 @@ $family_max_top: 664 * $scale;   //<<<<<
       fill: control-color-var($--control-color-button-text);
     }
   }
-  
+
 
   //-------- MENU page ------------
 

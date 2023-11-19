@@ -20,6 +20,14 @@ a {
   text-decoration: none;
 }
 
+.remove-scroll {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.remove-scroll::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 .page__theme-indicator {
   display: flex;
   flex-direction: row;
@@ -327,7 +335,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     display: none;
   }
   .grid_image_mobile {
-    display: block;
+    display: none;
     position: absolute;
     opacity: 0.2;
     top: 0;
