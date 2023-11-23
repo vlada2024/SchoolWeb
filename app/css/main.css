@@ -28,6 +28,13 @@ a {
   display: none; /* Safari and Chrome */
 }
 
+/* Firefox */
+@-moz-document url-prefix() {
+  html,
+  body {
+    scrollbar-width: none;
+  }
+}
 .page__theme-indicator {
   display: flex;
   flex-direction: row;
