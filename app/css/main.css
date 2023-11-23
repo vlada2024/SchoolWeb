@@ -161,7 +161,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
   --control-color-button-border-inactive: #999999;
 }
 
-.wrapper_mobile {
+.wrapper_mobile, .wrapper_mobile-menu {
   display: none;
 }
 
@@ -309,11 +309,21 @@ svg.theme-indicator circle, svg.theme-indicator path {
   .wrapper {
     display: none;
   }
-  .wrapper_mobile {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+  .wrapper_mobile-menu {
+    display: block;
     background-color: var(--control-color-page-back);
     width: calc(320px + 380 * (100vw - 320px) / 380);
+  }
+  .wrapper_mobile {
+    display: block;
+    background-color: var(--control-color-page-back);
+    width: calc(320px + 380 * (100vw - 320px) / 380);
+  }
+  .wrapper_mobile-menu--invisible {
+    display: none;
+  }
+  .wrapper_mobile--invisible {
+    display: none;
   }
   .page_mobile {
     display: block;
@@ -331,9 +341,6 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background-position-x: calc(9px + 10.7307692308 * (100vw - 320px) / 380);
     background-position-y: calc(366px + 436.3846153846 * (100vw - 320px) / 380);
     background-repeat: no-repeat;
-  }
-  .startup-page--invisible {
-    display: none;
   }
   .startup-page-background {
     height: 100vh;
@@ -473,9 +480,6 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background-position-x: calc(100vw - 52px + 8px);
     background-position-y: -8px;
     background-repeat: no-repeat;
-  }
-  .menu-page--invisible {
-    display: none;
   }
   .main-menu {
     height: 44px;

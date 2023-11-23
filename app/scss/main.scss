@@ -92,7 +92,7 @@ $family_max_top: 664 * $scale;   //<<<<<
 
 } 
 
-.wrapper_mobile{
+.wrapper_mobile, .wrapper_mobile-menu{
   display: none;
 }
 .grid_image_mobile{
@@ -316,26 +316,31 @@ $circleGreenY: 421 * $scale;
   
   }
   
-
-  .wrapper_mobile{
-    display: grid;  // block;
-    grid-template-rows: 1fr 1fr 1fr;
-
-    //padding: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
+  .wrapper_mobile-menu{
+    display: block;
     background-color: control-color-var(--control-color-page-back);
     width: adapt($maxMobileWidth, $minMobileWidth, $maxMobileWidth, $minMobileWidth);
-    //height: 100vh;
-
-    
-
-    //overflow: hidden;
-    // -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    // scrollbar-width: none;  /* Firefox */
   }
 
-  .wrapper_mobile::-webkit-scrollbar { 
-    // display: none;  /* Safari and Chrome */
-}
+  .wrapper_mobile{
+    display: block; //grid;  // block;
+    //grid-template-rows: 1fr 1fr 1fr;
+
+    background-color: control-color-var(--control-color-page-back);
+    width: adapt($maxMobileWidth, $minMobileWidth, $maxMobileWidth, $minMobileWidth);
+  }
+
+
+  
+
+  .wrapper_mobile-menu--invisible {
+    display: none;
+  }
+
+  .wrapper_mobile--invisible {
+    display: none;
+  }
+
 
   .page_mobile{
 
@@ -365,9 +370,7 @@ $circleGreenY: 421 * $scale;
       
 }
 
-.startup-page--invisible{
-  display: none;
-} 
+ 
 
 .startup-page-background {
   height: 100vh;
@@ -585,10 +588,7 @@ $circleGreenY: 421 * $scale;
   
   }
 
-  .menu-page--invisible{
-    display: none;
-  }
-
+ 
   .main-menu{
     height: 44px;
     
