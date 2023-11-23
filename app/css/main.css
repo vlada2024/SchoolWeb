@@ -326,6 +326,9 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background-position-y: calc(366px + 436.3846153846 * (100vw - 320px) / 380);
     background-repeat: no-repeat;
   }
+  .startup-page--invisible {
+    display: none;
+  }
   .startup-page-background {
     height: 100vh;
     max-height: 100vh;
@@ -464,6 +467,9 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background-position-x: calc(100vw - 52px + 8px);
     background-position-y: -8px;
     background-repeat: no-repeat;
+  }
+  .menu-page--invisible {
+    display: none;
   }
   .main-menu {
     height: 44px;
