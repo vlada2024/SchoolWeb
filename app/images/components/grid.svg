@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	  viewBox="0 0 1920 1080" enable-background="new 0 0 1920 1080" xml:space="preserve">
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="1" width="1920" height="1080"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_2_)">
+			<rect x="1" display="none" fill="#FFFFFF" width="1920" height="1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M0.5-0.5l1921,1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M0.5,1080.5L1918.67,2.588"/>
+			<path fill="none" stroke="#5D6AAD" d="M961.5,0.5l959,540"/>
+			<path fill="none" stroke="#5D6AAD" d="M961.007,1079.41L1919.26,2.588"/>
+			<path fill="none" stroke="#5D6AAD" d="M0.5-0.5l961,1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M0.5,1080.5l961-1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M1.5,540.5l960,539"/>
+			<path fill="none" stroke="#5D6AAD" d="M1.5,540.5l960-540"/>
+			<path fill="none" stroke="#5D6AAD" d="M961.5,1.5l960,1078"/>
+			<path fill="none" stroke="#5D6AAD" d="M961.5,1079.5l959-539"/>
+			<path fill="none" stroke="#5D6AAD" d="M1601.34,0v1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M1440.79,0v1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M1281.34,0v1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M961.5,0v1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M641.34,0v1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M481.371,0v1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M321.371,0v1080"/>
+			<path fill="none" stroke="#5D6AAD" d="M1,810.176h1920"/>
+			<path fill="none" stroke="#5D6AAD" d="M1,720.176h1920"/>
+			<path fill="none" stroke="#5D6AAD" d="M1,540.5h1920"/>
+			<path fill="none" stroke="#5D6AAD" d="M1,360.176h1920"/>
+			<path fill="none" stroke="#5D6AAD" d="M1,270h1920"/>
+		</g>
+	</g>
+</g>
+<line fill="none" stroke="#6B578A" stroke-width="2" stroke-miterlimit="10" x1="41" y1="0" x2="41" y2="1080"/>
+<line fill="none" stroke="#6B578A" stroke-width="2" stroke-miterlimit="10" x1="1881" y1="0" x2="1881" y2="1080"/>
+<line fill="none" stroke="#6B578A" stroke-width="2" stroke-miterlimit="10" x1="1" y1="40" x2="1921" y2="40"/>
+<line fill="none" stroke="#6B578A" stroke-width="2" stroke-miterlimit="10" x1="1" y1="1040" x2="1921" y2="1040"/>
+</svg>

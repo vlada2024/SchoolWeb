@@ -2,61 +2,66 @@
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/functions';
+@import 'base/tricks';
 
 @import 'components/theme-indicator';
 
-
-$maxPageWidth: 642;
-$maxPageHeight: 351;
-$minPageWidth: 200;
-$minPageHeight: calc($minPageWidth * $maxPageHeight / $maxPageWidth);
-
-
-$divider: 5; // 4 wrong!!!
-
-$school_max_width: 619;
-$school_max_height: 717;
-$school_max_right: 146;
-$school_max_top: 165;
-
-// $road_max_width: 2863;
-// $road_max_height: 1495;
-// $road_max_right: 300;
-// $road_max_top: 640;
-
-$road_max_width: 2560;
-$road_max_height: 900;
-$road_max_right: 351;
-$road_max_top: 883;
+// <-------- mobile -------> < ------- desktop ------------------------->
+// 320px             ->    700px                             ->   1200px
+// minMobileWidth    ->    minDeskWidth(maxMobileWidth)      ->   maxDeskWidth 
+// 568               ->    394px                             ->   675px
+// minMobileHeight   ->    minDeskHeight                     ->   maxDeskHeight 
 
 
-$boy_max_width: 254;
-$boy_max_height: 400;
-$boy_max_left: 179;
-$boy_max_top: 858;//643; <<<<<
+
+$scale: 0.625;  // for maket only
+$mScale: calc(285 / 130);
+  
+// for adaptive mixin
+$minMobileWidth: 320;
+$minMobileHeight: 568; // is not propotional to landscape orientation!!!!
+
+$maxDeskWidth: 1920 * $scale; // 1200
+$maxDeskHeight: 1080 * $scale;
+
+$ratio: calc($maxDeskHeight / $maxDeskWidth);
+
+$minDeskWidth: 700;
+$minDeskHeight: $minDeskWidth *  $ratio;
+
+$maxMobileWidth: $minDeskWidth;
+
+$school_max_width: 738 * $scale;
+$school_max_height: 691 * $scale;
+$school_max_right: 80 * $scale;
+$school_max_top: 206 * $scale;
 
 
-$teacher_max_width: 169;
-$teacher_max_height: 289;
-$teacher_max_right: 552;
-$teacher_max_top: 684;
+$road_max_width: 1004 * $scale;
+$road_max_height: 287 * $scale;
+$road_max_right: 529 * $scale;
+$road_max_left: 399 * $scale; //387
+$road_max_top: 793 * $scale;
 
-$family_max_width: 241;
-$family_max_height: 360;
-$family_max_left: 550;  //<<<< 
-$family_max_top: 700;   //<<<<<
 
-$treeTop_max_width: 177;
-$treeTop_max_height: 418;
-$treeTop_max_right: 50;
-$treeTop_max_top: 524;
+$boy_max_width: 153 * $scale;
+$boy_max_height: 510 * $scale;
+$boy_max_left: 481 * $scale;
+$boy_max_top: 529 * $scale;//643; <<<<<
 
-$treeBehind_max_width: 177;
-$treeBehind_max_height: 418;
-$treeBehind_max_right: 720;
-$treeBehind_max_top: 467;
 
-$respType: 0;
+$teacher_max_width: 116 * $scale;
+$teacher_max_height: 265 * $scale;
+$teacher_max_right: 540 * $scale;
+$teacher_max_top: 745 * $scale;
+
+$family_max_width: 284 * $scale;
+$family_max_height: 393 * $scale;
+$family_max_left: 818 * $scale;  //<<<< 
+$family_max_top: 664 * $scale;   //<<<<<
+
+
+
 
 :root.light {
   @include spread-map($color-map-light);
@@ -67,480 +72,553 @@ $respType: 0;
   @include spread-map($control-color-map-dark);
 }
 
-.wrapper {
-  min-height: 100vh; 
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  //background-image: url("../images/background.jpg");
-  background-position: center center; 
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-
-.page {
-  //@include adaptive-value("width", $maxPageWidth, $minPageWidth, 0);
-  //@include adaptive-value("height", $maxPageHeight, $minPageHeight, 0);
-  
-  display: flex;
-  color:  control-color-var($--control-color-text);
-  background-color: control-color-var($--control-color-page-back);
-  min-height: 100vh; 
-  width: 100%;
-  padding: $space2x 0;
-}
-
-// .page_bg {
-//  // background: url(../images/components/404/404_chemical.png) center / cover no-repeat fixed;
-//   background: url(../images/components/404/404a.svg) center / cover no-repeat fixed;
-//   background-color: control-color-var($--control-color-page-back);
-//   background-size: contain;
+// body {
+//   height: 100%;
 // }
 
-.page__body {
-  //background-color: control-color-var($--control-color-page-scene-back);
-  flex: 1 1 auto;
-  max-width: calc($containerMaxWidthPX);
-  max-height: calc($containerMaxHeightPX);
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  //padding: 0 2-0px; // 1200 + 20+ 20 = 1240px max container width
-  //overflow: hidden;
-  //overflow-y: hidden;
-  border: 5px solid #000;
-}
-
-
-.scene__wrapper{
-  width: $containerMaxWidthPX;
-  height: 100%;
-  //background-color: blueviolet;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.header{
-  background-color: bisque;
-  // position: fixed;
-  // top: 0;
-
-}
-
-.header__inner{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  height: $headerHeight; //TODO auto resize
+// fixed desktop version  >> 1200
+//@media  (min-width: $maxDeskWidth) {
+.wrapper {
   
-  
-}
+  // min-height: 100vh; 
+  // height: 100%;
+  // display: flex;
+  //  flex-direction: column;
+  // //background-image: url("../images/background.jpg");
+  // background-position: center center; 
+  // background-size: cover;
+  // background-attachment: fixed;
 
-.menu-mobile{
+} 
+
+.wrapper_mobile{
+  display: none;
+}
+.grid_image_mobile{
   display: none;
 }
 
-.menu__list{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: $space2x ;
-  padding-left: $space2x;
+.page{
+  max-width: $maxDeskWidth + px;
+  max-height: $maxDeskHeight + px;
+
+  width: $maxDeskWidth + px; 
+  height: $maxDeskHeight + px; 
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+  background-color: control-color-var(--control-color-page-back);
  
 }
 
-.menu__link{
-  font-family: 'PT Sans', sans-serif;
-  font-size: 1.2rem;  //TODO resize
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
+.grid_image {
+  //display: none;
+  position: absolute;
+  max-width: $maxDeskWidth + px;
+  max-height: $maxDeskHeight + px;
+
+  width: $maxDeskWidth + px; 
+  height: $maxDeskHeight + px; 
+  //z-index: 100;
+
+  //position: fixed;
+  opacity: 0.4;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
-.main{
-  //background-color: aqua;
-  height: 100%;
-}
-
-.title-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: $space2x;
-  padding: $space2x;
-}
-
-.title-container-mobile{
-  display: none;
-}
-
-.main__title{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  letter-spacing: 0;
-  border: 0;
-  margin: 0;
-  padding: 0;
- 
-}
-
-.main__subtitle{
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  margin-left: $space;
-
-}
-
-.main__item{
-  background-color: rgb(6, 102, 27);
-  //width: 100%;
-  height: 5px;
-
-
- //align-content: stretch;
-}
-
-.item-container{
- // max-width: 100vw;
-  //width: 100%;
-  display: flex;
-  flex-direction: column;
-  //align-items: stretch;
-}
-
-.item-school{
-  background-color: chartreuse;
-}
-
-.item-boy{
-  background-color: chocolate;
-}
-
-.item-family{
-  background-color: rgb(133, 170, 161);
-}
-
-.footer{
-  position: relative;
-  height: $footerHeight;
-  min-height: $footerHeight;
-  display: block;
-  // bottom: 0;
-  background-color: rgb(192, 127, 133);
-}
-
-
-.footer__text{
-
-}
-
-
 
 .pic-school{
   position: absolute;
-  @include adaptive-value("width", $school_max_width, calc($school_max_width/$divider), $respType);
-  @include adaptive-value("right", $school_max_right, calc($school_max_right/$divider) , $respType);
-  @include adaptive-value("top", $school_max_top, calc($school_max_top/$divider), $respType);
-  @include adaptive-value("height", $school_max_height, calc($school_max_height/$divider), $respType);
+  width: $school_max_width + px;
+  height: $school_max_height + px;
+  right: $school_max_right + px;
+  top: $school_max_top + px;
   z-index: 40;
 }
 
 .pic-road{
   position: absolute;
-  @include adaptive-value("width", $road_max_width, calc($road_max_width/$divider), $respType);
-  @include adaptive-value("right", $road_max_right, calc($road_max_right/$divider) , $respType);
-  @include adaptive-value("top", $road_max_top, calc($road_max_top/$divider), $respType); 
- // @include adaptive-value("left", $road_max_left, calc($road_max_left/$divider), 0);
-  @include adaptive-value("height", $road_max_height, calc($road_max_height/$divider), $respType);
-  z-index: 40;
+  width: $road_max_width + px;
+  height: $road_max_height + px;
+  left: $road_max_left + px;
+  top: $road_max_top + px;
+  //bottom: 0;
+  z-index: 30;
 }
-
 
 .pic-boy{
   position: absolute;
-  @include adaptive-value("width", $boy_max_width, calc($boy_max_width/$divider), $respType);
-  @include adaptive-value("left", $boy_max_left, calc($boy_max_left/$divider), $respType);
-  @include adaptive-value("top", $boy_max_top, calc($boy_max_top/$divider), $respType);
-  @include adaptive-value("height", $boy_max_height, calc($boy_max_height/$divider), $respType);
+  width: $boy_max_width + px;
+  height: $boy_max_height + px;
+  left: $boy_max_left + px;
+  top: $boy_max_top + px;
   z-index: 100;
-}
-
-.pic-teacher{
-  position: absolute;
-  @include adaptive-value("width", $teacher_max_width, calc($teacher_max_width/$divider), $respType);
-  @include adaptive-value("right", $teacher_max_right, calc($teacher_max_right/$divider), $respType);
-  @include adaptive-value("top", $teacher_max_top, calc($teacher_max_top/$divider), $respType);
-  @include adaptive-value("height", $teacher_max_height, calc($teacher_max_height/$divider), $respType);
-  z-index: 80;
 }
 
 .pic-family{
   position: absolute;
-  @include adaptive-value("width", $family_max_width, calc($family_max_width/$divider), $respType);
-  @include adaptive-value("left", $family_max_left, calc($family_max_left/$divider), $respType);
-  @include adaptive-value("top", $family_max_top, calc($family_max_top/$divider), $respType);
-  @include adaptive-value("height", $family_max_height, calc($family_max_height/$divider), $respType);
+  width: $family_max_width + px;
+  height: $family_max_height + px;
+  left: $family_max_left + px;
+  top: $family_max_top + px;
   z-index: 90;
 }
 
-.pic-treeTop{
+.pic-teacher{
   position: absolute;
-  @include adaptive-value("width", $treeTop_max_width, calc($treeTop_max_width/$divider), $respType);
-  @include adaptive-value("right", $treeTop_max_right, calc($treeTop_max_right/$divider), $respType);
-  @include adaptive-value("top", $treeTop_max_top, calc($treeTop_max_top/$divider), $respType);
-  @include adaptive-value("height", $treeTop_max_height, calc($treeTop_max_height/$divider), $respType);
-  z-index: 70;
+  width: $teacher_max_width + px;
+  height: $teacher_max_height + px;
+  right: $teacher_max_right + px;
+  top: $teacher_max_top + px;
+  z-index: 80;
 }
 
-.pic-treeBehind{
-  position: absolute;
-  @include adaptive-value("width", $treeBehind_max_width, calc($treeBehind_max_width/$divider), $respType);
-  @include adaptive-value("right", $treeBehind_max_right, calc($treeBehind_max_right/$divider), $respType);
-  @include adaptive-value("top", $treeBehind_max_top, calc($treeBehind_max_top/$divider), $respType);
-  @include adaptive-value("height", $treeBehind_max_height, calc($treeBehind_max_height/$divider), $respType);
-  z-index: 20;
+
+// resize DESKTOP version  
+@media  (min-width: #{$minDeskWidth + px}) and (max-width: #{$maxDeskWidth + px})   {
+  .wrapper {
+    background-color: red;
+  }
+  .page{
+    width: adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
+    height: adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, $ratio);
+  }
+
+  .grid_image {
+    width: adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
+    opacity: 0.4;
+    //height: 100px;
+    position: absolute;
+    //z-index: 100;
+  }
+
+  .pic-school{
+    position: absolute;
+    width: adapt($school_max_width, 270, $maxDeskWidth, $minDeskWidth);
+    height: adapt($school_max_height, 252, $maxDeskWidth, $minDeskWidth);
+    left: unset;
+    right: adapt($school_max_right, 29, $maxDeskWidth, $minDeskWidth);
+    top: adapt($school_max_top, 76, $maxDeskWidth, $minDeskWidth);
+    z-index: 40;
+  }
+  .pic-road{
+    position: absolute;
+    width: adapt($road_max_width, 365, $maxDeskWidth, $minDeskWidth);
+    height: adapt($road_max_height, 105, $maxDeskWidth, $minDeskWidth);
+    left: adapt($road_max_left, 141, $maxDeskWidth, $minDeskWidth);
+    right: unset;
+    top: adapt($road_max_top, 290, $maxDeskWidth, $minDeskWidth);
+    z-index: 30;
+  }
+
+  .pic-boy{
+    position: absolute;
+    width: adapt($boy_max_width, 56, $maxDeskWidth, $minDeskWidth);
+    height: adapt($boy_max_height, 186, $maxDeskWidth, $minDeskWidth);
+    left: adapt($boy_max_left, 175, $maxDeskWidth, $minDeskWidth);
+    right: unset;
+    top: adapt($boy_max_top, 193, $maxDeskWidth, $minDeskWidth);
+    z-index: 100;
+  }
+
+  .pic-teacher{
+    position: absolute;
+    width: adapt($teacher_max_width, 42, $maxDeskWidth, $minDeskWidth);
+    height: adapt($teacher_max_height, 96, $maxDeskWidth, $minDeskWidth);
+    left: unset;
+    right: adapt($teacher_max_right, 199, $maxDeskWidth, $minDeskWidth);
+    top: adapt($teacher_max_top, 272, $maxDeskWidth, $minDeskWidth);
+    z-index: 80;
+  }
+
+  .pic-family{
+    position: absolute;
+    width: adapt($family_max_width, 103, $maxDeskWidth, $minDeskWidth);
+    height: adapt($family_max_height, 143, $maxDeskWidth, $minDeskWidth);
+    left: adapt($family_max_left, 298, $maxDeskWidth, $minDeskWidth);
+    right: unset;
+    top: adapt($family_max_top, 243, $maxDeskWidth, $minDeskWidth);
+    z-index: 90;
+  }
+
 }
+
+// resize MOBILE version!!!!!!!!!!!!!!
+@media  (max-width: #{$minDeskWidth + px}) {
+  
+
+
+  .wrapper {
+    display: none;
+  
+  }
+  
+
+  .wrapper_mobile{
+    display: grid;  // block;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    //padding: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
+    background-color: control-color-var(--control-color-page-back);
+    width: adapt($maxMobileWidth, $minMobileWidth, $maxMobileWidth, $minMobileWidth);
+    //height: 100vh;
+
+    
+
+    //overflow: hidden;
+    // -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    // scrollbar-width: none;  /* Firefox */
+  }
+
+  .wrapper_mobile::-webkit-scrollbar { 
+    // display: none;  /* Safari and Chrome */
+}
+
+  .page_mobile{
+
+    display: block;
+    height: 100vh;
+    max-height: 100vh;
+    
+
+    //overflow: auto;
+  }
+
+  .page_inner {
+    height: 100vh;
+    max-height: 100vh;
+    padding: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
+  }
+
+.startup-page{
+    //display: none; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! remove
+    background-image: url("/images/components/mobile/green-circle.svg");
+    background-size: adapt($mScale * 446, 446, $maxMobileWidth, $minMobileWidth); 
+    background-position-x: adapt($mScale * 9, 9, $maxMobileWidth, $minMobileWidth); 
+    background-position-y: adapt($mScale * 366, 366, $maxMobileWidth, $minMobileWidth); 
+    background-repeat: no-repeat;
+
+   // overflow-x: hidden;
+      
+}
+.startup-page-background {
+  height: 100vh;
+    max-height: 100vh;
+      background-image: url("/images/components/mobile/school.svg");
+      background-size: adapt($mScale * 405, 405, $maxMobileWidth, $minMobileWidth); 
+      background-position-x: adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth);  // TODO change to 75????
+      background-position-y: adapt($mScale * 187, 187, $maxMobileWidth, $minMobileWidth);  //was 47 
+      background-repeat: no-repeat; 
+}
+
+
+.menu_button_background
+
+
+.bell-page {
+  background-color: rgb(212, 241, 232);
+} 
+
+
+  .grid_image {
+    display: none;
+  }
+
+
+   // TODO change it to background with repeat!!!!
+  .grid_image_mobile{
+    display: none; // block
+    position: absolute;
+    opacity: 0.2;
+    //z-index: 100;
+    top: 0;
+    left: 0;
+  }
+
+
+
+  .header{
+    height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    min-height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+  }
+
+  .menu{
+    min-height: 24px;  //32 ???
+  }
+  
+
+
+  .menu__button{
+   background-color: transparent;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: $space;
+    left: $space;
+  }
+
+  .menu-button_background{
+    position: absolute;
+    top: -$space;
+    left: -$space;
+  }
+
+  .menu__button-image{
+    //display: none;
+    // position: absolute;
+    // width: 24px;
+    // height: 24px;
+    // background-color: transparent;
+    // top: $space;
+    // left: $space;
+    path {
+      fill: control-color-var($--control-color-button-text);
+    }
+  }
+
+  .public-info{
+    height: adapt($mScale * 106, 106, $maxMobileWidth, $minMobileWidth);
+  }
+
+  //----------------------------------
+  .info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .info__name{
+    padding-top: adapt($mScale * 30, 30, $maxMobileWidth, $minMobileWidth);
+    width: 50%;
+  }
+
+  .info__title{
+    font-size: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: control-color-var($--control-color-page-title);
+    //letter-spacing: 0.9;
+  
+   // background-color: chocolate;
+  }
+
+.info__subtitle{
+  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);
+  font-family: 'Open Sans', sans-serif;
+  color: control-color-var($--control-color-page-title);
+  font-weight: 600;
+}
+
+.info__contacts{
+  //background-color: rgb(206, 173, 173);
+  width: adapt($mScale * 130, 130, $maxMobileWidth, $minMobileWidth);
+}
+  .info__background{
+
+    position: absolute;
+    top: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
+    width: adapt($mScale * 130, 130, $maxMobileWidth, $minMobileWidth);
+    right: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
+  }
+
+  
+  .info__text{
+    position: absolute;
+    right: adapt($sp2x * $mScale, $sp2x, $maxMobileWidth, $minMobileWidth);
+    width: adapt($mScale * 130, 130, $maxMobileWidth, $minMobileWidth);
+    top: adapt($mScale * 38, 38, $maxMobileWidth, $minMobileWidth);
+    height: adapt($mScale * 130, 130, $maxMobileWidth, $minMobileWidth);
+    //text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    //background-color: aqua;
+    gap: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
+    font-style: normal;
+    font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: control-color-var($--control-color-page-title);
+  }
+  .info__number{
+   
+  }
+
+  .info__city{
+   
+  }
+
+  .info__adress{
+   
+  }
+  $minMobileHeightPX: $minMobileHeight + px;
+  //-----------------------------
+  .main-container{
+     width: adapt($mScale * 295, 295, $maxMobileWidth, $minMobileWidth);  // TODO 12px space lost!!!
+     height: adapt($mScale * calc($minMobileHeight - 24 - 106 - $sp4x), calc($minMobileHeight - 24 - 106 - $sp4x), $maxMobileWidth, $minMobileWidth);
+
+    
+     
+
+  }
+
+  .navigation{
+    width: adapt($mScale * 68, 68, $maxMobileWidth, $minMobileWidth);
+    //1background-color: aqua;
+  }
+
+  .navigation__arrow{
+    height: adapt($mScale * 142, 142, $maxMobileWidth, $minMobileWidth);
+    //background-color: aquamarine;
+    //text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .arrow-button-image{
+    align-self: center;
+    padding-bottom: adapt($mScale * 14, 14, $maxMobileWidth, $minMobileWidth);
+    width: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);
+    height: adapt($mScale * 94, 94, $maxMobileWidth, $minMobileWidth);
+    path {
+      fill: control-color-var($--control-color-button-text);
+    }
+  }
+
+  .navigation__buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    padding-top: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    
+  }
+
+  .nav-button-image{
+    align-self: center;
+    z-index: 1;
+    width: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    path {
+      fill: control-color-var($--control-color-button-text);
+    }
+  }
+
+
+  //-------- MENU page ------------
+
+  .menu-page{
+    background-image: url("/images/components/mobile/menu-button-back.svg");
+    background-size: 52px;
+    background-position-x: calc(100vw - 52px + 8px);
+    background-position-y: -8px;
+    background-repeat: no-repeat;
+  
+  }
+  .main-menu{
+    height: 44px;
+    
+    
+  }
+
+  .main-menu_background{
+    background-image: url("/images/components/mobile/teacher-left.svg");
+    background-size: adapt($mScale * 142, 142, $maxMobileWidth, $minMobileWidth); 
+    background-position-x: adapt($mScale * 164, 164, $maxMobileWidth, $minMobileWidth); 
+    background-position-y: adapt($mScale * 220, 220, $maxMobileWidth, $minMobileWidth); 
+    background-repeat: no-repeat;
+  }
+
+  .close__button{
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: $space;
+    right: $space;
+
+
+
+  }
+
+  .close-button_background{
+    position: absolute;
+    top: -$space;
+    right: $space;
+    
+  }
+
+  .close__button-image{
+    //display: none;
+    // position: absolute;
+    // width: 24px;
+    // height: 24px;
+    // background-color: transparent;
+    // top: $space;
+    // left: $space;
+    path {
+      fill: control-color-var($--control-color-button-text);
+    }
+  }
+
+  .menus{
+    display: flex;
+    justify-content: center;
+    //background-color: aqua;
+  }
+  .menu-list{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-top: 19px;
+    
+  }
+
+  .menu-list__item{
+    
+  }
+
+  .menu__link{
+    font-size: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: control-color-var($--control-color-page-title);
+    
+  }
+
+   //-------- BELL page ------------
+
+  .grid-in-bell {
+    top: 100vh;
+  }
+
+  .background-in-bell {
+    top: calc(100vh - $space);
+  }
+
+  .button-in-bell{
+    top: calc(100vh - $space);
+  }
+
+  .image-in-bell {
+    top: calc(100vh + $space);
+  }
+}
+
+
 /*
 font-family: 'Lora', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'PT Sans', sans-serif;
+font-family: 'Open Sans', sans-serif;
 */
 
-@media  (max-width: $mobileContainerMaxWidthPX) {
-
-  .wrapper {
-    // min-height: auto; 
-    // height: auto;
-  }
 
 
-  .page{
-      background-color: #00ff0022;
-       //min-height: auto; 
-       height: auto;
-  }
-
-  .page__body {
-    max-width: 100vw;
-    max-height: 100vh;
-    align-items: center;
-  }
-
-  .scene__wrapper{
-    width: 100vw;
-   
-  }
-
-  .header__inner{
-    //position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    //height: 250px;
-    background-color: blueviolet;
-    width: 100vw;
-    
-  }
-  .menu-mobile{
-    display: none;
-    flex-direction: column;
-  }
-  .menu-button{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        //width: 45px;
-        height: 30px;
-        //background-color: $page-body-background-color;
-        border: 0;
-        cursor: pointer;
-        z-index: 4;
-
-  }
-
-  .menu__link{
-    padding: $space2x 0;
-    font-size: 3vh;
-    display: block;
-   
-    width: 100vw;
-    text-align: center;
-}
-
-  .menu__list{
-    display: none;
-  }
-
-  .main{
-   
-  }
-
-  .container{
-    height: 100%;
-  }
-
-  .main__inner{
-    height: 100%;
-  }
-
-  .title-container-mobile{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    //width: 100vw;
-    //text-align: left;
-    //background-color: brown;
-  }
-
-  .title-container{
-    display: none;
-  }
-
-  .main__title-mobile{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    letter-spacing: 0;
-    border: 0;
-    margin: 0;
-    padding: $space2x;
-    //width: 300px;
-  }
-
-  .main__subtitle-mobile{
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    margin-left: 4px;
-    padding: 0 $space2x;
-    //padding-bottom: 10px;
-  }
-
-  .item-container{
-    display: block;
-    height: 100%;
-    
-  }
-
-  .main__item{
-    //height: 100%;
-  }
-
-  .item-school{
-    // height: 500px;
-    height: calc(100vh - $headerHeight);
-  }
-
-  .pic-school{
-    position: relative;
-    width: 300px;
-    height: unset;
-    top: unset;
-    left: unset;
-    // @include adaptive-value("width", $school_max_width, calc($school_max_width/$divider), $respType);
-    // @include adaptive-value("right", $school_max_right, calc($school_max_right/$divider) , $respType);
-    // @include adaptive-value("top", $school_max_top, calc($school_max_top/$divider), $respType);
-    // @include adaptive-value("height", $school_max_height, calc($school_max_height/$divider), $respType);
-    z-index: 0;
-  }
-
-  .pic-treeTop {
-    position: relative;
-    width: 100px;
-    height: unset;
-    top: unset;
-    left: unset;
-  }
-
-  .pic-treeBehind {
-    position: relative;
-    width: 100px;
-    height: unset;
-    top: unset;
-    left: unset;
-  }
-
-
-
-  .item-boy{
-    height: 100vh;
-  }
-
-  
-.pic-boy{
-  position: relative;
-  width: 100px;
-  height: unset;
-  top: unset;
-  left: unset;
-  // @include adaptive-value("width", $boy_max_width, calc($boy_max_width/$divider), $respType);
-  // @include adaptive-value("left", $boy_max_left, calc($boy_max_left/$divider), $respType);
-  // @include adaptive-value("top", $boy_max_top, calc($boy_max_top/$divider), $respType);
-  // @include adaptive-value("height", $boy_max_height, calc($boy_max_height/$divider), $respType);
-  z-index: 0;
-}
-
-  .item-family{
-    height: calc(100vh);
-  }
-
-  .pic-family{
-    position: relative;
-    width: 150px;
-
-    height: unset;
-    top: unset;
-    left: unset;
-
-    margin-top: 20px;
-
-    // @include adaptive-value("width", $family_max_width, calc($family_max_width/$divider), $respType);
-    // @include adaptive-value("left", $family_max_left, calc($family_max_left/$divider), $respType);
-    // @include adaptive-value("top", $family_max_top, calc($family_max_top/$divider), $respType);
-    // @include adaptive-value("height", $family_max_height, calc($family_max_height/$divider), $respType);
-    z-index: 0;
-  }
-
-  .item-teacher{
-    height: calc(100vh - $footerHeight);
-  }
-
-  .pic-teacher{
-    position: relative;
-    width: 100px;
-    height: unset;
-    top: unset;
-    left: unset;
-    // @include adaptive-value("width", $teacher_max_width, calc($teacher_max_width/$divider), $respType);
-    // @include adaptive-value("right", $teacher_max_right, calc($teacher_max_right/$divider), $respType);
-    // @include adaptive-value("top", $teacher_max_top, calc($teacher_max_top/$divider), $respType);
-    // @include adaptive-value("height", $teacher_max_height, calc($teacher_max_height/$divider), $respType);
-    z-index: 0;
-  }
-
-  .item-road{
-    display: none;
-  }
-
-  .footer{
-    clear: both;
-    position: relative;
-   
-  }
-}
-
-
-
-
-
-
-// for testing ONLY!!!
-@media  (min-width: $containerMaxWidthPX) {
-  .page{
-      background-color: #ff000011;
-  }
-
-}
