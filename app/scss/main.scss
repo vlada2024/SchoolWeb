@@ -16,6 +16,7 @@
 
 $scale: 0.625;  // for maket only
 $mScale: calc(285 / 130);
+$mScaleInvers: calc(269 / 738);
   
 // for adaptive mixin
 $minMobileWidth: 320;
@@ -111,9 +112,29 @@ $family_max_top: 664 * $scale;   //<<<<<
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   
+  
+  
+  background: url("/images/components/mobile/circle-blue.svg")  calc(480px * $scale) calc(102px * $scale)  no-repeat ,
+      url("/images/components/mobile/circle-pink.svg") calc(-169px * $scale) calc(178px * $scale)  no-repeat,
+      url("/images/components/mobile/circle-yellow.svg") calc(1383px * $scale) calc(-200px * $scale)  no-repeat,
+      url("/images/components/mobile/circle-green.svg") calc(334px * $scale) calc(421px * $scale)  no-repeat;
+
+  background-size: calc(320px * $scale), calc(490px * $scale), calc(358px * $scale), calc(1886px * $scale);
+
   background-color: control-color-var(--control-color-page-back);
- 
-}
+
+    // background-image: url("/images/components/mobile/circle-blue.svg");
+    // background-size: calc(320px * $scale); 
+    // background-position-x: calc(480px * $scale); 
+    // background-position-y: calc(102px * $scale); 
+    // background-repeat: no-repeat;
+
+    // background-image: url("/images/components/mobile/circle-pink.svg");
+    // background-size: calc(200px * $scale); 
+    // background-position-x: calc(1000px * $scale); 
+    // background-position-y: calc(102px * $scale); 
+    // background-repeat: no-repeat;
+  }
 
 .grid_image {
   //display: none;
@@ -123,7 +144,7 @@ $family_max_top: 664 * $scale;   //<<<<<
 
   width: $maxDeskWidth + px; 
   height: $maxDeskHeight + px; 
-  //z-index: 100;
+  z-index: 100;
 
   //position: fixed;
   opacity: 0.4;
@@ -131,6 +152,7 @@ $family_max_top: 664 * $scale;   //<<<<<
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
 }
 
 .pic-school{
@@ -180,6 +202,24 @@ $family_max_top: 664 * $scale;   //<<<<<
 }
 
 
+$circleBlue: 320 * $scale;
+$circlePink: 490 * $scale;
+$circleYellow: 358 * $scale;
+$circleGreen: 1886 * $scale;
+$dScale: calc(116 / $circleBlue);
+
+$circleBlueX: 480 * $scale;
+$circleBlueY: 102 * $scale;
+
+$circlePinkX: -169 * $scale;
+$circlePinkY: 178 * $scale;
+
+$circleYellowX: 1383 * $scale;
+$circleYellowY: -200 * $scale;
+
+$circleGreenX: 334 * $scale;
+$circleGreenY: 421 * $scale;
+
 // resize DESKTOP version  
 @media  (min-width: #{$minDeskWidth + px}) and (max-width: #{$maxDeskWidth + px})   {
   .wrapper {
@@ -188,6 +228,23 @@ $family_max_top: 664 * $scale;   //<<<<<
   .page{
     width: adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth); 
     height: adapt($maxDeskWidth, $minDeskWidth, $maxDeskWidth, $minDeskWidth, $ratio);
+
+      
+    background: url("/images/components/mobile/circle-blue.svg")  adapt($circleBlueX, $circleBlueX * $dScale, $maxDeskWidth, $minDeskWidth) 
+      adapt($circleBlueY, $circleBlueY * $dScale, $maxDeskWidth, $minDeskWidth)  no-repeat,
+    url("/images/components/mobile/circle-pink.svg") adapt($circlePinkX, $circlePinkX * $dScale, $maxDeskWidth, $minDeskWidth) 
+      adapt($circlePinkY, $circlePinkY * $dScale, $maxDeskWidth, $minDeskWidth)  no-repeat,
+    url("/images/components/mobile/circle-yellow.svg") adapt($circleYellowX, $circleYellowX * $dScale, $maxDeskWidth, $minDeskWidth) 
+      adapt($circleYellowY, $circleYellowY * $dScale, $maxDeskWidth, $minDeskWidth)  no-repeat,
+    url("/images/components/mobile/circle-green.svg") adapt($circleGreenX, $circleGreenX * $dScale, $maxDeskWidth, $minDeskWidth) 
+      adapt($circleGreenY, $circleGreenY * $dScale, $maxDeskWidth, $minDeskWidth)  no-repeat;
+
+    background-size: adapt($circleBlue, $circleBlue * $dScale, $maxDeskWidth, $minDeskWidth), 
+    adapt($circlePink, $circlePink * $dScale, $maxDeskWidth, $minDeskWidth),
+    adapt($circleYellow, $circleYellow * $dScale, $maxDeskWidth, $minDeskWidth),
+    adapt($circleGreen, $circleGreen * $dScale, $maxDeskWidth, $minDeskWidth); 
+
+    background-color: control-color-var(--control-color-page-back);
   }
 
   .grid_image {
