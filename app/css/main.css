@@ -201,7 +201,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
   grid-row-start: 4;
   grid-row-end: 4;
   grid-column-start: 3;
-  grid-column-end: 8;
+  grid-column-end: 15;
   font-size: 54px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -213,7 +213,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
   grid-row-start: 5;
   grid-row-end: 5;
   grid-column-start: 3;
-  grid-column-end: 8;
+  grid-column-end: 12;
   padding-left: 5px;
 }
 
@@ -256,7 +256,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
   grid-row-start: 2;
   grid-row-end: 2;
   grid-column-start: 12;
-  grid-column-end: 14;
+  grid-column-end: 20;
   align-items: start;
   align-self: self-start;
   font-size: 20px;
@@ -265,7 +265,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
 }
 
 .left-menu-arrow {
-  grid-row-start: 7;
+  grid-row-start: 6;
   grid-row-end: 7;
   grid-column-start: 2;
   grid-column-end: 2;
@@ -282,6 +282,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
   grid-column-end: 2;
   margin-top: 10px;
   text-align: center;
+  align-self: start;
 }
 
 .left-menu-button-image {
@@ -371,6 +372,10 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background: url("/images/components/mobile/circle-blue.svg") calc(174px + 126 * (100vw - 700px) / 500) calc(36.975px + 26.775 * (100vw - 700px) / 500) no-repeat, url("/images/components/mobile/circle-pink.svg") calc(-61.2625px + -44.3625 * (100vw - 700px) / 500) calc(64.525px + 46.725 * (100vw - 700px) / 500) no-repeat, url("/images/components/mobile/circle-yellow.svg") calc(501.3375px + 363.0375 * (100vw - 700px) / 500) calc(-72.5px + -52.5 * (100vw - 700px) / 500) no-repeat, url("/images/components/mobile/circle-green.svg") calc(121.075px + 87.675 * (100vw - 700px) / 500) calc(152.6125px + 110.5125 * (100vw - 700px) / 500) no-repeat;
     background-size: calc(116px + 84 * (100vw - 700px) / 500), calc(177.625px + 128.625 * (100vw - 700px) / 500), calc(129.775px + 93.975 * (100vw - 700px) / 500), calc(683.675px + 495.075 * (100vw - 700px) / 500);
     background-color: var(--control-color-page-back);
+  }
+  .grid {
+    width: calc(700px + 500 * (100vw - 700px) / 500);
+    height: calc(393.75px + 281.25 * (100vw - 700px) / 500);
   }
   .grid_image {
     width: calc(700px + 500 * (100vw - 700px) / 500);
