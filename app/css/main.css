@@ -453,6 +453,16 @@ svg.theme-indicator circle, svg.theme-indicator path {
     height: 100vh;
     max-height: 100vh;
   }
+  .top-right-button-background, .top-left-button-background, .bottom-right-button-background, .bottom-left-button-background {
+    position: absolute;
+    height: calc(50px + 59.6153846154 * (100vw - 320px) / 380);
+  }
+  .top-right-button-background, .bottom-right-button-background {
+    right: 0;
+  }
+  .top-left-button-background, .bottom-left-button-background {
+    left: 0;
+  }
   .page_inner {
     height: 100vh;
     max-height: 100vh;
@@ -474,7 +484,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background-position-y: calc(187px + 222.9615384615 * (100vw - 320px) / 380);
     background-repeat: no-repeat;
   }
-  .menu_button_background .bell-page {
+  .bell-page {
     background-color: rgb(212, 241, 232);
   }
   .grid_image {
@@ -490,25 +500,12 @@ svg.theme-indicator circle, svg.theme-indicator path {
   .header {
     height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
     min-height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .menu {
     min-height: 24px;
-  }
-  .menu__button {
-    background-color: transparent;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 6px;
-    left: 6px;
-  }
-  .menu-button_background {
-    position: absolute;
-    top: -6px;
-    left: -6px;
-  }
-  .menu__button-image path {
-    fill: var(--control-color-button-text);
   }
   .public-info {
     height: calc(106px + 126.3846153846 * (100vw - 320px) / 380);
@@ -522,7 +519,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     padding-top: calc(30px + 35.7692307692 * (100vw - 320px) / 380);
     width: 50%;
   }
-  .info__title {
+  .info__title, .page-title {
     font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
@@ -597,15 +594,12 @@ svg.theme-indicator circle, svg.theme-indicator path {
   .nav-button-image path {
     fill: var(--control-color-button-text);
   }
-  .menu-page {
-    background-image: url("/images/components/mobile/menu-button-back.svg");
-    background-size: 52px;
-    background-position-x: calc(100vw - 52px + 8px);
-    background-position-y: -8px;
-    background-repeat: no-repeat;
-  }
   .main-menu {
     height: 44px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: calc(100vw - 6px - 6px);
   }
   .main-menu_background {
     background-image: url("/images/components/mobile/teacher-left.svg");
@@ -614,21 +608,24 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background-position-y: calc(220px + 262.3076923077 * (100vw - 320px) / 380);
     background-repeat: no-repeat;
   }
-  .close__button {
+  .close__button, .go-home__button, .menu__button {
     background-color: transparent;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 6px;
-    right: 6px;
+    height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
+    width: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
   }
   .close-button_background {
     position: absolute;
     top: -6px;
     right: 6px;
   }
-  .close__button-image path {
+  .close__button-image, .go-home__button-image, .menu__button-image {
+    height: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
+  }
+  .close__button-image path, .go-home__button-image path, .menu__button-image path {
     fill: var(--control-color-button-text);
+  }
+  .go-home__button-image {
+    margin-left: calc(4px + 4.7692307692 * (100vw - 320px) / 380);
   }
   .menus {
     display: flex;

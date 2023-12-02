@@ -531,6 +531,23 @@ $circleGreenY: 421 * $scale;
     //overflow: auto;
   }
 
+
+  .top-right-button-background, .top-left-button-background, .bottom-right-button-background, .bottom-left-button-background{
+    position: absolute;
+    height: adapt($mScale * 50, 50, $maxMobileWidth, $minMobileWidth);
+    //z-index: 100;
+  }
+
+
+  .top-right-button-background, .bottom-right-button-background{
+    right: 0;
+  }
+
+  .top-left-button-background, .bottom-left-button-background{
+    left: 0;
+  }
+
+
   .page_inner {
     height: 100vh;
     max-height: 100vh;
@@ -562,7 +579,7 @@ $circleGreenY: 421 * $scale;
 }
 
 
-.menu_button_background
+
 
 
 .bell-page {
@@ -590,6 +607,9 @@ $circleGreenY: 421 * $scale;
   .header{
     height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
     min-height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .menu{
@@ -598,33 +618,15 @@ $circleGreenY: 421 * $scale;
   
 
 
-  .menu__button{
-   background-color: transparent;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: $space;
-    left: $space;
-  }
+  // .menu__button{
+  //   background-color: transparent;
+  //    width: 30px;
+  //    height: 30px;
+  //   //  position: absolute;
+  //   //  top: $space;
+  //   //  left: $space;
+  //  }
 
-  .menu-button_background{
-    position: absolute;
-    top: -$space;
-    left: -$space;
-  }
-
-  .menu__button-image{
-    //display: none;
-    // position: absolute;
-    // width: 24px;
-    // height: 24px;
-    // background-color: transparent;
-    // top: $space;
-    // left: $space;
-    path {
-      fill: control-color-var($--control-color-button-text);
-    }
-  }
 
   .public-info{
     height: adapt($mScale * 106, 106, $maxMobileWidth, $minMobileWidth);
@@ -642,7 +644,7 @@ $circleGreenY: 421 * $scale;
     width: 50%;
   }
 
-  .info__title{
+  .info__title, .page-title{
     font-size: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -759,19 +761,18 @@ $circleGreenY: 421 * $scale;
   //-------- MENU page ------------
 
   .menu-page{
-    background-image: url("/images/components/mobile/menu-button-back.svg");
-    background-size: 52px;
-    background-position-x: calc(100vw - 52px + 8px);
-    background-position-y: -8px;
-    background-repeat: no-repeat;
+  
   
   }
 
  
   .main-menu{
     height: 44px;
-    
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    //background-color: aqua;
+    width: calc(100vw - $space - $space);
   }
 
   .main-menu_background{
@@ -782,17 +783,20 @@ $circleGreenY: 421 * $scale;
     background-repeat: no-repeat;
   }
 
-  .close__button{
+  .close__button, .go-home__button, .menu__button{
     background-color: transparent;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: $space;
-    right: $space;
-
-
-
+    
+    height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    width: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
   }
+
+  // .close__button{
+  //   position: absolute;
+  //   top: $space;
+  //   right: $space;
+  // }
+
+
 
   .close-button_background{
     position: absolute;
@@ -801,17 +805,21 @@ $circleGreenY: 421 * $scale;
     
   }
 
-  .close__button-image{
+  .close__button-image, .go-home__button-image, .menu__button-image {
     //display: none;
     // position: absolute;
-    // width: 24px;
-    // height: 24px;
+   
     // background-color: transparent;
     // top: $space;
     // left: $space;
+    height: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);
     path {
       fill: control-color-var($--control-color-button-text);
     }
+  }
+
+  .go-home__button-image{
+    margin-left: adapt($mScale * 4, 4, $maxMobileWidth, $minMobileWidth);
   }
 
   .menus{
