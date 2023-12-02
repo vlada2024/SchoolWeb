@@ -35,6 +35,11 @@ a {
     scrollbar-width: none;
   }
 }
+@font-face {
+  font-family: "Breamcatcher";
+  src: url("../../fonts/breamcatcher.otf");
+  font-weight: normal;
+}
 .page__theme-indicator {
   display: flex;
   flex-direction: row;
@@ -463,6 +468,9 @@ svg.theme-indicator circle, svg.theme-indicator path {
   .top-left-button-background, .bottom-left-button-background {
     left: 0;
   }
+  .bottom-right-button-background, .bottom-left-button-background {
+    top: 200vh;
+  }
   .page_inner {
     height: 100vh;
     max-height: 100vh;
@@ -497,7 +505,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     top: 0;
     left: 0;
   }
-  .header {
+  .header, .footer {
     height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
     min-height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
     display: flex;
@@ -594,12 +602,15 @@ svg.theme-indicator circle, svg.theme-indicator path {
   .nav-button-image path {
     fill: var(--control-color-button-text);
   }
-  .main-menu {
+  .main-menu, .bottom-menu {
     height: 44px;
     display: flex;
     flex-direction: row;
     justify-content: end;
     width: calc(100vw - 6px - 6px);
+  }
+  .bottom-menu {
+    justify-content: space-between;
   }
   .main-menu_background {
     background-image: url("/images/components/mobile/teacher-left.svg");
@@ -608,7 +619,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background-position-y: calc(220px + 262.3076923077 * (100vw - 320px) / 380);
     background-repeat: no-repeat;
   }
-  .close__button, .go-home__button, .menu__button {
+  .close__button, .go-home__button, .menu__button, .nav-prev__button, .nav-next__button {
     background-color: transparent;
     height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
     width: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
@@ -618,10 +629,10 @@ svg.theme-indicator circle, svg.theme-indicator path {
     top: -6px;
     right: 6px;
   }
-  .close__button-image, .go-home__button-image, .menu__button-image {
+  .close__button-image, .go-home__button-image, .menu__button-image, .nav-prev__button-image, .nav-next__button-image {
     height: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
   }
-  .close__button-image path, .go-home__button-image path, .menu__button-image path {
+  .close__button-image path, .go-home__button-image path, .menu__button-image path, .nav-prev__button-image path, .nav-next__button-image path {
     fill: var(--control-color-button-text);
   }
   .go-home__button-image {
@@ -642,6 +653,125 @@ svg.theme-indicator circle, svg.theme-indicator path {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     color: var(--control-color-page-title);
+  }
+  .main-container-activity {
+    width: 296px;
+    display: grid;
+    height: 480px;
+    grid-template-columns: 8.42% 31.1% 60.47%;
+    grid-template-rows: 7.31% 12.91% 36.87% 6.04% 5.83% 10.42% 13.75% 6.87%;
+  }
+  .survival-title {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+    line-height: 62px;
+    vertical-align: bottom;
+    font-family: "Breamcatcher";
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+  .questions-list {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    text-align: right;
+    padding-right: 26px;
+  }
+  .question-item, .bonus {
+    font-family: "Breamcatcher";
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    line-height: 18px;
+  }
+  .bonus {
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    color: red;
+    text-align: right;
+    padding-right: 26px;
+    font-size: 16px;
+    line-height: 28px;
+    vertical-align: bottom;
+  }
+  .slogan-bottom-line, .slogan-top-line {
+    font-family: "Breamcatcher";
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .slogan-top-line {
+    grid-row-start: 6;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    line-height: 54px;
+    vertical-align: bottom;
+  }
+  .slogan-bottom-line {
+    grid-row-start: 7;
+    grid-row-end: 7;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    line-height: 66px;
+    vertical-align: middle;
+  }
+  .slogan-middle {
+    font-size: 64px;
+  }
+  .teacher {
+    grid-row-start: 8;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: var(--control-color-page-title);
+  }
+  .phone-vertical-left {
+    grid-row-start: 3;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 12px;
+  }
+  .phone-item {
+    transform: rotate(-180deg);
+    writing-mode: vertical-rl;
+    font-family: "Lora", serif;
+  }
+  .boy-activity {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    height: 234px;
+    margin-left: 12px;
+  }
+  .schedule-activity {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: var(--control-color-page-title);
+  }
+  .surv-act-background-red {
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 3;
+  }
+  .set-top {
+    z-index: 30;
   }
   .grid-in-bell {
     top: 100vh;

@@ -3,6 +3,7 @@
 @import 'base/mixins';
 @import 'base/functions';
 @import 'base/tricks';
+@import 'base/fonts';
 
 @import 'components/theme-indicator';
 
@@ -82,7 +83,7 @@ $r-menu-sp: 12.46%;
 $r-title: 8.33%;
 $r-main: 16.68%;
 
-
+$mHeaderHeight: 44px;  //header mobile
 
 :root.light {
   @include spread-map($color-map-light);
@@ -547,6 +548,9 @@ $circleGreenY: 421 * $scale;
     left: 0;
   }
 
+.bottom-right-button-background, .bottom-left-button-background{
+  top: calc(2 * 100vh);
+}
 
   .page_inner {
     height: 100vh;
@@ -604,7 +608,7 @@ $circleGreenY: 421 * $scale;
 
 
 
-  .header{
+  .header, .footer{
     height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
     min-height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
     display: flex;
@@ -764,15 +768,19 @@ $circleGreenY: 421 * $scale;
   
   
   }
-
+  
  
-  .main-menu{
-    height: 44px;
+  .main-menu, .bottom-menu{
+    height: $mHeaderHeight;
     display: flex;
     flex-direction: row;
     justify-content: end;
     //background-color: aqua;
     width: calc(100vw - $space - $space);
+  }
+
+  .bottom-menu{
+    justify-content: space-between;
   }
 
   .main-menu_background{
@@ -783,7 +791,7 @@ $circleGreenY: 421 * $scale;
     background-repeat: no-repeat;
   }
 
-  .close__button, .go-home__button, .menu__button{
+  .close__button, .go-home__button, .menu__button, .nav-prev__button, .nav-next__button{
     background-color: transparent;
     
     height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
@@ -805,7 +813,7 @@ $circleGreenY: 421 * $scale;
     
   }
 
-  .close__button-image, .go-home__button-image, .menu__button-image {
+  .close__button-image, .go-home__button-image, .menu__button-image, .nav-prev__button-image, .nav-next__button-image {
     //display: none;
     // position: absolute;
    
@@ -847,6 +855,162 @@ $circleGreenY: 421 * $scale;
     
   }
 
+  //25 92 179             296 = 100% width  
+  // 8.42  31.1 60.47  
+  
+  // 35 62  177        29  28 50   66  33         480 = 100% height
+  // 7.31 12.91 36.87  6.04 5.83 10.42 13.75 6.87
+  .main-container-activity{
+    //width: adapt($mScale * 295, 295, $maxMobileWidth, $minMobileWidth);
+    width: 296px;//calc(100vw - 2 * $space);
+    display: grid;
+    //background-color: rgb(243, 189, 189);
+    height: 480px; //calc(100vh - 2 * $mHeaderHeight);
+    grid-template-columns: 8.42% 31.1% 60.47%;
+    grid-template-rows: 7.31% 12.91% 36.87%  6.04% 5.83% 10.42% 13.75% 6.87%;
+  }
+
+  
+  .survival-title{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+    line-height: 62px;     //TODO adapt
+    vertical-align: bottom;
+    font-family: 'Breamcatcher';
+    font-size: 36px;
+    text-transform: uppercase;
+    //background-color: red;
+  }
+ 
+  .questions-list{
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    text-align: right;
+    padding-right: 26px;
+    //background-color: aquamarine;
+  }
+
+  .question-item, .bonus{
+    font-family: 'Breamcatcher';
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    line-height: 18px;
+
+  }
+
+  .bonus{
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    color: red;
+    text-align: right;
+    padding-right: 26px;
+    font-size: 16px;
+    line-height: 28px;
+    vertical-align: bottom;
+  }
+
+  .slogan-bottom-line, .slogan-top-line{
+    font-family: 'Breamcatcher';
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+   
+  }
+
+  .slogan-top-line{
+    grid-row-start: 6;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    //background-color: blueviolet;
+    line-height: 54px;
+    vertical-align: bottom;
+  }
+
+  .slogan-bottom-line{
+    grid-row-start: 7;
+    grid-row-end: 7;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    //background-color: aqua;
+    line-height: 66px;
+    vertical-align: middle;
+  }
+
+  .slogan-middle{
+    font-size: 64px;
+  }
+
+  .teacher{
+    grid-row-start: 8;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: control-color-var($--control-color-page-title);
+  }
+
+  .phone-vertical-left{
+    grid-row-start: 3;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    //background-color: aqua;
+    padding-bottom: 12px;
+   //transform: rotateY(-90deg);
+  }
+
+  .phone-item{
+    transform: rotate(-180deg);
+    //text-orientation: m
+    writing-mode: vertical-rl;
+    //width: 150px;
+    //background-color: rgb(227, 210, 243);
+    font-family: 'Lora', serif;
+  }
+
+  .boy-activity{
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    //width: 70px;
+    height: 234px;
+    margin-left: 12px;
+    //background-color: aqua;
+  }
+
+  .schedule-activity{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: control-color-var($--control-color-page-title);
+  }
+
+  .surv-act-background-red{
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 3;
+   
+  }
+
+  .set-top{
+    z-index: 30;
+  }
    //-------- BELL page ------------
 
   .grid-in-bell {
