@@ -621,17 +621,7 @@ $circleGreenY: 421 * $scale;
   }
   
 
-
-  // .menu__button{
-  //   background-color: transparent;
-  //    width: 30px;
-  //    height: 30px;
-  //   //  position: absolute;
-  //   //  top: $space;
-  //   //  left: $space;
-  //  }
-
-
+ 
   .public-info{
     height: adapt($mScale * 106, 106, $maxMobileWidth, $minMobileWidth);
   }
@@ -764,11 +754,7 @@ $circleGreenY: 421 * $scale;
 
   //-------- MENU page ------------
 
-  .menu-page{
-  
-  
-  }
-  
+   
  
   .main-menu, .bottom-menu{
     height: $mHeaderHeight;
@@ -793,7 +779,8 @@ $circleGreenY: 421 * $scale;
 
   .close__button, .go-home__button, .menu__button, .nav-prev__button, .nav-next__button{
     background-color: transparent;
-    
+    position: relative; // this is the fix of button click
+    z-index: 100;
     height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
     width: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
   }

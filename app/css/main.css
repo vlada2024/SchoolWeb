@@ -621,6 +621,8 @@ svg.theme-indicator circle, svg.theme-indicator path {
   }
   .close__button, .go-home__button, .menu__button, .nav-prev__button, .nav-next__button {
     background-color: transparent;
+    position: relative;
+    z-index: 100;
     height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
     width: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
   }

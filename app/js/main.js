@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded",  ()=> {
     const closeMenuButton = document.querySelector('.close__button');
     const menuPage = document.querySelector('.wrapper_mobile-menu');
     const allPages = document.querySelector('.wrapper_mobile');
+    const goHomeButtons = document.querySelectorAll('.go--home');
 
     menuButton.addEventListener('click', () => {
         menuPage.classList.remove('wrapper_mobile-menu--invisible');
@@ -14,6 +15,14 @@ document.addEventListener("DOMContentLoaded",  ()=> {
         allPages.classList.remove('wrapper_mobile--invisible');
         menuPage.classList.add('wrapper_mobile-menu--invisible');
     });
+
+    goHomeButtons.forEach(b => {
+    
+        b.addEventListener('click', () => {
+            alert("Vlada, privet!")
+        });
+
+    })
     
 });
 
