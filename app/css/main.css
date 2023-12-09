@@ -50,6 +50,36 @@ a {
   src: url("../../fonts/larisa.ttf");
   font-weight: normal;
 }
+@font-face {
+  font-family: "Lora";
+  src: url("../../fonts/Lora-Regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Lora-bold";
+  src: url("../../fonts/Lora-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../fonts/Montserrat-Regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Montserrat-bold";
+  src: url("../../fonts/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../../fonts/OpenSans-Regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "OpenSans-bold";
+  src: url("../../fonts/OpenSans-SemiBold.ttf");
+  font-weight: 600;
+}
 .page__theme-indicator {
   display: flex;
   flex-direction: row;
@@ -218,7 +248,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
   grid-column-start: 3;
   grid-column-end: 15;
   font-size: 54px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat-bold";
   font-weight: 600;
   color: var(--control-color-page-title);
 }
@@ -234,13 +264,13 @@ svg.theme-indicator circle, svg.theme-indicator path {
 
 .middle-title {
   font-size: 24px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "OpenSans";
   color: var(--control-color-page-sub-title);
 }
 
 .small-title {
   font-size: 16px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "OpenSans";
   color: var(--control-color-page-sub-title);
 }
 
@@ -275,7 +305,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
   align-items: start;
   align-self: self-start;
   font-size: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "OpenSans";
   color: var(--control-color-page-sub-title);
 }
 
@@ -314,7 +344,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
 
 .top-menu__link {
   font-size: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "OpenSans";
   color: var(--color-primary);
 }
 
@@ -539,15 +569,14 @@ svg.theme-indicator circle, svg.theme-indicator path {
   }
   .info__title, .page-title {
     font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat-bold";
     font-weight: 600;
     color: var(--control-color-page-title);
   }
   .info__subtitle {
     font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
-    font-family: "Open Sans", sans-serif;
+    font-family: "OpenSans-bold";
     color: var(--control-color-page-title);
-    font-weight: 600;
   }
   .info__contacts {
     width: calc(130px + 155 * (100vw - 320px) / 380);
@@ -571,7 +600,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     gap: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     font-style: normal;
     font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
-    font-family: "Open Sans", sans-serif;
+    font-family: "OpenSans-bold";
     font-weight: 600;
     color: var(--control-color-page-title);
   }
@@ -662,7 +691,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
   }
   .menu__link {
     font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat-bold";
     font-weight: 600;
     color: var(--control-color-page-title);
   }
@@ -742,7 +771,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     grid-row-end: 8;
     grid-column-start: 1;
     grid-column-end: 4;
-    font-family: "Open Sans", sans-serif;
+    font-family: "OpenSans";
     font-size: 12px;
     text-align: center;
     color: var(--control-color-page-title);
@@ -771,7 +800,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     margin-left: 12px;
   }
   .schedule-activity {
-    font-family: "Open Sans", sans-serif;
+    font-family: "OpenSans";
     font-size: 12px;
     text-align: center;
     color: var(--control-color-page-title);
@@ -798,9 +827,9 @@ svg.theme-indicator circle, svg.theme-indicator path {
     top: calc(100vh + 6px);
   }
   .main-container-theatre {
-    width: 296px;
+    width: calc(296px + 352.9230769231 * (100vw - 320px) / 380);
     display: grid;
-    height: 480px;
+    height: calc(480px + 572.3076923077 * (100vw - 320px) / 380);
     grid-template-columns: 50% 43.9% 6.1%;
     grid-template-rows: 10.8% 27% 56.25% 5.95%;
   }
@@ -808,12 +837,12 @@ svg.theme-indicator circle, svg.theme-indicator path {
     grid-row-start: 1;
     grid-row-end: 1;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
     text-align: center;
-    line-height: 52px;
+    line-height: calc(52px + 62 * (100vw - 320px) / 380);
     vertical-align: middle;
     font-family: "Pobeda";
-    font-size: 36px;
+    font-size: calc(36px + 42.9230769231 * (100vw - 320px) / 380);
     text-transform: uppercase;
   }
   .theatre-act-back-green {
@@ -821,7 +850,8 @@ svg.theme-indicator circle, svg.theme-indicator path {
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 1;
-    margin-left: 38px;
+    margin-left: calc(38px + 45.3076923077 * (100vw - 320px) / 380);
+    width: calc(117px + 139.5 * (100vw - 320px) / 380);
   }
   .theatre-first-text {
     grid-row-start: 2;
@@ -829,17 +859,18 @@ svg.theme-indicator circle, svg.theme-indicator path {
     grid-column-start: 1;
     grid-column-end: 1;
     font-family: "Larisa";
-    font-size: 20px;
-    margin-left: 12px;
-    margin-top: 12px;
+    font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
+    margin-left: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    margin-top: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
   }
   .theatre-act-back-blue {
     grid-row-start: 2;
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 2;
-    margin-left: -55px;
-    margin-top: 22px;
+    margin-left: calc(-55px + -65.5769230769 * (100vw - 320px) / 380);
+    margin-top: calc(22px + 26.2307692308 * (100vw - 320px) / 380);
+    width: calc(179px + 213.4230769231 * (100vw - 320px) / 380);
   }
   .theatre-second-text {
     grid-row-start: 2;
@@ -847,9 +878,9 @@ svg.theme-indicator circle, svg.theme-indicator path {
     grid-column-start: 2;
     grid-column-end: 2;
     font-family: "Larisa";
-    font-size: 35px;
-    margin-left: -26px;
-    margin-top: 72px;
+    font-size: calc(35px + 41.7307692308 * (100vw - 320px) / 380);
+    margin-left: calc(-26px + -31 * (100vw - 320px) / 380);
+    margin-top: calc(72px + 85.8461538462 * (100vw - 320px) / 380);
     color: var(--control-color-page-title);
   }
   .family-activity {
@@ -857,21 +888,21 @@ svg.theme-indicator circle, svg.theme-indicator path {
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 1;
-    height: 270px;
-    margin-left: 6px;
+    height: calc(270px + 321.9230769231 * (100vw - 320px) / 380);
+    margin-left: calc(6px + 7.1538461538 * (100vw - 320px) / 380);
   }
   .theatre-teacher, .theatre-schedule {
     grid-row-start: 4;
     grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 4;
-    font-family: "Open Sans", sans-serif;
-    font-size: 12px;
+    font-family: "OpenSans";
+    font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     text-align: center;
     color: var(--control-color-page-title);
   }
   .theatre-schedule {
-    margin-top: 16px;
+    margin-top: calc(16px + 19.0769230769 * (100vw - 320px) / 380);
   }
   .phone-vertical-right {
     grid-row-start: 3;
@@ -881,17 +912,18 @@ svg.theme-indicator circle, svg.theme-indicator path {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-bottom: 12px;
+    padding-bottom: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
   }
   .phone-item-second {
     transform: rotate(0deg);
     writing-mode: vertical-rl;
     font-family: "Lora", serif;
+    font-size: calc(14px + 16.6923076923 * (100vw - 320px) / 380);
   }
 }
 /*
 font-family: 'Lora', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'PT Sans', sans-serif;
-font-family: 'Open Sans', sans-serif;
+font-family: 'OpenSans', sans-serif;
 */

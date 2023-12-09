@@ -179,7 +179,7 @@ $mHeaderHeight: 44px;  //header mobile
     grid-column-start: 3;
     grid-column-end: 15;
     font-size: 54px ;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat-bold';
     font-weight: 600;
     color: control-color-var($--control-color-page-title);
     //background-color: aqua;
@@ -202,14 +202,14 @@ $mHeaderHeight: 44px;  //header mobile
 
   .middle-title{
     font-size: 24px ;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'OpenSans';
   
     color: control-color-var($--control-color-page-sub-title);
   }
 
   .small-title{
     font-size: 16px ;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'OpenSans';
     
     color: control-color-var($--control-color-page-sub-title);
   }
@@ -249,7 +249,7 @@ $mHeaderHeight: 44px;  //header mobile
     align-items: start;
     align-self: self-start;
     font-size: 20px ;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'OpenSans';
   
     color: control-color-var($--control-color-page-sub-title);
   }
@@ -306,7 +306,7 @@ $mHeaderHeight: 44px;  //header mobile
 
 .top-menu__link{
   font-size: 20px ;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'OpenSans';
 
   color: color-var($--color-primary);
 }
@@ -435,6 +435,10 @@ $circleGreenY: 421 * $scale;
     //z-index: 100;
   }
 
+
+ 
+
+  
   .pic-school{
     position: absolute;
     width: adapt($school_max_width, 270, $maxDeskWidth, $minDeskWidth);
@@ -640,7 +644,7 @@ $circleGreenY: 421 * $scale;
 
   .info__title, .page-title{
     font-size: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat-bold';
     font-weight: 600;
     color: control-color-var($--control-color-page-title);
     //letter-spacing: 0.9;
@@ -650,9 +654,8 @@ $circleGreenY: 421 * $scale;
 
 .info__subtitle{
   font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'OpenSans-bold';
   color: control-color-var($--control-color-page-title);
-  font-weight: 600;
 }
 
 .info__contacts{
@@ -683,7 +686,7 @@ $circleGreenY: 421 * $scale;
     gap: adapt($mScale * $sp2x, $sp2x, $maxMobileWidth, $minMobileWidth);
     font-style: normal;
     font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'OpenSans-bold';
     font-weight: 600;
     color: control-color-var($--control-color-page-title);
   }
@@ -836,7 +839,7 @@ $circleGreenY: 421 * $scale;
 
   .menu__link{
     font-size: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat-bold';
     font-weight: 600;
     color: control-color-var($--control-color-page-title);
     
@@ -941,7 +944,7 @@ $circleGreenY: 421 * $scale;
     grid-row-end: 8;
     grid-column-start: 1;
     grid-column-end: 4;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'OpenSans';
     font-size: 12px;
     text-align: center;
     color: control-color-var($--control-color-page-title);
@@ -981,7 +984,7 @@ $circleGreenY: 421 * $scale;
   }
 
   .schedule-activity{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'OpenSans';
     font-size: 12px;
     text-align: center;
     color: control-color-var($--control-color-page-title);
@@ -1022,10 +1025,10 @@ $circleGreenY: 421 * $scale;
 // 10.8 27 56.25 5.95     50 43.9 6.1
 
   .main-container-theatre{
-    width: 296px;//calc(100vw - 2 * $space);
+    width: adapt($mScale * 296, 296, $maxMobileWidth, $minMobileWidth);// 296px;//calc(100vw - 2 * $space);
     display: grid;
     //background-color: rgb(243, 189, 189);
-    height: 480px; //calc(100vh - 2 * $mHeaderHeight);
+    height:  adapt($mScale * 480, 480, $maxMobileWidth, $minMobileWidth);//480px; //calc(100vh - 2 * $mHeaderHeight);
     grid-template-columns: 50% 43.9% 6.1%;
     grid-template-rows: 10.8% 27% 56.25% 5.95%;
   }
@@ -1034,13 +1037,13 @@ $circleGreenY: 421 * $scale;
     grid-row-start: 1;
     grid-row-end: 1;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
     text-align: center;
     //background-color: aqua;
-    line-height: 52px; 
+    line-height:adapt($mScale * 52, 52, $maxMobileWidth, $minMobileWidth); //52px; 
     vertical-align: middle;
     font-family: 'Pobeda';
-    font-size: 36px;
+    font-size: adapt($mScale * 36, 36, $maxMobileWidth, $minMobileWidth);//36px;
     text-transform: uppercase;
   }
 
@@ -1049,7 +1052,8 @@ $circleGreenY: 421 * $scale;
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 1;
-    margin-left: 38px;
+    margin-left: adapt($mScale * 38, 38, $maxMobileWidth, $minMobileWidth);//38px;
+    width: adapt($mScale * 117, 117, $maxMobileWidth, $minMobileWidth);
   }
 
   .theatre-first-text{
@@ -1058,9 +1062,9 @@ $circleGreenY: 421 * $scale;
     grid-column-start: 1;
     grid-column-end: 1;
     font-family: 'Larisa';
-    font-size: 20px;
-    margin-left: 12px;
-    margin-top: 12px;
+    font-size: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);//20px;
+    margin-left: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+    margin-top: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
   }
 
   .theatre-act-back-blue{
@@ -1068,8 +1072,9 @@ $circleGreenY: 421 * $scale;
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 2;
-    margin-left: -55px;
-    margin-top: 22px;
+    margin-left: adapt($mScale * -55, -55, $maxMobileWidth, $minMobileWidth);//-55px;
+    margin-top: adapt($mScale * 22, 22, $maxMobileWidth, $minMobileWidth);//22px;
+    width: adapt($mScale * 179, 179, $maxMobileWidth, $minMobileWidth);
   }
 
   .theatre-second-text{
@@ -1078,9 +1083,9 @@ $circleGreenY: 421 * $scale;
     grid-column-start: 2;
     grid-column-end: 2;
     font-family: 'Larisa';
-    font-size: 35px;
-    margin-left: -26px;
-    margin-top: 72px;
+    font-size: adapt($mScale * 35, 35, $maxMobileWidth, $minMobileWidth);//35px;
+    margin-left: adapt($mScale * -26, -26, $maxMobileWidth, $minMobileWidth);//-26px;
+    margin-top: adapt($mScale * 72, 72, $maxMobileWidth, $minMobileWidth);//72px;
     color: control-color-var($--control-color-page-title);
   }
 
@@ -1090,8 +1095,8 @@ $circleGreenY: 421 * $scale;
     grid-column-start: 1;
     grid-column-end: 1;
     //width: 70px;
-    height: 270px;
-    margin-left: 6px;
+    height: adapt($mScale * 270, 270, $maxMobileWidth, $minMobileWidth);//270px;
+    margin-left: adapt($mScale * 6, 6, $maxMobileWidth, $minMobileWidth);//6px;
     //background-color: aqua;
   }
 
@@ -1100,14 +1105,14 @@ $circleGreenY: 421 * $scale;
     grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 4;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
+    font-family: 'OpenSans';
+    font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
     text-align: center;
     color: control-color-var($--control-color-page-title);
   }
 
   .theatre-schedule{
-    margin-top: 16px;
+    margin-top: adapt($mScale * 16, 16, $maxMobileWidth, $minMobileWidth);//16px;
   }
 
   .phone-vertical-right{
@@ -1119,8 +1124,7 @@ $circleGreenY: 421 * $scale;
     flex-direction: column;
     justify-content: flex-end;
     //background-color: aqua;
-    padding-bottom: 12px;
-   //transform: rotateY(-90deg);
+    padding-bottom: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
   }
 
   .phone-item-second{
@@ -1130,6 +1134,7 @@ $circleGreenY: 421 * $scale;
     //width: 150px;
     //background-color: rgb(227, 210, 243);
     font-family: 'Lora', serif;
+    font-size: adapt($mScale * 14, 14, $maxMobileWidth, $minMobileWidth);//14px;
   }
 }
 
@@ -1138,7 +1143,7 @@ $circleGreenY: 421 * $scale;
 font-family: 'Lora', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'PT Sans', sans-serif;
-font-family: 'Open Sans', sans-serif;
+font-family: 'OpenSans', sans-serif;
 */
 
 
