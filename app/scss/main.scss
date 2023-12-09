@@ -1015,9 +1015,125 @@ $circleGreenY: 421 * $scale;
   .image-in-bell {
     top: calc(100vh + $space);
   }
+
+//--------------------theatre------------------------
+//480 = 100% height       296 = 100% width
+// 52 130 270 28          148 130 18
+// 10.8 27 56.25 5.95     50 43.9 6.1
+
+  .main-container-theatre{
+    width: 296px;//calc(100vw - 2 * $space);
+    display: grid;
+    //background-color: rgb(243, 189, 189);
+    height: 480px; //calc(100vh - 2 * $mHeaderHeight);
+    grid-template-columns: 50% 43.9% 6.1%;
+    grid-template-rows: 10.8% 27% 56.25% 5.95%;
+  }
+
+  .theatre-title{
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    //background-color: aqua;
+    line-height: 52px; 
+    vertical-align: middle;
+    font-family: 'Pobeda';
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+
+  .theatre-act-back-green{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    margin-left: 38px;
+  }
+
+  .theatre-first-text{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    font-family: 'Larisa';
+    font-size: 20px;
+    margin-left: 12px;
+    margin-top: 12px;
+  }
+
+  .theatre-act-back-blue{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    margin-left: -55px;
+    margin-top: 22px;
+  }
+
+  .theatre-second-text{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    font-family: 'Larisa';
+    font-size: 35px;
+    margin-left: -26px;
+    margin-top: 72px;
+    color: control-color-var($--control-color-page-title);
+  }
+
+  .family-activity{
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    //width: 70px;
+    height: 270px;
+    margin-left: 6px;
+    //background-color: aqua;
+  }
+
+  .theatre-teacher, .theatre-schedule{
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: control-color-var($--control-color-page-title);
+  }
+
+  .theatre-schedule{
+    margin-top: 16px;
+  }
+
+  .phone-vertical-right{
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    //background-color: aqua;
+    padding-bottom: 12px;
+   //transform: rotateY(-90deg);
+  }
+
+  .phone-item-second{
+    transform: rotate(0deg);
+    //text-orientation: m
+    writing-mode: vertical-rl;
+    //width: 150px;
+    //background-color: rgb(227, 210, 243);
+    font-family: 'Lora', serif;
+  }
 }
 
-
+//Larisa
 /*
 font-family: 'Lora', serif;
 font-family: 'Montserrat', sans-serif;
