@@ -862,6 +862,10 @@ $circleGreenY: 421 * $scale;
   }
 
 //-----------------lessons---------------
+.lessons-page{
+  
+}
+
 .lessons-selector{
   width:  adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
   height:  adapt($mScale * 98, 98, $maxMobileWidth, $minMobileWidth);//98px;
@@ -870,7 +874,7 @@ $circleGreenY: 421 * $scale;
 .lesson-inner{
   margin-top:  adapt($mScale * -36, -36, $maxMobileWidth, $minMobileWidth);//-36px;
 }
-.data-selector{
+.date-selector{
   background-color: transparent;
   margin-left: adapt($mScale * 30, 30, $maxMobileWidth, $minMobileWidth);//30px;
   display: flex;
@@ -878,20 +882,20 @@ $circleGreenY: 421 * $scale;
   margin-top: adapt($mScale * 30, 30, $maxMobileWidth, $minMobileWidth);//-12px;
 }
 
-.data-number{
+.date-number{
   font-size:  adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth);//80px;
   font-family: 'Lora';
   color: #E7A9AC;
 }
 
-.data-month{
+.date-month{
   font-family: 'OpenSans';
   font-size:  adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
   color: control-color-var($--control-color-page-title);
   margin-top:  adapt($mScale * -16, -16, $maxMobileWidth, $minMobileWidth);//-16px;
 }
 
-.data-arrow{
+.arrow{
   margin-top:  adapt($mScale * 50, 50, $maxMobileWidth, $minMobileWidth);//50px;
   margin-left:  adapt($mScale * 6, 6, $maxMobileWidth, $minMobileWidth);//6px;
   width: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//32px;
@@ -903,7 +907,7 @@ $circleGreenY: 421 * $scale;
   width: adapt($mScale * 32, 32, $maxMobileWidth, $minMobileWidth);//32px;
 }
 
-.data-day{
+.date-day{
   font-family: 'OpenSans';
   font-size:  adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
   color: control-color-var($--control-color-page-sub-title);
@@ -926,20 +930,14 @@ $circleGreenY: 421 * $scale;
   margin-left:  adapt($mScale * 44, 44, $maxMobileWidth, $minMobileWidth);//44px;
 }
 
-.selector-number{
-  //background-color: #E7A9AC;
-}
 
-.class-number{
- 
-}
 
 .class-number, .class-letter{
   font-size:  adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);//20px;
   font-family: 'Lora-bold';
  color: control-color-var(--control-color-page-back);
   
-  margin-top:  adapt($mScale * -32, -32, $maxMobileWidth, $minMobileWidth);//-32px;
+  margin-top:  adapt($mScale * -31, -31, $maxMobileWidth, $minMobileWidth);//-32px;
   margin-left:  adapt($mScale * 6, 6, $maxMobileWidth, $minMobileWidth);//6px;
   text-transform: capitalize;
 }

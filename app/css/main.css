@@ -709,25 +709,25 @@ svg.theme-indicator circle, svg.theme-indicator path {
   .lesson-inner {
     margin-top: calc(-36px + -42.9230769231 * (100vw - 320px) / 380);
   }
-  .data-selector {
+  .date-selector {
     background-color: transparent;
     margin-left: calc(30px + 35.7692307692 * (100vw - 320px) / 380);
     display: flex;
     flex-direction: row;
     margin-top: calc(30px + 35.7692307692 * (100vw - 320px) / 380);
   }
-  .data-number {
+  .date-number {
     font-size: calc(80px + 95.3846153846 * (100vw - 320px) / 380);
     font-family: "Lora";
     color: #E7A9AC;
   }
-  .data-month {
+  .date-month {
     font-family: "OpenSans";
     font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     color: var(--control-color-page-title);
     margin-top: calc(-16px + -19.0769230769 * (100vw - 320px) / 380);
   }
-  .data-arrow {
+  .arrow {
     margin-top: calc(50px + 59.6153846154 * (100vw - 320px) / 380);
     margin-left: calc(6px + 7.1538461538 * (100vw - 320px) / 380);
     width: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
@@ -737,7 +737,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     margin-left: calc(6px + 7.1538461538 * (100vw - 320px) / 380);
     width: calc(32px + 38.1538461538 * (100vw - 320px) / 380);
   }
-  .data-day {
+  .date-day {
     font-family: "OpenSans";
     font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     color: var(--control-color-page-sub-title);
@@ -760,7 +760,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
     font-family: "Lora-bold";
     color: var(--control-color-page-back);
-    margin-top: calc(-32px + -38.1538461538 * (100vw - 320px) / 380);
+    margin-top: calc(-31px + -36.9615384615 * (100vw - 320px) / 380);
     margin-left: calc(6px + 7.1538461538 * (100vw - 320px) / 380);
     text-transform: capitalize;
   }
