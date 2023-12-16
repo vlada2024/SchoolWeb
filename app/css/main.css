@@ -550,7 +550,14 @@ svg.theme-indicator circle, svg.theme-indicator path {
     min-height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+  }
+  .page-title {
+    font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
+    font-family: "Montserrat-bold";
+    font-weight: 600;
+    color: var(--control-color-page-title);
+    flex-basis: 80%;
+    flex-shrink: 0;
   }
   .menu {
     min-height: 24px;
@@ -567,7 +574,7 @@ svg.theme-indicator circle, svg.theme-indicator path {
     padding-top: calc(30px + 35.7692307692 * (100vw - 320px) / 380);
     width: 50%;
   }
-  .info__title, .page-title {
+  .info__title {
     font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
     font-family: "Montserrat-bold";
     font-weight: 600;
@@ -693,6 +700,108 @@ svg.theme-indicator circle, svg.theme-indicator path {
     font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
     font-family: "Montserrat-bold";
     font-weight: 600;
+    color: var(--control-color-page-title);
+  }
+  .lessons-selector {
+    width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);
+    height: calc(98px + 116.8461538462 * (100vw - 320px) / 380);
+  }
+  .lesson-inner {
+    margin-top: calc(-36px + -42.9230769231 * (100vw - 320px) / 380);
+  }
+  .data-selector {
+    background-color: transparent;
+    margin-left: calc(30px + 35.7692307692 * (100vw - 320px) / 380);
+    display: flex;
+    flex-direction: row;
+    margin-top: calc(30px + 35.7692307692 * (100vw - 320px) / 380);
+  }
+  .data-number {
+    font-size: calc(80px + 95.3846153846 * (100vw - 320px) / 380);
+    font-family: "Lora";
+    color: #E7A9AC;
+  }
+  .data-month {
+    font-family: "OpenSans";
+    font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    color: var(--control-color-page-title);
+    margin-top: calc(-16px + -19.0769230769 * (100vw - 320px) / 380);
+  }
+  .data-arrow {
+    margin-top: calc(50px + 59.6153846154 * (100vw - 320px) / 380);
+    margin-left: calc(6px + 7.1538461538 * (100vw - 320px) / 380);
+    width: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+  }
+  .class-back {
+    margin-top: calc(50px + 59.6153846154 * (100vw - 320px) / 380);
+    margin-left: calc(6px + 7.1538461538 * (100vw - 320px) / 380);
+    width: calc(32px + 38.1538461538 * (100vw - 320px) / 380);
+  }
+  .data-day {
+    font-family: "OpenSans";
+    font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    color: var(--control-color-page-sub-title);
+    margin-top: calc(98px + 116.8461538462 * (100vw - 320px) / 380);
+    margin-left: calc(70px + 83.4615384615 * (100vw - 320px) / 380);
+  }
+  .calendar-slot {
+    width: calc(154px + 183.6153846154 * (100vw - 320px) / 380);
+    height: calc(114px + 135.9230769231 * (100vw - 320px) / 380);
+    margin-top: calc(-110px + -131.1538461538 * (100vw - 320px) / 380);
+    margin-left: calc(150px + 178.8461538462 * (100vw - 320px) / 380);
+  }
+  .class-selector {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    margin-left: calc(44px + 52.4615384615 * (100vw - 320px) / 380);
+  }
+  .class-number, .class-letter {
+    font-size: calc(20px + 23.8461538462 * (100vw - 320px) / 380);
+    font-family: "Lora-bold";
+    color: var(--control-color-page-back);
+    margin-top: calc(-32px + -38.1538461538 * (100vw - 320px) / 380);
+    margin-left: calc(6px + 7.1538461538 * (100vw - 320px) / 380);
+    text-transform: capitalize;
+  }
+  .lessons-schedule {
+    width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);
+    height: calc(284px + 338.6153846154 * (100vw - 320px) / 380);
+    margin-top: calc(18px + 21.4615384615 * (100vw - 320px) / 380);
+  }
+  .lesson-container {
+    margin-bottom: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
+    width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);
+  }
+  .lessons-back {
+    margin-left: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    width: calc(278px + 331.4615384615 * (100vw - 320px) / 380);
+    height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
+  }
+  .lesson-number {
+    font-family: "Lora";
+    font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    color: var(--control-color-page-title);
+    margin-top: calc(-24px + -28.6153846154 * (100vw - 320px) / 380);
+  }
+  .lessons-second-container {
+    width: calc(262px + 312.3846153846 * (100vw - 320px) / 380);
+    height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: calc(-16px + -19.0769230769 * (100vw - 320px) / 380);
+    margin-left: calc(16px + 19.0769230769 * (100vw - 320px) / 380);
+  }
+  .lesson-name {
+    font-family: "OpenSans";
+    font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    color: var(--control-color-page-title);
+  }
+  .lesson-room {
+    font-family: "Lora";
+    font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     color: var(--control-color-page-title);
   }
   .main-container-activity {

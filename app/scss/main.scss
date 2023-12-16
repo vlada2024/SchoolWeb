@@ -617,7 +617,19 @@ $circleGreenY: 421 * $scale;
     min-height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    //justify-content: ;
+    //align-content: stretch;
+  }
+
+  .page-title{
+    font-size: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);
+    font-family: 'Montserrat-bold';
+    font-weight: 600;
+    color: control-color-var($--control-color-page-title);
+    //background-color: chocolate;
+   flex-basis: 80%;
+   //flex-grow: 0;
+   flex-shrink: 0;
   }
 
   .menu{
@@ -642,15 +654,19 @@ $circleGreenY: 421 * $scale;
     width: 50%;
   }
 
-  .info__title, .page-title{
+  .info__title{
     font-size: adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);
     font-family: 'Montserrat-bold';
     font-weight: 600;
     color: control-color-var($--control-color-page-title);
+   
+  
     //letter-spacing: 0.9;
   
-   // background-color: chocolate;
+   //background-color: chocolate;
   }
+
+
 
 .info__subtitle{
   font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);
@@ -845,6 +861,141 @@ $circleGreenY: 421 * $scale;
     
   }
 
+//-----------------lessons---------------
+.lessons-selector{
+  width:  adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
+  height:  adapt($mScale * 98, 98, $maxMobileWidth, $minMobileWidth);//98px;
+}
+
+.lesson-inner{
+  margin-top:  adapt($mScale * -36, -36, $maxMobileWidth, $minMobileWidth);//-36px;
+}
+.data-selector{
+  background-color: transparent;
+  margin-left: adapt($mScale * 30, 30, $maxMobileWidth, $minMobileWidth);//30px;
+  display: flex;
+  flex-direction: row;
+  margin-top: adapt($mScale * 30, 30, $maxMobileWidth, $minMobileWidth);//-12px;
+}
+
+.data-number{
+  font-size:  adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth);//80px;
+  font-family: 'Lora';
+  color: #E7A9AC;
+}
+
+.data-month{
+  font-family: 'OpenSans';
+  font-size:  adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-title);
+  margin-top:  adapt($mScale * -16, -16, $maxMobileWidth, $minMobileWidth);//-16px;
+}
+
+.data-arrow{
+  margin-top:  adapt($mScale * 50, 50, $maxMobileWidth, $minMobileWidth);//50px;
+  margin-left:  adapt($mScale * 6, 6, $maxMobileWidth, $minMobileWidth);//6px;
+  width: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//32px;
+}
+
+.class-back{
+  margin-top:  adapt($mScale * 50, 50, $maxMobileWidth, $minMobileWidth);//50px;
+  margin-left:  adapt($mScale * 6, 6, $maxMobileWidth, $minMobileWidth);//6px;
+  width: adapt($mScale * 32, 32, $maxMobileWidth, $minMobileWidth);//32px;
+}
+
+.data-day{
+  font-family: 'OpenSans';
+  font-size:  adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-sub-title);
+  margin-top:  adapt($mScale * 98, 98, $maxMobileWidth, $minMobileWidth);//98px;
+  margin-left:  adapt($mScale * 70, 70, $maxMobileWidth, $minMobileWidth);//70px;
+}
+
+.calendar-slot{
+  width:  adapt($mScale * 154, 154, $maxMobileWidth, $minMobileWidth);//154px;
+  height:  adapt($mScale * 114, 114, $maxMobileWidth, $minMobileWidth);//114px;
+  margin-top:  adapt($mScale * -110, -110, $maxMobileWidth, $minMobileWidth);//-110px;
+  margin-left:  adapt($mScale * 150, 150, $maxMobileWidth, $minMobileWidth);//150px;
+  //background-color: #E7A9AC;
+}
+
+.class-selector{
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  margin-left:  adapt($mScale * 44, 44, $maxMobileWidth, $minMobileWidth);//44px;
+}
+
+.selector-number{
+  //background-color: #E7A9AC;
+}
+
+.class-number{
+ 
+}
+
+.class-number, .class-letter{
+  font-size:  adapt($mScale * 20, 20, $maxMobileWidth, $minMobileWidth);//20px;
+  font-family: 'Lora-bold';
+ color: control-color-var(--control-color-page-back);
+  
+  margin-top:  adapt($mScale * -32, -32, $maxMobileWidth, $minMobileWidth);//-32px;
+  margin-left:  adapt($mScale * 6, 6, $maxMobileWidth, $minMobileWidth);//6px;
+  text-transform: capitalize;
+}
+
+.lessons-schedule{
+  width:  adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
+  height:  adapt($mScale * 284, 284, $maxMobileWidth, $minMobileWidth);//284px;
+  margin-top:  adapt($mScale * 18, 18, $maxMobileWidth, $minMobileWidth);//18px;
+
+}
+
+.lesson-container{
+  margin-bottom: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
+  width: adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
+}
+
+.lessons-back{
+  margin-left: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  width: adapt($mScale * 278, 278, $maxMobileWidth, $minMobileWidth);;
+  height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+  //background-color: #E7A9AC;
+}
+
+.lesson-number{
+  font-family: 'Lora';
+  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-title);
+  margin-top: adapt($mScale * -24, -24, $maxMobileWidth, $minMobileWidth);//-24px;
+}
+
+.lessons-second-container{
+  width: adapt($mScale * 262, 262, $maxMobileWidth, $minMobileWidth);//262px;
+  height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: adapt($mScale * -16, -16, $maxMobileWidth, $minMobileWidth);//-16px;
+  margin-left: adapt($mScale * 16, 16, $maxMobileWidth, $minMobileWidth);//16px;
+}
+
+.lesson-name{
+  font-family: 'OpenSans';
+  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-title);
+  // margin-top: -16px;
+  // margin-left: 16px;
+}
+
+.lesson-room{
+  font-family: 'Lora';
+  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-title);
+  // margin-top: -16px;
+  
+}
   //25 92 179             296 = 100% width  
   // 8.42  31.1 60.47  
   
