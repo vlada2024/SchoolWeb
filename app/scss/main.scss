@@ -949,64 +949,22 @@ $circleGreenY: 421 * $scale;
 
 }
 
-/*
-.shedule-container{
-  margin-bottom: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
-  height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
-  width: adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
-}
-
-.shedule-back{
-  margin-left: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
-  width: adapt($mScale * 278, 278, $maxMobileWidth, $minMobileWidth);;
-  height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
-  //background-color: #E7A9AC;
-}
-
-.lesson-number{
-  font-family: 'Lora';
-  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
-  color: control-color-var($--control-color-page-title);
-  margin-top: adapt($mScale * -22, -22, $maxMobileWidth, $minMobileWidth);//-24px;
-}
-
-.lessons-container{
-  width: adapt($mScale * 262, 262, $maxMobileWidth, $minMobileWidth);//262px;
-  height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: adapt($mScale * -16, -16, $maxMobileWidth, $minMobileWidth);//-16px;
-  margin-left: adapt($mScale * 16, 16, $maxMobileWidth, $minMobileWidth);//16px;
-}
-
-.lesson-name{
-  font-family: 'OpenSans';
-  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
-  color: control-color-var($--control-color-page-title);
-  // margin-top: -16px;
-  // margin-left: 16px;
-}
-
-.lesson-room{
-  font-family: 'Lora';
-  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
-  color: control-color-var($--control-color-page-title);
-  // margin-top: -16px;
-  
-}
-*/
 .schedule-container{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  margin-bottom: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  //margin-bottom: 
   height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
   width: adapt($mScale * 292, 292, $maxMobileWidth, $minMobileWidth);//308px;
 
   align-items: center;
   justify-content: end;
+}
+
+.arrow-selector {
+  height: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;;
+  //background-color: aqua;
 }
 
 .lesson-number{
