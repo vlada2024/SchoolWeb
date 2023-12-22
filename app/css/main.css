@@ -769,40 +769,91 @@ svg.theme-indicator circle, svg.theme-indicator path {
     height: calc(284px + 338.6153846154 * (100vw - 320px) / 380);
     margin-top: calc(18px + 21.4615384615 * (100vw - 320px) / 380);
   }
-  .shedule-container {
+  /*
+  .shedule-container{
+    margin-bottom: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+    height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
+    width: adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
+  }
+
+  .shedule-back{
+    margin-left: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+    width: adapt($mScale * 278, 278, $maxMobileWidth, $minMobileWidth);;
+    height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+    //background-color: #E7A9AC;
+  }
+
+  .lesson-number{
+    font-family: 'Lora';
+    font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+    color: control-color-var($--control-color-page-title);
+    margin-top: adapt($mScale * -22, -22, $maxMobileWidth, $minMobileWidth);//-24px;
+  }
+
+  .lessons-container{
+    width: adapt($mScale * 262, 262, $maxMobileWidth, $minMobileWidth);//262px;
+    height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: adapt($mScale * -16, -16, $maxMobileWidth, $minMobileWidth);//-16px;
+    margin-left: adapt($mScale * 16, 16, $maxMobileWidth, $minMobileWidth);//16px;
+  }
+
+  .lesson-name{
+    font-family: 'OpenSans';
+    font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+    color: control-color-var($--control-color-page-title);
+    // margin-top: -16px;
+    // margin-left: 16px;
+  }
+
+  .lesson-room{
+    font-family: 'Lora';
+    font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+    color: control-color-var($--control-color-page-title);
+    // margin-top: -16px;
+
+  }
+  */
+  .schedule-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-bottom: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
-    width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);
-  }
-  .shedule-back {
-    margin-left: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
-    width: calc(278px + 331.4615384615 * (100vw - 320px) / 380);
-    height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
+    width: calc(292px + 348.1538461538 * (100vw - 320px) / 380);
+    align-items: center;
+    justify-content: end;
   }
   .lesson-number {
     font-family: "Lora";
     font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     color: var(--control-color-page-title);
-    margin-top: calc(-22px + -26.2307692308 * (100vw - 320px) / 380);
-  }
-  .lessons-container {
-    width: calc(262px + 312.3846153846 * (100vw - 320px) / 380);
-    height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: calc(-16px + -19.0769230769 * (100vw - 320px) / 380);
-    margin-left: calc(16px + 19.0769230769 * (100vw - 320px) / 380);
+    text-align: right;
+    margin-right: calc(6px + 7.1538461538 * (100vw - 320px) / 380);
   }
   .lesson-name {
+    margin-left: calc(16px + 19.0769230769 * (100vw - 320px) / 380);
     font-family: "OpenSans";
     font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     color: var(--control-color-page-title);
   }
   .lesson-room {
+    margin-right: calc(16px + 19.0769230769 * (100vw - 320px) / 380);
     font-family: "Lora";
     font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     color: var(--control-color-page-title);
+  }
+  .lessons-container {
+    flex-basis: 95%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-primary300);
+    height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
+    align-items: center;
   }
   .main-container-activity {
     width: 296px;

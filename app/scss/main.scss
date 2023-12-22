@@ -949,6 +949,7 @@ $circleGreenY: 421 * $scale;
 
 }
 
+/*
 .shedule-container{
   margin-bottom: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
   height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
@@ -994,6 +995,58 @@ $circleGreenY: 421 * $scale;
   // margin-top: -16px;
   
 }
+*/
+.schedule-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-bottom: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
+  width: adapt($mScale * 292, 292, $maxMobileWidth, $minMobileWidth);//308px;
+
+  align-items: center;
+  justify-content: end;
+}
+
+.lesson-number{
+  font-family: 'Lora';
+  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-title);
+  text-align: right;
+  //background-color: aqua;
+  margin-right: adapt($mScale * $sp, $sp, $maxMobileWidth, $minMobileWidth);//16px;
+}
+
+.lesson-name {
+  margin-left: adapt($mScale * 16, 16, $maxMobileWidth, $minMobileWidth);//16px;
+  font-family: 'OpenSans';
+  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-title);
+}
+
+.lesson-room {
+  margin-right: adapt($mScale * 16, 16, $maxMobileWidth, $minMobileWidth);//16px;
+  font-family: 'Lora';
+  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-title);
+}
+
+.lessons-container{
+  flex-basis: 95%;
+  //flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //vertical-align: middle;
+  background-color: color-var($--color-primary300);
+
+  height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
+  //padding-left: adapt($mScale * 16, 16, $maxMobileWidth, $minMobileWidth);//16px;
+  align-items: center;
+}
+
   //25 92 179             296 = 100% width  
   // 8.42  31.1 60.47  
   
