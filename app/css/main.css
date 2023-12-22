@@ -702,11 +702,11 @@ svg.theme-indicator circle, svg.theme-indicator path {
     font-weight: 600;
     color: var(--control-color-page-title);
   }
-  .lessons-selector {
+  .main-container-lessons {
     width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);
     height: calc(98px + 116.8461538462 * (100vw - 320px) / 380);
   }
-  .lesson-inner {
+  .lessons-inner {
     margin-top: calc(-36px + -42.9230769231 * (100vw - 320px) / 380);
   }
   .date-selector {
@@ -769,12 +769,12 @@ svg.theme-indicator circle, svg.theme-indicator path {
     height: calc(284px + 338.6153846154 * (100vw - 320px) / 380);
     margin-top: calc(18px + 21.4615384615 * (100vw - 320px) / 380);
   }
-  .lesson-container {
+  .shedule-container {
     margin-bottom: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
     width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);
   }
-  .lessons-back {
+  .shedule-back {
     margin-left: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     width: calc(278px + 331.4615384615 * (100vw - 320px) / 380);
     height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
@@ -783,9 +783,9 @@ svg.theme-indicator circle, svg.theme-indicator path {
     font-family: "Lora";
     font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
     color: var(--control-color-page-title);
-    margin-top: calc(-24px + -28.6153846154 * (100vw - 320px) / 380);
+    margin-top: calc(-22px + -26.2307692308 * (100vw - 320px) / 380);
   }
-  .lessons-second-container {
+  .lessons-container {
     width: calc(262px + 312.3846153846 * (100vw - 320px) / 380);
     height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
     display: flex;

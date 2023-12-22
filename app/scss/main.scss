@@ -866,12 +866,12 @@ $circleGreenY: 421 * $scale;
   
 }
 
-.lessons-selector{
+.main-container-lessons{
   width:  adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
   height:  adapt($mScale * 98, 98, $maxMobileWidth, $minMobileWidth);//98px;
 }
 
-.lesson-inner{
+.lessons-inner{
   margin-top:  adapt($mScale * -36, -36, $maxMobileWidth, $minMobileWidth);//-36px;
 }
 .date-selector{
@@ -949,13 +949,13 @@ $circleGreenY: 421 * $scale;
 
 }
 
-.lesson-container{
+.shedule-container{
   margin-bottom: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
   height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
   width: adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
 }
 
-.lessons-back{
+.shedule-back{
   margin-left: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
   width: adapt($mScale * 278, 278, $maxMobileWidth, $minMobileWidth);;
   height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
@@ -966,10 +966,10 @@ $circleGreenY: 421 * $scale;
   font-family: 'Lora';
   font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
   color: control-color-var($--control-color-page-title);
-  margin-top: adapt($mScale * -24, -24, $maxMobileWidth, $minMobileWidth);//-24px;
+  margin-top: adapt($mScale * -22, -22, $maxMobileWidth, $minMobileWidth);//-24px;
 }
 
-.lessons-second-container{
+.lessons-container{
   width: adapt($mScale * 262, 262, $maxMobileWidth, $minMobileWidth);//262px;
   height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);//24px;
   display: flex;
