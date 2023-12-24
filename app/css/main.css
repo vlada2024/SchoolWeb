@@ -532,9 +532,6 @@ svg.theme-indicator circle, svg.theme-indicator path {
     background-position-y: calc(187px + 222.9615384615 * (100vw - 320px) / 380);
     background-repeat: no-repeat;
   }
-  .bell-page {
-    background-color: rgb(212, 241, 232);
-  }
   .grid_image {
     display: none;
   }
@@ -701,6 +698,60 @@ svg.theme-indicator circle, svg.theme-indicator path {
     font-family: "Montserrat-bold";
     font-weight: 600;
     color: var(--control-color-page-title);
+  }
+  .main-container-bells {
+    width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);
+    height: calc(98px + 116.8461538462 * (100vw - 320px) / 380);
+  }
+  .current-time {
+    font-size: calc(80px + 95.3846153846 * (100vw - 320px) / 380);
+    font-family: "Lora";
+    color: #E7A9AC;
+    text-align: center;
+    margin-top: calc(-12px + -14.3076923077 * (100vw - 320px) / 380);
+    margin-left: calc(-12px + -14.3076923077 * (100vw - 320px) / 380);
+  }
+  .current-day {
+    font-family: "OpenSans";
+    font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    color: var(--control-color-page-sub-title);
+    margin-top: calc(-6px + -7.1538461538 * (100vw - 320px) / 380);
+    margin-left: calc(204px + 243.2307692308 * (100vw - 320px) / 380);
+  }
+  .bells-schedule {
+    width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);
+    height: calc(284px + 338.6153846154 * (100vw - 320px) / 380);
+    margin-top: calc(18px + 21.4615384615 * (100vw - 320px) / 380);
+  }
+  .bells-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-primary300);
+    height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
+    width: calc(296px + 352.9230769231 * (100vw - 320px) / 380);
+    align-items: center;
+  }
+  .lessons-number {
+    font-family: "OpenSans";
+    font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    color: var(--control-color-page-title);
+    margin-left: calc(16px + 19.0769230769 * (100vw - 320px) / 380);
+  }
+  .lessons-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: calc(16px + 19.0769230769 * (100vw - 320px) / 380);
+    width: calc(80px + 95.3846153846 * (100vw - 320px) / 380);
+  }
+  .lesson-start, .lesson-end {
+    font-family: "Lora";
+    font-size: calc(12px + 14.3076923077 * (100vw - 320px) / 380);
+    color: var(--control-color-page-title);
+  }
+  .arrow-selector {
+    margin-left: calc(-6px + -7.1538461538 * (100vw - 320px) / 380);
   }
   .main-container-lessons {
     width: calc(308px + 367.2307692308 * (100vw - 320px) / 380);

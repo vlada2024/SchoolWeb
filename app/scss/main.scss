@@ -590,9 +590,7 @@ $circleGreenY: 421 * $scale;
 
 
 
-.bell-page {
-  background-color: rgb(212, 241, 232);
-} 
+
 
 
   .grid_image {
@@ -860,10 +858,76 @@ $circleGreenY: 421 * $scale;
     color: control-color-var($--control-color-page-title);
     
   }
+  //-----------------bells-----------
+  
+.main-container-bells{
+  width:  adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
+  height:  adapt($mScale * 98, 98, $maxMobileWidth, $minMobileWidth);//98px;
+  
+}
+
+.current-time{
+  font-size:  adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth);//80px;
+  font-family: 'Lora';
+  color: #E7A9AC;
+  text-align: center;
+  margin-top: adapt($mScale * -12, -12, $maxMobileWidth, $minMobileWidth);//-12px;
+  margin-left: adapt($mScale * -12, -12, $maxMobileWidth, $minMobileWidth);//-12px;
+}
+
+.current-day{
+  font-family: 'OpenSans';
+  font-size:  adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-sub-title);
+  margin-top: adapt($mScale * -6, -6, $maxMobileWidth, $minMobileWidth);//-6px; 
+  margin-left: adapt($mScale * 204, 204, $maxMobileWidth, $minMobileWidth);//204px;
+}
+
+.bells-schedule{
+  width:  adapt($mScale * 308, 308, $maxMobileWidth, $minMobileWidth);//308px;
+  height:  adapt($mScale * 284, 284, $maxMobileWidth, $minMobileWidth);//284px;
+  margin-top:  adapt($mScale * 18, 18, $maxMobileWidth, $minMobileWidth);//18px;
+}
+
+.bells-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: color-var($--color-primary300);
+  height: adapt($mScale * 24, 24, $maxMobileWidth, $minMobileWidth);
+  width: adapt($mScale * 296, 296, $maxMobileWidth, $minMobileWidth);//296px;
+  align-items: center;
+}
+
+.lessons-number{
+  font-family: 'OpenSans';
+  font-size:  adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-title);
+  margin-left: adapt($mScale * 16, 16, $maxMobileWidth, $minMobileWidth);//16px;
+}
+
+.lessons-time{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: adapt($mScale * 16, 16, $maxMobileWidth, $minMobileWidth);//16px;
+  width: adapt($mScale * 80, 80, $maxMobileWidth, $minMobileWidth);//80px;
+}
+
+.lesson-start, .lesson-end{
+  font-family: 'Lora';
+  font-size: adapt($mScale * 12, 12, $maxMobileWidth, $minMobileWidth);//12px;
+  color: control-color-var($--control-color-page-title);
+  
+}
+
+.arrow-selector{
+  margin-left: adapt($mScale * -6, -6, $maxMobileWidth, $minMobileWidth);//-6px;
+}
 
 //-----------------lessons---------------
 .lessons-page{
-  
+
 }
 
 .main-container-lessons{
