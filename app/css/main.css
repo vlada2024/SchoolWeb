@@ -861,6 +861,89 @@ svg.theme-indicator circle, svg.theme-indicator path {
     height: calc(24px + 28.6153846154 * (100vw - 320px) / 380);
     align-items: center;
   }
+  .grade-message {
+    font-family: "Opensans";
+    color: var(--color-primary);
+    font-size: 12px;
+    background-color: var(--control-color-page-back);
+    padding: 12px;
+  }
+  .grade--number {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /*
+
+
+  .grade-form{
+    max-width: 152px;
+    //width: 152px;
+  }
+
+  .grade-number{
+    background-color: control-color-var(--control-color-page-back);
+    padding: 6px;
+  }
+
+  .grade-number-current{
+    background-color: transparent;
+    padding: 6px;
+  }
+
+  .number-current{
+    font-family: 'Lora-bold';
+    font-size: 20px;
+    color: control-color-var(--control-color-page-back);
+    margin-top: -31px;
+  }
+
+  .grade-number-background{
+    width: 32px;
+  }
+
+  .grade-number-ordinary{
+    background-color: transparent;
+    padding: 6px;
+  }
+
+  .number-ordinary{
+    font-family: 'Lora-bold';
+    font-size: 20px;
+    color: control-color-var($--control-color-page-sub-title);
+    //margin-top: -31px;
+  }
+
+  .grade-letter{
+    background-color:control-color-var(--control-color-page-back);
+    padding: 6px;
+  }
+
+  .grade-letter-current{
+    background-color: transparent;
+    padding: 6px;
+  }
+
+  .letter-current{
+    font-family: 'Lora-bold';
+    font-size: 20px;
+    color: control-color-var(--control-color-page-back);
+    margin-top: -31px;
+    text-transform: uppercase;
+  }
+
+  .grade-letter-ordinary{
+    background-color: transparent;
+    padding: 6px;
+  }
+
+  .letter-ordinary{
+    font-family: 'Lora-bold';
+    font-size: 20px;
+    color: control-color-var($--control-color-page-sub-title);
+    margin-top: -31px;
+    text-transform: uppercase;
+  } */
   .main-container-activity {
     width: 296px;
     display: grid;
