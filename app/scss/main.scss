@@ -1073,20 +1073,65 @@ $circleGreenY: 421 * $scale;
   font-family: 'Opensans';
   color: color-var($--color-primary);
   font-size: 12px;
-  background-color: control-color-var($--control-color-page-back);
   padding: 12px;
+  text-align: center;
 }
 
 
 
-.grade--form{
-  //max-width: 100px;
+.grade-form{
+  max-width: 135px;
+  margin: 0 auto;
+  //background-color: #e4e9b7;
 }
 
-.grade--number {
+.grade-number, .grade-letter {
+   display: flex;
+   flex-direction: row;
+  flex-wrap: wrap;
+  
+  //flex-flow: row;
+}
+
+
+
+.grade-number__item, .grade-letter__item{
+  width: 32px;
+  height: 32px;
+  background-color: color-var($--color-secondary300);
+  border-radius: 16px;
+  margin: $space;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  
+  .current{
+    color: color-var($--color-white);
+
+  }
+}
+
+.grade-number__item--current, .grade-letter__item--current{
+  background-color: color-var($--color-secondary);
+  
+}
+.grade-number__number, .grade-letter__letter{
+  color: color-var($--color-secondary);
+  font-family: 'Lora-bold';
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.grade-number__background{
+  width: 32px;
+  height: 32px;
+  
+  // border-width:1px;
+}
+
+.grade-form__spacer{
+  height: 24px;
 }
 /*
 
