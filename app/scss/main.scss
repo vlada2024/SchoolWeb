@@ -1082,57 +1082,104 @@ $circleGreenY: 421 * $scale;
 .grade-form{
   max-width: 135px;
   margin: 0 auto;
-  //background-color: #e4e9b7;
-}
+   
+  .grade-number {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    .grade-number__item {
+      width: 32px;
+      height: 32px;
+      background-color: color-var($--color-secondary300);
+      border-radius: 16px;
+      margin: $space;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      
+      .grade-number__number {
+        color: color-var($--color-secondary);
+        font-family: 'Lora-bold';
+        font-size: 20px;
+        line-height: 24px;
+      }
 
-.grade-number, .grade-letter {
-   display: flex;
-   flex-direction: row;
-  flex-wrap: wrap;
-  
-  //flex-flow: row;
-}
+      .current-number{
+        color: color-var($--color-white);
+    
+      }
+    }
+
+    .current-item {
+      background-color: color-var($--color-secondary);
+    }
+  }
 
 
 
-.grade-number__item, .grade-letter__item{
-  width: 32px;
-  height: 32px;
-  background-color: color-var($--color-secondary300);
-  border-radius: 16px;
-  margin: $space;
+.grade-letter {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+ 
+  .grade-letter__item{
+    width: 32px;
+    height: 32px;
+    background-color: color-var($--color-secondary300);
+    border-radius: 16px;
+    margin: $space;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    .grade-letter__letter {
+      color: color-var($--color-secondary);
+      font-family: 'Lora-bold';
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+
+    .current-letter{
+      color: color-var($--color-white);
   
-  .current{
-    color: color-var($--color-white);
+    }
+  }
+
+    .current-item {
+      background-color: color-var($--color-secondary);
+    }
 
   }
+
+ 
 }
 
-.grade-number__item--current, .grade-letter__item--current{
-  background-color: color-var($--color-secondary);
+
+// .grade-number__item--current, .grade-letter__item--current{
   
-}
-.grade-number__number, .grade-letter__letter{
-  color: color-var($--color-secondary);
-  font-family: 'Lora-bold';
-  font-size: 20px;
-  line-height: 24px;
-}
+  // background-color: color-var($--color-secondary);
+// }
+// .grade-number__number, .grade-letter__letter{
+//   color: color-var($--color-secondary);
+//   font-family: 'Lora-bold';
+//   font-size: 20px;
+//   line-height: 24px;
+// }
 
-.grade-number__background{
-  width: 32px;
-  height: 32px;
+// .grade-number__background{
+//   width: 32px;
+//   height: 32px;
   
-  // border-width:1px;
-}
+//   // border-width:1px;
+// }
 
-.grade-form__spacer{
-  height: 24px;
-}
+// .grade-form__spacer{
+//   height: 24px;
+// }
 /*
 
 

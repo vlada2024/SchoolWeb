@@ -872,12 +872,12 @@ svg.theme-indicator circle, svg.theme-indicator path {
     max-width: 135px;
     margin: 0 auto;
   }
-  .grade-number, .grade-letter {
+  .grade-form .grade-number {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .grade-number__item, .grade-letter__item {
+  .grade-form .grade-number .grade-number__item {
     width: 32px;
     height: 32px;
     background-color: var(--color-secondary300);
@@ -888,24 +888,45 @@ svg.theme-indicator circle, svg.theme-indicator path {
     align-items: center;
     justify-content: center;
   }
-  .grade-number__item .current, .grade-letter__item .current {
-    color: var(--color-white);
-  }
-  .grade-number__item--current, .grade-letter__item--current {
-    background-color: var(--color-secondary);
-  }
-  .grade-number__number, .grade-letter__letter {
+  .grade-form .grade-number .grade-number__item .grade-number__number {
     color: var(--color-secondary);
     font-family: "Lora-bold";
     font-size: 20px;
     line-height: 24px;
   }
-  .grade-number__background {
+  .grade-form .grade-number .grade-number__item .current-number {
+    color: var(--color-white);
+  }
+  .grade-form .grade-number .current-item {
+    background-color: var(--color-secondary);
+  }
+  .grade-form .grade-letter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .grade-form .grade-letter .grade-letter__item {
     width: 32px;
     height: 32px;
+    background-color: var(--color-secondary300);
+    border-radius: 16px;
+    margin: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
-  .grade-form__spacer {
-    height: 24px;
+  .grade-form .grade-letter .grade-letter__item .grade-letter__letter {
+    color: var(--color-secondary);
+    font-family: "Lora-bold";
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .grade-form .grade-letter .grade-letter__item .current-letter {
+    color: var(--color-white);
+  }
+  .grade-form .grade-letter .current-item {
+    background-color: var(--color-secondary);
   }
   /*
 
