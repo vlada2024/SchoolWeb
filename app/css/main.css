@@ -216,6 +216,10 @@ svg.theme-indicator circle, svg.theme-indicator path {
   display: none;
 }
 
+.transparent {
+  background-color: transparent;
+}
+
 .page {
   max-width: 1200px;
   max-height: 675px;
@@ -927,6 +931,98 @@ svg.theme-indicator circle, svg.theme-indicator path {
   }
   .grade-form .grade-letter .current-item {
     background-color: var(--color-secondary);
+  }
+  .calendar-container {
+    width: 308px;
+    height: 290px;
+    margin: 0 auto;
+  }
+  .main-container-calendar {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+  }
+  .current-year {
+    font-size: 20px;
+    font-family: "Lora-bold";
+    color: var(--color-primary);
+    padding-top: 12px;
+    padding-left: 12px;
+  }
+  .month-container {
+    display: flex;
+    flex-direction: row;
+    margin: 12px auto;
+    justify-content: space-between;
+  }
+  .current-month {
+    width: 100px;
+    text-align: center;
+    font-family: "OpenSans";
+    font-size: 12px;
+    color: var(--control-color-page-title);
+  }
+  .arrow-right-calendar, .arrow-left-calendar {
+    padding: 6px;
+    height: 32px;
+  }
+  .current-day-of-week {
+    font-family: "OpenSans";
+    font-size: 12px;
+    color: var(--color-secondary);
+  }
+  .day-names-container-calendar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .days-container-calendar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .days-container-calendar .day-item {
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-secondary300);
+    border-radius: 16px;
+    margin: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .days-container-calendar .day-item .day-number {
+    color: var(--color-secondary);
+    font-family: "Lora-bold";
+    font-size: 20px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+  .days-container-calendar .day-item .not-current-month {
+    color: var(--color-quaternary);
+  }
+  .days-container-calendar .day-item .current {
+    color: var(--color-white);
+  }
+  .days-container-calendar .day-item .weekend {
+    color: var(--color-primary);
+  }
+  .days-container-calendar .day-item .holiday {
+    color: var(--color-white);
+  }
+  .days-container-calendar .not-current-month {
+    background-color: var(--color-quaternary300);
+  }
+  .days-container-calendar .current {
+    background-color: var(--color-secondary);
+  }
+  .days-container-calendar .weekend {
+    background-color: var(--color-primary300);
+  }
+  .days-container-calendar .holiday {
+    background-color: var(--color-primary);
   }
   /*
 

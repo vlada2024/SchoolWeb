@@ -120,6 +120,10 @@ $mHeaderHeight: 44px;  //header mobile
   display: none;
 }
 
+.transparent{
+  background-color: transparent;
+}
+
 .page{
   max-width: $maxDeskWidth + px;
   max-height: $maxDeskHeight + px;
@@ -1158,6 +1162,120 @@ $circleGreenY: 421 * $scale;
  
 }
 
+
+.calendar-container{
+  width: 308px;
+  height: 290px;
+  //background-color: #f8ced0;
+  margin: 0 auto;
+}
+
+.main-container-calendar{
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+}
+ 
+
+.current-year{
+  font-size: 20px;
+  font-family: "Lora-bold";
+  color: color-var($--color-primary);
+  padding-top: 12px;
+  padding-left: 12px;
+}
+
+.month-container{
+  display: flex;
+  flex-direction: row;
+  margin: 12px auto;
+  justify-content: space-between;
+  //background-color: #E7A9AC;
+}
+
+.current-month{
+  width: 100px;
+  text-align: center;
+  font-family: 'OpenSans';
+  font-size: 12px;
+  color: control-color-var($--control-color-page-title);
+}
+
+.arrow-right-calendar, .arrow-left-calendar{
+  padding: 6px;
+  height: 32px;
+}
+
+.current-day-of-week{
+  font-family: 'OpenSans';
+  font-size: 12px;
+  color: color-var($--color-secondary);
+}
+
+.day-names-container-calendar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.days-container-calendar{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .day-item{
+    width: 32px;
+    height: 32px;
+    background-color: color-var($--color-secondary300);
+    border-radius: 16px;
+    margin: $space;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .day-number{
+      color: color-var($--color-secondary);
+      font-family: 'Lora-bold';
+      font-size: 20px;
+      line-height: 24px;
+      cursor: pointer;
+    }
+
+    .not-current-month{
+      color: color-var($--color-quaternary);
+    }
+
+    .current{
+      color: color-var($--color-white);
+    }
+
+    .weekend{
+      color: color-var($--color-primary);
+    }
+
+    .holiday{
+      color: color-var($--color-white);
+    }
+  }
+
+  .not-current-month{
+    background-color: color-var($--color-quaternary300);
+  }
+
+  .current{
+    background-color: color-var($--color-secondary);
+  }
+
+  .weekend{
+    background-color: color-var($--color-primary300);
+  }
+
+  .holiday{
+    background-color: color-var($--color-primary);
+  }
+}
 
 // .grade-number__item--current, .grade-letter__item--current{
   
